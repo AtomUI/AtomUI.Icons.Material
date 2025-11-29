@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>$(AtomUITargetFrameworks)</TargetFrameworks>
+        <OutputType>WinExe</OutputType>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <ApplicationIcon>Assets/MaterialGallery.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <TrimmerRootDescriptor Include="Roots.xml"/>
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <!--        <IsTrimmable>true</IsTrimmable>-->
+        <!--        <PublishTrimmed>true</PublishTrimmed>-->
+        <!--        <PublishAot>true</PublishAot>-->
+        <UseAppHost>true</UseAppHost>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../MaterialGallery/MaterialGallery.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="Assets/Images/MaterialGallery.ico">
+            <Link>MaterialGallery.ico</Link>
+        </None>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <AvaloniaResource Remove="Assets/MaterialGallery.ico" />
+    </ItemGroup>
+</Project>

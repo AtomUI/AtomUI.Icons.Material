@@ -1,0 +1,15 @@
+<Project>
+    <PropertyGroup>
+        <AtomUIDevelopTargetFramework>net10.0</AtomUIDevelopTargetFramework>
+        <AtomUIProductionTargetFramework>net8.0</AtomUIProductionTargetFramework>
+        <OutputType>Library</OutputType>
+        <TrimMode>copyused</TrimMode>
+        <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+        <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
+
+        <AtomUITargetFrameworks Condition=" '$(Configuration)' == 'Debug' ">$(AtomUIDevelopTargetFramework)</AtomUITargetFrameworks>
+        <AtomUITargetFrameworks Condition=" '$(Configuration)' == 'Release' ">$(AtomUIDevelopTargetFramework);$(AtomUIProductionTargetFramework)</AtomUITargetFrameworks>
+        
+    </PropertyGroup>
+
+</Project>

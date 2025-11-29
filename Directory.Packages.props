@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)"/>
+        <PackageVersion Include="AtomUI.Core" Version="$(AtomUIVersion)"/>
+        <PackageVersion Include="AtomUI.Desktop.Controls" Version="$(AtomUIVersion)"/>
+        <PackageVersion Include="AtomUI.Icons.Shared" Version="$(AtomUIVersion)"/>
+    </ItemGroup>
+</Project>
