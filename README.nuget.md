@@ -1,4 +1,4 @@
-# AtomUI.Icons.Material Introduction
+# Introduction
 
 AtomUI.Icons.Material is an icon library wrapper for the AtomUI OSS framework, built on the Google Material Icons project. It provides a unified API and naming conventions, enabling you to use the full style and semantics of native Material icons within AtomUI.
 
