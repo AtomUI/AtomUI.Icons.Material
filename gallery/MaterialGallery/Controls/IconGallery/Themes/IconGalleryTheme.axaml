@@ -2,7 +2,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:atom="https://atomui.net"
-    xmlns:gallery="https://atomui.net/material-icons/gallery"
+    xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
     x:ClassModifier="internal">
     <ControlTheme x:Key="{x:Type gallery:IconGallery}" TargetType="gallery:IconGallery">
         <Setter Property="Template">

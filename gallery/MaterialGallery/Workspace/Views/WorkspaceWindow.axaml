@@ -1,7 +1,7 @@
 <atom:Window xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:atom="https://atomui.net"
-             xmlns:gallery="https://atomui.net/material-icons/gallery"
+             xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
              xmlns:lang="clr-namespace:MaterialGallery.Workspace.Localization.WorkspaceWindowLang"
              xmlns:workspaceviews="clr-namespace:MaterialGallery.Workspace.Views"
              xmlns:viewModels="clr-namespace:MaterialGallery.Workspace.ViewModels"
