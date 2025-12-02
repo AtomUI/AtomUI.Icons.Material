@@ -1,0 +1,30 @@
+// This code is auto generated. Do not modify.
+// Generated Date: 2025-12-02
+
+using Avalonia;
+using System;
+using Avalonia.Media;
+using AtomUI.Controls;
+using AtomUI.Media;
+namespace AtomUI.Icons.Material;
+
+public class AvAddToQueueSharp : Icon
+{
+    public AvAddToQueueSharp()
+    {
+        IconTheme = IconThemeType.Sharp;
+        ViewBox = new Rect(0, 0, 24, 24);
+    }
+
+    private static readonly DrawingInstruction[] StaticInstructions = [
+        new PathDrawingInstruction()
+        {
+            Opacity = 1,
+            FillBrush = IconBrushType.Fill,
+            Data = StreamGeometry.Parse("M23 3H1v16h7v2h8v-2h7V3zm-2 14H3V5h18v12zm-5-7v2h-3v3h-2v-3H8v-2h3V7h2v3h3z"),
+        },
+    ];
+
+    protected override IList<DrawingInstruction> DrawingInstructions => StaticInstructions;
+}
+

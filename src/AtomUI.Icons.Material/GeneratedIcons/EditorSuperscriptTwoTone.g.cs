@@ -1,0 +1,30 @@
+// This code is auto generated. Do not modify.
+// Generated Date: 2025-12-02
+
+using Avalonia;
+using System;
+using Avalonia.Media;
+using AtomUI.Controls;
+using AtomUI.Media;
+namespace AtomUI.Icons.Material;
+
+public class EditorSuperscriptTwoTone : Icon
+{
+    public EditorSuperscriptTwoTone()
+    {
+        IconTheme = IconThemeType.TwoTone;
+        ViewBox = new Rect(0, 0, 24, 24);
+    }
+
+    private static readonly DrawingInstruction[] StaticInstructions = [
+        new PathDrawingInstruction()
+        {
+            Opacity = 1,
+            FillBrush = IconBrushType.Stroke,
+            Data = StreamGeometry.Parse("M22,7h-2v1h3v1h-4V7c0-0.55,0.45-1,1-1h2V5h-3V4h3c0.55,0,1,0.45,1,1v1C23,6.55,22.55,7,22,7z M5.88,20h2.66l3.4-5.42h0.12 l3.4,5.42h2.66l-4.65-7.27L17.81,6h-2.68l-3.07,4.99h-0.12L8.85,6H6.19l4.32,6.73L5.88,20z"),
+        },
+    ];
+
+    protected override IList<DrawingInstruction> DrawingInstructions => StaticInstructions;
+}
+

@@ -1,0 +1,30 @@
+// This code is auto generated. Do not modify.
+// Generated Date: 2025-12-02
+
+using Avalonia;
+using System;
+using Avalonia.Media;
+using AtomUI.Controls;
+using AtomUI.Media;
+namespace AtomUI.Icons.Material;
+
+public class MapsDirectionsBusFilledFilled : Icon
+{
+    public MapsDirectionsBusFilledFilled()
+    {
+        IconTheme = IconThemeType.Filled;
+        ViewBox = new Rect(0, 0, 24, 24);
+    }
+
+    private static readonly DrawingInstruction[] StaticInstructions = [
+        new PathDrawingInstruction()
+        {
+            Opacity = 1,
+            FillBrush = IconBrushType.Fill,
+            Data = StreamGeometry.Parse("M12,2C8,2,4,2.5,4,6v9.5c0,0.95,0.38,1.81,1,2.44V20c0,0.55,0.45,1,1,1h1c0.55,0,1-0.45,1-1 v-1h8v1c0,0.55,0.45,1,1,1h1c0.55,0,1-0.45,1-1v-2.06c0.62-0.63,1-1.49,1-2.44V6C20,2.5,16.42,2,12,2z M8.5,16 C7.67,16,7,15.33,7,14.5S7.67,13,8.5,13s1.5,0.67,1.5,1.5S9.33,16,8.5,16z M15.5,16c-0.83,0-1.5-0.67-1.5-1.5s0.67-1.5,1.5-1.5 s1.5,0.67,1.5,1.5S16.33,16,15.5,16z M18,10H6V7h12V10z"),
+        },
+    ];
+
+    protected override IList<DrawingInstruction> DrawingInstructions => StaticInstructions;
+}
+

@@ -1,0 +1,30 @@
+// This code is auto generated. Do not modify.
+// Generated Date: 2025-12-02
+
+using Avalonia;
+using System;
+using Avalonia.Media;
+using AtomUI.Controls;
+using AtomUI.Media;
+namespace AtomUI.Icons.Material;
+
+public class NotificationNetworkLockedRounded : Icon
+{
+    public NotificationNetworkLockedRounded()
+    {
+        IconTheme = IconThemeType.Rounded;
+        ViewBox = new Rect(0, 0, 24, 24);
+    }
+
+    private static readonly DrawingInstruction[] StaticInstructions = [
+        new PathDrawingInstruction()
+        {
+            Opacity = 1,
+            FillBrush = IconBrushType.Fill,
+            Data = StreamGeometry.Parse("M22,12l0-7.58c0-0.89-1.08-1.34-1.71-0.71L3.71,20.29C3.08,20.92,3.52,22,4.41,22H15v-6c0-2.21,1.79-4,4-4H22z M22,17v-1 c0-1.1-0.9-2-2-2c-1.1,0-2,0.9-2,2v1c-0.55,0-1,0.45-1,1v3c0,0.55,0.45,1,1,1h4c0.55,0,1-0.45,1-1v-3C23,17.45,22.55,17,22,17z M19,16c0-0.55,0.45-1,1-1s1,0.45,1,1v1h-2V16z"),
+        },
+    ];
+
+    protected override IList<DrawingInstruction> DrawingInstructions => StaticInstructions;
+}
+

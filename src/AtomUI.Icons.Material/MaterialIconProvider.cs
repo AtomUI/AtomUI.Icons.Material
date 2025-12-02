@@ -1,9 +1,8 @@
 using System.Diagnostics;
 using System.Reflection;
 using AtomUI.Controls;
-using AtomUI.Icons.Material;
 
-namespace DefaultNamespace;
+namespace AtomUI.Icons.Material;
 
 public class MaterialIconProvider : IconProvider<MaterialIconKind>
 {

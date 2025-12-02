@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="gallery/MaterialGallery.Desktop/MaterialGallery.Desktop.csproj" />
+  <Project Path="gallery/MaterialGallery/MaterialGallery.csproj" />
+  <Project Path="src/AtomUI.Icons.Material.Generator/AtomUI.Icons.Material.Generator.csproj" />
+  <Project Path="src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj" />
+</Solution>

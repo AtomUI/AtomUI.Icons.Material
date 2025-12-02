@@ -1,0 +1,36 @@
+// This code is auto generated. Do not modify.
+// Generated Date: 2025-12-02
+
+using Avalonia;
+using System;
+using Avalonia.Media;
+using AtomUI.Controls;
+using AtomUI.Media;
+namespace AtomUI.Icons.Material;
+
+public class ToggleStarTwoTone : Icon
+{
+    public ToggleStarTwoTone()
+    {
+        IconTheme = IconThemeType.TwoTone;
+        ViewBox = new Rect(0, 0, 24, 24);
+    }
+
+    private static readonly DrawingInstruction[] StaticInstructions = [
+        new PolygonDrawingInstruction()
+        {
+            Opacity = 0.3,
+            FillBrush = IconBrushType.Fill,
+            Points = [new Point(12, 15.4),new Point(8.24, 17.67),new Point(9.24, 13.39),new Point(5.92, 10.51),new Point(10.3, 10.13),new Point(12, 6.1),new Point(13.71, 10.14),new Point(18.09, 10.52),new Point(14.77, 13.4),new Point(15.77, 17.68)]
+        },
+        new PathDrawingInstruction()
+        {
+            Opacity = 1,
+            FillBrush = IconBrushType.Stroke,
+            Data = StreamGeometry.Parse("m22 9.24-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"),
+        },
+    ];
+
+    protected override IList<DrawingInstruction> DrawingInstructions => StaticInstructions;
+}
+

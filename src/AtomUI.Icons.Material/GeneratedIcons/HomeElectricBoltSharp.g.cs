@@ -1,0 +1,30 @@
+// This code is auto generated. Do not modify.
+// Generated Date: 2025-12-02
+
+using Avalonia;
+using System;
+using Avalonia.Media;
+using AtomUI.Controls;
+using AtomUI.Media;
+namespace AtomUI.Icons.Material;
+
+public class HomeElectricBoltSharp : Icon
+{
+    public HomeElectricBoltSharp()
+    {
+        IconTheme = IconThemeType.Sharp;
+        ViewBox = new Rect(0, 0, 24, 24);
+    }
+
+    private static readonly DrawingInstruction[] StaticInstructions = [
+        new PolygonDrawingInstruction()
+        {
+            Opacity = 1,
+            FillBrush = IconBrushType.Fill,
+            Points = [new Point(15, 2),new Point(2.5, 13),new Point(13, 14),new Point(8, 21),new Point(9, 22),new Point(21.5, 11),new Point(11, 10),new Point(16, 3)]
+        },
+    ];
+
+    protected override IList<DrawingInstruction> DrawingInstructions => StaticInstructions;
+}
+

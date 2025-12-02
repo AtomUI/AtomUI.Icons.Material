@@ -7,5 +7,6 @@
         <PackageVersion Include="AtomUI.Core" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Desktop.Controls" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Icons.Shared" Version="$(AtomUIVersion)"/>
+        <PackageVersion Include="AtomUI.Generator" Version="$(AtomUIVersion)"/>
     </ItemGroup>
 </Project>

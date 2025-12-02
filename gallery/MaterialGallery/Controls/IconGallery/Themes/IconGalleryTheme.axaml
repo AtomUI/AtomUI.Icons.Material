@@ -1,0 +1,42 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:atom="https://atomui.net"
+    xmlns:gallery="https://atomui.net/material-icons/gallery"
+    x:ClassModifier="internal">
+    <ControlTheme x:Key="{x:Type gallery:IconGallery}" TargetType="gallery:IconGallery">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel LastChildFill="True">
+                    <atom:SearchEdit Name="{x:Static gallery:IconGalleryThemeConstants.SearchInputPart}"
+                                     HorizontalAlignment="Stretch"
+                                     DockPanel.Dock="Top"/>
+                    <ScrollViewer Name="{x:Static gallery:IconGalleryThemeConstants.ScrollViewerPart}"
+                                  VerticalScrollBarVisibility="Auto"
+                                  AllowAutoHide="False"
+                                  BringIntoViewOnFocusChange="False">
+                        <ItemsControl ItemsSource="{TemplateBinding IconInfos}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel LineSpacing="10" ItemSpacing="10"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="gallery:IconInfo">
+                                    <gallery:IconInfoItem
+                                        IconName="{Binding Name}"
+                                        Icon="{Binding Icon}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+        
+        <Setter Property="IsMotionEnabled" Value="{DynamicResource {x:Static  atom:SharedTokenKey.EnableMotion}}"/>
+        <Style Selector="^ /template/ atom|SearchEdit#PART_SearchInput">
+            <Setter Property="Margin" Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.SearchInputMargin}}"/>
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

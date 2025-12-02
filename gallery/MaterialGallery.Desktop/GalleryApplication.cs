@@ -16,6 +16,7 @@ public class GalleryApplication : BaseGalleryApplication
             builder.WithDefaultTheme(IThemeManager.DEFAULT_THEME_ID);
             builder.UseAlibabaSansFont();
             builder.UseDesktopControls();
+            builder.UseGalleryControls();
         });
     }
 
