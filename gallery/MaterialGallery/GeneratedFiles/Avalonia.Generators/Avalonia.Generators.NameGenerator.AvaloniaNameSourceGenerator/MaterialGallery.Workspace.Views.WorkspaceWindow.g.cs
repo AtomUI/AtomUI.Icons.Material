@@ -17,23 +17,15 @@ namespace MaterialGallery.Workspace.Views
         /// Wires up the controls and optionally loads XAML markup and attaches dev tools (if Avalonia.Diagnostics package is referenced).
         /// </summary>
         /// <param name="loadXaml">Should the XAML be loaded into the component.</param>
-        /// <param name="attachDevTools">Should the dev tools be attached.</param>
 
         [global::System.CodeDom.Compiler.GeneratedCode("Avalonia.Generators.NameGenerator.InitializeComponentCodeGenerator", "11.3.9.0")]
         [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-        public void InitializeComponent(bool loadXaml = true, bool attachDevTools = true)
+        public void InitializeComponent(bool loadXaml = true)
         {
             if (loadXaml)
             {
                 AvaloniaXamlLoader.Load(this);
             }
-
-#if DEBUG
-            if (attachDevTools)
-            {
-                this.AttachDevTools();
-            }
-#endif
 
             var __thisNameScope__ = this.FindNameScope();
             Navigation = __thisNameScope__?.Find<global::MaterialGallery.Controls.Navigation>("Navigation");

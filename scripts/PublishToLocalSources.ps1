@@ -42,5 +42,5 @@ function Push-NuGetPackages {
 }
 
 dotnet build -v diag --configuration $buildType ../src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj
-
+dotnet pack --no-build --configuration $buildType ../src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj
 Push-NuGetPackages -Source $localSourcesDir

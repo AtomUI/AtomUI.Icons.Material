@@ -13,7 +13,7 @@
         <PackageIcon>logo.png</PackageIcon>
         <PackageReadmeFile>README.nuget.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <Version>$(AtomUIVersion)</Version>
+        <Version>$(MaterialVersion)</Version>
     </PropertyGroup>
 
     <ItemGroup>
