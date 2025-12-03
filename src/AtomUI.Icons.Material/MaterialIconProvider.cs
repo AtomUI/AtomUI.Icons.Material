@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Reflection;
 using AtomUI.Controls;
 
@@ -9,32 +8,22 @@ public class MaterialIconProvider : IconProvider<MaterialIconKind>
     public MaterialIconProvider()
     {
     }
-    
-    public MaterialIconProvider(MaterialIconKind kind)
-        : base(kind)
+
+    public MaterialIconProvider(MaterialIconKind kind) : base(kind)
     {
     }
-    
-    protected override Icon GetIcon(MaterialIconKind kind)
+
+    protected override Type GetTypeForKind(MaterialIconKind kind)
     {
-        try
+        var typeName = $"AtomUI.Icons.IconPark.{kind.ToString()}";
+
+        var type = Type.GetType(typeName)
+                   ?? Assembly.GetExecutingAssembly().GetType(typeName);
+        if (type == null)
         {
-            var fullTypeName = $"AtomUI.Icons.Material.{kind.ToString()}";
-            var type = Type.GetType(fullTypeName) 
-                       ?? Assembly.GetExecutingAssembly().GetType(fullTypeName);
-            
-            if (type == null)
-            {
-                throw new InvalidOperationException($"{fullTypeName} not exist");
-            }
-            
-            var icon = (Icon?)Activator.CreateInstance(type);
-            Debug.Assert(icon != null);
-            return icon;
+            throw new InvalidOperationException($"Type {typeName} does not exist");
         }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException($"create icon {kind.ToString()} failed", ex);
-        }
+
+        return type;
     }
 }
