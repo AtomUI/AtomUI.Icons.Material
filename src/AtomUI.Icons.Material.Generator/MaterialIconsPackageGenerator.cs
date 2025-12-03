@@ -303,6 +303,7 @@ public class MaterialIconsPackageGenerator : DefaultIconPackageGenerator
             sourceText.AppendLine($"                Category = \"{iconFileInfo.Category}\",");
             sourceText.AppendLine($"                ThemeType = IconThemeType.{iconFileInfo.ThemeType},");
             sourceText.AppendLine($"                IconType = typeof(AtomUI.Icons.Material.{name}),");
+            sourceText.AppendLine($"                Creator = () => new AtomUI.Icons.Material.{name}()");
             sourceText.AppendLine(@"            },");
         }
         sourceText.AppendLine(@"        ];");

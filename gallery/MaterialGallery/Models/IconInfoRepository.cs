@@ -73,9 +73,7 @@ public partial class IconInfoRepository : AvaloniaObject
                                                 (string.IsNullOrEmpty(Category) || info.Category == Category) && 
                                                 (string.IsNullOrEmpty(Filter) || info.Name.Contains(Filter, StringComparison.InvariantCultureIgnoreCase))).Select(info =>
         {
-            var type = info.IconType;
-            var icon = Activator.CreateInstance(type!) as Icon;
-            info.Icon = icon;
+            info.Icon = info.Creator?.Invoke();
             return info;
         }).ToList();
         SetCurrentValue(ActivatedIconInfosProperty, iconInfos);

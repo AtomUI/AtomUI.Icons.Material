@@ -9,9 +9,4 @@ public partial class BaseGalleryApplication : Application
     {
         return new WorkspaceWindow();
     }
-
-    public override void RegisterServices()
-    {
-        base.RegisterServices();
-    }
 }
