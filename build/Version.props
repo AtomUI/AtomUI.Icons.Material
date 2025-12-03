@@ -2,7 +2,7 @@
     <PropertyGroup>
         <NoWarn>$(NoWarn);CS7035</NoWarn>
         <AvaloniaVersion>11.3.9</AvaloniaVersion>
-        <AtomUIVersion>5.1.2-build.3</AtomUIVersion>
-        <MaterialVersion>5.0.0-beta.2</MaterialVersion>
+        <AtomUIVersion>5.1.2</AtomUIVersion>
+        <MaterialVersion>5.0.0</MaterialVersion>
     </PropertyGroup>
 </Project>
