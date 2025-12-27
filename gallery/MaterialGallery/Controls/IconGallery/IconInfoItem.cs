@@ -52,7 +52,6 @@ public class IconInfoItem : TemplatedControl, IControlSharedTokenResourcesHost, 
 
     Control IControlSharedTokenResourcesHost.HostControl => this;
     string IControlSharedTokenResourcesHost.TokenId => IconGalleryToken.ID;
-    Control IMotionAwareControl.PropertyBindTarget => this;
     #endregion
     
     public IconInfoItem()

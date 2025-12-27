@@ -17,9 +17,9 @@ internal class IconGalleryToken : AbstractControlDesignToken
     {
     }
     
-    public override void CalculateTokenValues()
+    public override void CalculateTokenValues(bool isDarkMode)
     {
-        base.CalculateTokenValues();
+        base.CalculateTokenValues(isDarkMode);
         SearchInputMargin = new Thickness(0, SharedToken.UniformlyMarginXS, SharedToken.UniformlyMarginXS, SharedToken.UniformlyMarginXS);
         IconSize = 48;
         InfoItemSize = 150;
