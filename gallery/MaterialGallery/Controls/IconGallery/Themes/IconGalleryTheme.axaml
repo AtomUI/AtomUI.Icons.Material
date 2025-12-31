@@ -10,15 +10,15 @@
                 <DockPanel LastChildFill="True">
                     <atom:SearchEdit Name="{x:Static gallery:IconGalleryThemeConstants.SearchInputPart}"
                                      HorizontalAlignment="Stretch"
-                                     DockPanel.Dock="Top"/>
-                    <ScrollViewer Name="{x:Static gallery:IconGalleryThemeConstants.ScrollViewerPart}"
-                                  VerticalScrollBarVisibility="Auto"
-                                  AllowAutoHide="False"
-                                  BringIntoViewOnFocusChange="False">
+                                     DockPanel.Dock="Top" />
+                    <atom:ScrollViewer Name="{x:Static gallery:IconGalleryThemeConstants.ScrollViewerPart}"
+                                       VerticalScrollBarVisibility="Auto"
+                                       AllowAutoHide="False"
+                                       BringIntoViewOnFocusChange="False">
                         <ItemsControl ItemsSource="{TemplateBinding IconInfos}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel LineSpacing="10" ItemSpacing="10"/>
+                                    <WrapPanel LineSpacing="10" ItemSpacing="10" />
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
@@ -29,14 +29,15 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                    </ScrollViewer>
+                    </atom:ScrollViewer>
                 </DockPanel>
             </ControlTemplate>
         </Setter>
-        
-        <Setter Property="IsMotionEnabled" Value="{DynamicResource {x:Static  atom:SharedTokenKey.EnableMotion}}"/>
+
+        <Setter Property="IsMotionEnabled" Value="{DynamicResource {x:Static  atom:SharedTokenKey.EnableMotion}}" />
         <Style Selector="^ /template/ atom|SearchEdit#PART_SearchInput">
-            <Setter Property="Margin" Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.SearchInputMargin}}"/>
+            <Setter Property="Margin"
+                    Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.SearchInputMargin}}" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>

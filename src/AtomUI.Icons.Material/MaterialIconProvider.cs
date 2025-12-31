@@ -15,7 +15,7 @@ public class MaterialIconProvider : IconProvider<MaterialIconKind>
 
     protected override Type GetTypeForKind(MaterialIconKind kind)
     {
-        var typeName = $"AtomUI.Icons.IconPark.{kind.ToString()}";
+        var typeName = $"AtomUI.Icons.Material.{kind.ToString()}";
 
         var type = Type.GetType(typeName)
                    ?? Assembly.GetExecutingAssembly().GetType(typeName);

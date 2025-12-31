@@ -10,6 +10,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using MaterialGallery.Controls.Themes;
 using MaterialGallery.Models;
+using ScrollViewer = AtomUI.Desktop.Controls.ScrollViewer;
 
 namespace MaterialGallery.Controls;
 

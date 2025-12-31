@@ -8,34 +8,39 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Border Padding="{TemplateBinding Padding}">
-                    <StackPanel Orientation="Vertical" Spacing="5">
+                    <DockPanel VerticalSpacing="5" LastChildFill="True">
                         <atom:ComboBox Name="{x:Static gallery:NavigationThemeConstants.IconThemeComboBoxPart}"
-                            HorizontalAlignment="Stretch" SelectedIndex="1"
-                                       Margin="0 0 0 10">
+                                       HorizontalAlignment="Stretch" SelectedIndex="1"
+                                       Margin="0 0 0 10"
+                                       DockPanel.Dock="Top">
                             <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Outlined}">Outlined</atom:ComboBoxItem>
                             <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Filled}">Filled</atom:ComboBoxItem>
                             <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Rounded}">Rounded</atom:ComboBoxItem>
                             <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Sharp}">Sharp</atom:ComboBoxItem>
                             <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.TwoTone}">Two tone</atom:ComboBoxItem>
                         </atom:ComboBox>
-                        <TextBlock FontWeight="Bold">Category:</TextBlock>
+                        <TextBlock FontWeight="Bold"
+                                   DockPanel.Dock="Top">Category:</TextBlock>
                         <atom:NavMenu Name="{x:Static gallery:NavigationThemeConstants.CategoryNavMenuPart}"
-                                      HorizontalAlignment="Stretch"
                                       Mode="Inline"
                                       ItemsSource="{TemplateBinding CategoryMavMenuItems}">
                             <atom:NavMenu.ItemTemplate>
                                 <DataTemplate x:DataType="atom:NavMenuItemData">
-                                    <TextBlock Text="{Binding Header}"/>
+                                    <TextBlock Text="{Binding Header}" />
                                 </DataTemplate>
                             </atom:NavMenu.ItemTemplate>
                         </atom:NavMenu>
-                    </StackPanel>
+                    </DockPanel>
                 </Border>
             </ControlTemplate>
         </Setter>
-        
-        <Setter Property="Width" Value="{DynamicResource {x:Static gallery:NavigationTokenKey.PanelWidth}}"/>
-        <Setter Property="Padding" Value="{DynamicResource {x:Static atom:SharedTokenKey.PaddingXS}}"/>
-        
+
+        <Style Selector="^ /template/ atom|NavMenu#PART_CategoryNavMenu[Mode=Inline]">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+
+        <Setter Property="Width" Value="{DynamicResource {x:Static gallery:NavigationTokenKey.PanelWidth}}" />
+        <Setter Property="Padding" Value="{DynamicResource {x:Static atom:SharedTokenKey.PaddingXS}}" />
+
     </ControlTheme>
 </ResourceDictionary>
