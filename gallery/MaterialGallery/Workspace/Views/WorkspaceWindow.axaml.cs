@@ -1,14 +1,12 @@
-using System.Diagnostics;
-using AtomUI.Controls;
+using System.Reactive;
 using AtomUI.Desktop.Controls;
-using AtomUI.Theme.Language;
-using MaterialGallery.Workspace.ViewModels;
-using Avalonia;
-using Avalonia.Controls.Primitives;
+using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
 using MaterialGallery.Controls;
 using MaterialGallery.Models;
+using MaterialGallery.Workspace.ViewModels;
+using MenuItemToggleType = Avalonia.Controls.MenuItemToggleType;
 
 namespace MaterialGallery.Workspace.Views;
 
@@ -44,16 +42,13 @@ public partial class WorkspaceWindow : ReactiveWindow<WorkspaceWindowViewModel>
     }
     
     private WindowMessageManager? _messageManager;
+    private bool _iconRepositoryInitializationQueued;
+    private bool _menuItemClickHandlerAttached;
     
     public WorkspaceWindow()
     {
-#if DEBUG
-        this.AttachDevTools();
-#endif
-        var model = new WorkspaceWindowViewModel();
-        DataContext = model;
+        ViewModel = new WorkspaceWindowViewModel();
         InitializeComponent();
-        AddHandler(MenuItem.IsCheckStateChangedEvent, HandleMenuItemCheckChanged);
         _messageManager =  new WindowMessageManager(this);
     }
 
@@ -66,30 +61,13 @@ public partial class WorkspaceWindow : ReactiveWindow<WorkspaceWindowViewModel>
         ));
         if (Clipboard != null)
         {
-            Dispatcher.UIThread.InvokeAsync(async () =>
+            Dispatcher.InvokeAsync(async () =>
             {
                 await Clipboard.SetTextAsync(infoItem.IconName);
             });
         }
     }
 
-    protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
-    {
-        base.OnApplyTemplate(e);
-        
-        if (DataContext is WorkspaceWindowViewModel viewModel)
-        {
-            viewModel.IconInfoRepository = new IconInfoRepository();
-            InitializeIconsInfos(viewModel);
-        }
-    }
-
-    private void InitializeIconsInfos(WorkspaceWindowViewModel model)
-    {
-        Debug.Assert(model.IconInfoRepository != null);
-        model.Categories = model.IconInfoRepository.Categories;
-    }
-    
     public override void Show()
     {
         base.Show();
@@ -97,59 +75,85 @@ public partial class WorkspaceWindow : ReactiveWindow<WorkspaceWindowViewModel>
         Width  = double.NaN;
     }
 
-    private void HandleMenuItemCheckChanged(object? sender, RoutedEventArgs e)
+    protected override void OnLoaded(RoutedEventArgs e)
     {
+        base.OnLoaded(e);
+        if (!_menuItemClickHandlerAttached)
+        {
+            AddHandler(MenuItem.ClickEvent, HandleMenuItemClick);
+            _menuItemClickHandlerAttached = true;
+        }
+
+        QueueIconRepositoryInitialization();
+    }
+
+    private void QueueIconRepositoryInitialization()
+    {
+        if (_iconRepositoryInitializationQueued)
+        {
+            return;
+        }
+
+        _iconRepositoryInitializationQueued = true;
+        Dispatcher.Post(InitializeIconRepository, DispatcherPriority.Background);
+    }
+
+    private void InitializeIconRepository()
+    {
+        if (ViewModel is not { } viewModel || viewModel.IconInfoRepository != null)
+        {
+            return;
+        }
+
+        var repository = new IconInfoRepository();
+        viewModel.IconInfoRepository = repository;
+        viewModel.Categories         = repository.Categories;
+    }
+
+    private void HandleMenuItemClick(object? sender, RoutedEventArgs e)
+    {
+        if (ViewModel is null) return;
+
         if (e.Source is MenuItem menuItem && menuItem.Tag is WindowMenuItemKind kind)
         {
-            var application = Application.Current;
-            Debug.Assert(application != null);
-            if (kind == WindowMenuItemKind.FullScreen)
+            if (menuItem.ToggleType == MenuItemToggleType.None) return;
+
+            switch (kind)
             {
-                IsFullScreenCaptionButtonEnabled = menuItem.IsChecked;
-            }
-            else if (kind == WindowMenuItemKind.Pin)
-            {
-                IsPinCaptionButtonEnabled = menuItem.IsChecked;
-            }
-            else if (kind == WindowMenuItemKind.Minimize)
-            {
-                CanMinimize = menuItem.IsChecked;
-            }
-            else if (kind == WindowMenuItemKind.Maximize)
-            {
-                CanMaximize = menuItem.IsChecked;
-            }
-            else if (kind == WindowMenuItemKind.Move)
-            {
-                IsMoveEnabled = menuItem.IsChecked;
-            }
-            else if (kind == WindowMenuItemKind.Resize)
-            {
-                CanResize = menuItem.IsChecked;
-            }
-            else if (kind == WindowMenuItemKind.DarkMode)
-            {
-                Dispatcher.UIThread.Post(() =>
-                {
-                    application.SetDarkThemeMode(menuItem.IsChecked);
-                });
-            }
-            else if (kind == WindowMenuItemKind.Compact)
-            {
-                Dispatcher.UIThread.Post(() =>
-                {
-                    application.SetCompactThemeMode(menuItem.IsChecked);
-                });
-            }
-            else if (kind == WindowMenuItemKind.Motion)
-            {
-                if (menuItem.Parent is MenuItem themeMenuItem)
-                {
-                    foreach (var item in themeMenuItem.Items)
+                case WindowMenuItemKind.FullScreen:
+                    IsFullScreenCaptionButtonVisible = menuItem.IsChecked;
+                    break;
+                case WindowMenuItemKind.Pin:
+                    IsPinCaptionButtonVisible = menuItem.IsChecked;
+                    break;
+                case WindowMenuItemKind.Minimize:
+                    CanMinimize = menuItem.IsChecked;
+                    break;
+                case WindowMenuItemKind.Maximize:
+                    CanMaximize = menuItem.IsChecked;
+                    break;
+                case WindowMenuItemKind.Move:
+                    IsMoveEnabled = menuItem.IsChecked;
+                    break;
+                case WindowMenuItemKind.Resize:
+                    CanResize = menuItem.IsChecked;
+                    break;
+                case WindowMenuItemKind.DarkMode:
+                    ViewModel.ToggleDarkModeCommand.Execute(menuItem.IsChecked)
+                             .Subscribe();
+                    break;
+                case WindowMenuItemKind.Compact:
+                    ViewModel.ToggleCompactModeCommand.Execute(menuItem.IsChecked)
+                             .Subscribe();
+                    break;
+                case WindowMenuItemKind.Motion:
+                    if (menuItem.Parent is MenuItem themeMenuItem)
                     {
-                        if (item is MenuItem themeMenuChildItem && themeMenuChildItem.Tag is WindowMenuItemKind themeMenuChildItemKind)
+                        foreach (var item in themeMenuItem.Items)
                         {
-                            if (themeMenuChildItemKind == WindowMenuItemKind.WaveSpirit)
+                            if (item is MenuItem themeMenuChildItem &&
+                                themeMenuChildItem.Tag is WindowMenuItemKind childKind &&
+                                childKind == WindowMenuItemKind.WaveSpirit)
                             {
                                 if (!menuItem.IsChecked)
                                 {
@@ -158,26 +162,21 @@ public partial class WorkspaceWindow : ReactiveWindow<WorkspaceWindowViewModel>
                             }
                         }
                     }
-                }
-                application.SetMotionEnabled(menuItem.IsChecked);
-            }
-            else if (kind == WindowMenuItemKind.WaveSpirit)
-            {
-                application.SetWaveSpiritEnabled(menuItem.IsChecked);
-            }
-            else if (kind == WindowMenuItemKind.LanguageZhCN)
-            {
-                Dispatcher.UIThread.Post(() =>
-                {
-                    application.SetLanguageVariant(LanguageVariant.zh_CN);
-                });
-            }
-            else if (kind == WindowMenuItemKind.LanguageEnUS)
-            {
-                Dispatcher.UIThread.Post(() =>
-                {
-                    application.SetLanguageVariant(LanguageVariant.en_US);
-                });
+                    ViewModel.ToggleMotionCommand.Execute(menuItem.IsChecked)
+                             .Subscribe();
+                    break;
+                case WindowMenuItemKind.WaveSpirit:
+                    ViewModel.ToggleWaveSpiritCommand.Execute(menuItem.IsChecked)
+                             .Subscribe();
+                    break;
+                case WindowMenuItemKind.LanguageZhCN:
+                    ViewModel.SwitchToZhCNCommand.Execute(Unit.Default)
+                             .Subscribe();
+                    break;
+                case WindowMenuItemKind.LanguageEnUS:
+                    ViewModel.SwitchToEnUSCommand.Execute(Unit.Default)
+                             .Subscribe();
+                    break;
             }
         }
     }

@@ -25,7 +25,7 @@
                                       Mode="Inline"
                                       ItemsSource="{TemplateBinding CategoryMavMenuItems}">
                             <atom:NavMenu.ItemTemplate>
-                                <DataTemplate x:DataType="atom:NavMenuItemData">
+                                <DataTemplate x:DataType="atom:NavMenuNode">
                                     <TextBlock Text="{Binding Header}" />
                                 </DataTemplate>
                             </atom:NavMenu.ItemTemplate>
@@ -39,8 +39,8 @@
             <Setter Property="HorizontalAlignment" Value="Stretch" />
         </Style>
 
-        <Setter Property="Width" Value="{DynamicResource {x:Static gallery:NavigationTokenKey.PanelWidth}}" />
-        <Setter Property="Padding" Value="{DynamicResource {x:Static atom:SharedTokenKey.PaddingXS}}" />
+        <Setter Property="Width" Value="{gallery:NavigationTokenResource PanelWidth}" />
+        <Setter Property="Padding" Value="{atom:SharedTokenResource PaddingXS}" />
 
     </ControlTheme>
 </ResourceDictionary>

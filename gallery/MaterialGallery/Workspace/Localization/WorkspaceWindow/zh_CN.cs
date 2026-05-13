@@ -1,9 +1,10 @@
 using AtomUI.Theme.Language;
+using MaterialGallery.Localization;
 using MaterialGallery.Workspace.Views;
 
 namespace MaterialGallery.Workspace.Localization.WorkspaceWindowLang;
 
-[LanguageProvider(LanguageCode.zh_CN, WorkspaceWindow.LanguageId, Constants.LanguageCatalog)]
+[LanguageProvider(LanguageCode.zh_CN, WorkspaceWindow.LanguageId)]
 internal class zh_CN : LanguageProvider
 {
     public const string MenuItemSettings = "设置";
@@ -22,4 +23,6 @@ internal class zh_CN : LanguageProvider
     public const string MenuItemCompactMode = "紧凑模式";
     public const string MenuItemEnableMotion = "开启动效";
     public const string MenuItemEnableWaveSpirit = "开启波浪动画";
+
+    protected override Type GetResourceKindType() => typeof(WorkspaceWindowLangResourceKind);
 }

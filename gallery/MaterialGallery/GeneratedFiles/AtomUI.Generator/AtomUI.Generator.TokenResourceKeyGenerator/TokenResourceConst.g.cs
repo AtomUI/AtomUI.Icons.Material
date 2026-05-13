@@ -1,16 +1,39 @@
 ﻿using AtomUI.Theme.TokenSystem;
+using AtomUI.Theme;
 
 namespace MaterialGallery.Controls.DesignTokens
 {
-    public static class IconGalleryTokenKey
+    public enum IconGalleryTokenKind
     {
-        public static readonly TokenResourceKey IconSize = new TokenResourceKey("MaterialGallery.Controls.IconGallery.IconSize");
-        public static readonly TokenResourceKey InfoItemSize = new TokenResourceKey("MaterialGallery.Controls.IconGallery.InfoItemSize");
-        public static readonly TokenResourceKey SearchInputMargin = new TokenResourceKey("MaterialGallery.Controls.IconGallery.SearchInputMargin");
+        IconSize,
+        InfoItemSize,
+        SearchInputMargin
     }
 
-    public static class NavigationTokenKey
+    public enum NavigationTokenKind
     {
-        public static readonly TokenResourceKey PanelWidth = new TokenResourceKey("MaterialGallery.Controls.Navigation.PanelWidth");
+        PanelWidth
+    }
+
+    public class IconGalleryTokenResourceExtension : TokenResourceExtension<IconGalleryTokenKind>
+    {
+        public IconGalleryTokenResourceExtension()
+        {
+        }
+
+        public IconGalleryTokenResourceExtension(IconGalleryTokenKind kind) : base(kind)
+        {
+        }
+    }
+
+    public class NavigationTokenResourceExtension : TokenResourceExtension<NavigationTokenKind>
+    {
+        public NavigationTokenResourceExtension()
+        {
+        }
+
+        public NavigationTokenResourceExtension(NavigationTokenKind kind) : base(kind)
+        {
+        }
     }
 }

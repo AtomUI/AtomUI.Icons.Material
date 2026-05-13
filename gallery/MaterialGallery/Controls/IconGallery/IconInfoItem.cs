@@ -10,13 +10,13 @@ using Avalonia.Interactivity;
 
 namespace MaterialGallery.Controls;
 
-public class IconInfoItem : TemplatedControl, IControlSharedTokenResourcesHost, IMotionAwareControl
+public class IconInfoItem : TemplatedControl, IMotionAwareControl
 {
     public static readonly StyledProperty<string> IconNameProperty = 
         AvaloniaProperty.Register<IconInfoItem, string>(nameof(IconName));
     
-    public static readonly StyledProperty<Icon> IconProperty = 
-        AvaloniaProperty.Register<IconInfoItem, Icon>(nameof(Icon));
+    public static readonly StyledProperty<Icon?> IconProperty =
+        AvaloniaProperty.Register<IconInfoItem, Icon?>(nameof(Icon));
     
     public static readonly StyledProperty<bool> IsMotionEnabledProperty =
         MotionAwareControlProperty.IsMotionEnabledProperty.AddOwner<IconInfoItem>();
@@ -27,7 +27,7 @@ public class IconInfoItem : TemplatedControl, IControlSharedTokenResourcesHost, 
         set => SetValue(IconNameProperty, value);
     }
     
-    public Icon Icon
+    public Icon? Icon
     {
         get => GetValue(IconProperty);
         set => SetValue(IconProperty, value);
@@ -48,15 +48,9 @@ public class IconInfoItem : TemplatedControl, IControlSharedTokenResourcesHost, 
         remove => RemoveHandler(ClickedEvent, value);
     }
     
-    #region 内部属性定义
-
-    Control IControlSharedTokenResourcesHost.HostControl => this;
-    string IControlSharedTokenResourcesHost.TokenId => IconGalleryToken.ID;
-    #endregion
-    
     public IconInfoItem()
     {
-        this.RegisterResources();
+        this.RegisterTokenResourceScope(IconGalleryToken.ScopeProvider);
     }
     
     protected override void OnLoaded(RoutedEventArgs e)

@@ -34,10 +34,10 @@
             </ControlTemplate>
         </Setter>
 
-        <Setter Property="IsMotionEnabled" Value="{DynamicResource {x:Static  atom:SharedTokenKey.EnableMotion}}" />
+        <Setter Property="IsMotionEnabled" Value="{atom:SharedTokenResource EnableMotion}" />
         <Style Selector="^ /template/ atom|SearchEdit#PART_SearchInput">
             <Setter Property="Margin"
-                    Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.SearchInputMargin}}" />
+                    Value="{gallery:IconGalleryTokenResource SearchInputMargin}" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>

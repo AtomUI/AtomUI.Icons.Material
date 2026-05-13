@@ -1,5 +1,5 @@
-﻿using Avalonia;
-using Avalonia.Media;
+﻿using AtomUI;
+using Avalonia;
 using ReactiveUI.Avalonia;
 
 namespace MaterialGallery.Desktop;
@@ -12,13 +12,6 @@ internal class Program
         try
         {
             BuildAvaloniaApp()
-                .With(new FontManagerOptions
-                {
-                    FontFallbacks = [new FontFallback
-                    {
-                        FontFamily = new FontFamily("Microsoft YaHei")
-                    }]
-                })
                 .StartWithClassicDesktopLifetime(args);
         }
         catch (Exception ex)
@@ -47,9 +40,10 @@ internal class Program
     public static AppBuilder BuildAvaloniaApp()
     {
         return AppBuilder.Configure<GalleryApplication>()
-            .UseReactiveUI()
+            .UseReactiveUI(_ => { })
             .UsePlatformDetect()
-            .With(new Win32PlatformOptions())
+            .WithAtomUIDefaultOptions()
+            .WithDeveloperTools()
             .LogToTrace();
         
     }

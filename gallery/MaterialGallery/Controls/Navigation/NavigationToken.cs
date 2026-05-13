@@ -1,4 +1,6 @@
+using AtomUI.Theme;
 using AtomUI.Theme.TokenSystem;
+using MaterialGallery.Controls.DesignTokens;
 
 namespace MaterialGallery.Controls;
 
@@ -11,6 +13,7 @@ internal class NavigationToken : AbstractControlDesignToken
     public double PanelWidth { get; set; }
     
     public const string ID = "Navigation";
+    public static readonly ControlTokenResourceScopeProvider ScopeProvider = new(ID);
 
     public NavigationToken()
         : base(ID)
@@ -22,4 +25,6 @@ internal class NavigationToken : AbstractControlDesignToken
         base.CalculateTokenValues(isDarkMode);
         PanelWidth = 200;
     }
+
+    protected override Type GetTokenKindType() => typeof(NavigationTokenKind);
 }

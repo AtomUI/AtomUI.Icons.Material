@@ -3,7 +3,6 @@ using AtomUI.Controls;
 using AtomUI.Data;
 using AtomUI.Desktop.Controls;
 using AtomUI.Theme;
-using AtomUI.Utils;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -14,8 +13,10 @@ using ScrollViewer = AtomUI.Desktop.Controls.ScrollViewer;
 
 namespace MaterialGallery.Controls;
 
-public class IconGallery : TemplatedControl, IControlSharedTokenResourcesHost, IMotionAwareControl
+public class IconGallery : TemplatedControl, IMotionAwareControl
 {
+    private const double LoadMoreScrollThreshold = 240;
+
     public static readonly StyledProperty<string?> CategoryProperty = 
         AvaloniaProperty.Register<IconGallery, string?>(nameof (Category));
     
@@ -61,19 +62,13 @@ public class IconGallery : TemplatedControl, IControlSharedTokenResourcesHost, I
         set => SetValue(IsMotionEnabledProperty, value);
     }
     
-    #region 内部属性定义
-
-    Control IControlSharedTokenResourcesHost.HostControl => this;
-    string IControlSharedTokenResourcesHost.TokenId => IconGalleryToken.ID;
-    #endregion
-    
     private CompositeDisposable? _disposables;
     private ScrollViewer? _scrollViewer;
     private SearchEdit? _searchEdit;
     
     public IconGallery()
     {
-        this.RegisterResources();
+        this.RegisterTokenResourceScope(IconGalleryToken.ScopeProvider);
     }
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -101,17 +96,41 @@ public class IconGallery : TemplatedControl, IControlSharedTokenResourcesHost, I
             _disposables.Add(BindUtils.RelayBind(this, CategoryProperty, IconInfoRepository, IconInfoRepository.CategoryProperty));
             _disposables.Add(BindUtils.RelayBind(this, IconThemeProperty, IconInfoRepository, IconInfoRepository.IconThemeProperty));
             _disposables.Add(BindUtils.RelayBind(IconInfoRepository, IconInfoRepository.ActivatedIconInfosProperty, this, IconInfosProperty));
+            IconInfoRepository.RefreshIconInfos();
         }
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
+        if (_scrollViewer != null)
+        {
+            _scrollViewer.ScrollChanged -= HandleScrollChanged;
+        }
+
         _scrollViewer = e.NameScope.Find<ScrollViewer>(IconGalleryThemeConstants.ScrollViewerPart);
         _searchEdit = e.NameScope.Find<SearchEdit>(IconGalleryThemeConstants.SearchInputPart);
+        if (_scrollViewer != null)
+        {
+            _scrollViewer.ScrollChanged += HandleScrollChanged;
+        }
         if (_searchEdit != null)
         {
             _searchEdit.SearchButtonClick += HandleSearchButtonClick;
+        }
+    }
+
+    private void HandleScrollChanged(object? sender, ScrollChangedEventArgs e)
+    {
+        if (_scrollViewer == null || IconInfoRepository?.HasMoreIconInfos != true)
+        {
+            return;
+        }
+
+        var remainingHeight = _scrollViewer.Extent.Height - _scrollViewer.Viewport.Height - _scrollViewer.Offset.Y;
+        if (remainingHeight <= LoadMoreScrollThreshold)
+        {
+            IconInfoRepository.LoadMoreIconInfos();
         }
     }
 

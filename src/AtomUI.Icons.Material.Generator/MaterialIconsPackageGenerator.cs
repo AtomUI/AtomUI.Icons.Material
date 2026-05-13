@@ -98,6 +98,7 @@ public class MaterialIconsPackageGenerator : DefaultIconPackageGenerator
         sourceText.AppendLine("");
         sourceText.AppendLine("using Avalonia;");
         sourceText.AppendLine("using System;");
+        sourceText.AppendLine("using System.Collections.Generic;");
         sourceText.AppendLine("using Avalonia.Media;");
         sourceText.AppendLine("using AtomUI.Controls;");
         sourceText.AppendLine("using AtomUI.Media;");
@@ -276,6 +277,7 @@ public class MaterialIconsPackageGenerator : DefaultIconPackageGenerator
         var sourceText = new StringBuilder();
         sourceText.AppendLine("// This code is auto generated. Do not modify.");
         sourceText.AppendLine($"// Generated Date: {DateTime.Today.ToString("yyyy-MM-dd")}");
+        sourceText.AppendLine("#nullable enable");
         sourceText.AppendLine("");
         sourceText.AppendLine("using Avalonia;");
         sourceText.AppendLine("using System;");
@@ -290,23 +292,11 @@ public class MaterialIconsPackageGenerator : DefaultIconPackageGenerator
         sourceText.AppendLine(@"{");
         sourceText.AppendLine(@"    public IconInfoRepository()");
         sourceText.AppendLine(@"    {");
-        sourceText.AppendLine(@"        IconInfos = [");
-        
-        var categorySet = new HashSet<string>();
-        foreach (var iconFileInfo in IconFiles)
-        {
-            categorySet.Add(iconFileInfo.Category!);
-            var name = $"{iconFileInfo.Name}{iconFileInfo.ThemeType}";
-            sourceText.AppendLine(@"            new IconInfo() {");
-            sourceText.AppendLine($"                Name = \"{name}\",");
-            sourceText.AppendLine($"                Category = \"{iconFileInfo.Category}\",");
-            sourceText.AppendLine($"                ThemeType = IconThemeType.{iconFileInfo.ThemeType},");
-            sourceText.AppendLine($"                IconType = typeof(AtomUI.Icons.Material.{name}),");
-            sourceText.AppendLine($"                Creator = () => new AtomUI.Icons.Material.{name}()");
-            sourceText.AppendLine(@"            },");
-        }
-        sourceText.AppendLine(@"        ];");
-        var categories = categorySet.OrderBy(x => x);
+        var categoryGroups = IconFiles
+            .GroupBy(iconFileInfo => iconFileInfo.Category!)
+            .OrderBy(group => group.Key)
+            .ToList();
+        var categories = categoryGroups.Select(group => group.Key);
         sourceText.AppendLine(@"        Categories = [");
         foreach (var category in categories)
         {
@@ -314,8 +304,70 @@ public class MaterialIconsPackageGenerator : DefaultIconPackageGenerator
         }
         sourceText.AppendLine(@"        ];");
         sourceText.AppendLine(@"    }");
+        sourceText.AppendLine("");
+        sourceText.AppendLine(@"    protected partial List<IconInfo> CreateIconInfos(string? category, IconThemeType iconTheme)");
+        sourceText.AppendLine(@"    {");
+        sourceText.AppendLine(@"        return category switch");
+        sourceText.AppendLine(@"        {");
+        foreach (var categoryGroup in categoryGroups)
+        {
+            var categoryName = categoryGroup.Key;
+            sourceText.AppendLine($"            \"{categoryName}\" => Create{ToIdentifierPart(categoryName)}IconInfos(iconTheme),");
+        }
+        sourceText.AppendLine(@"            _ => []");
+        sourceText.AppendLine(@"        };");
+        sourceText.AppendLine(@"    }");
+
+        foreach (var categoryGroup in categoryGroups)
+        {
+            var categoryName = categoryGroup.Key;
+            var categoryIdentifier = ToIdentifierPart(categoryName);
+            sourceText.AppendLine("");
+            sourceText.AppendLine($"    private static List<IconInfo> Create{categoryIdentifier}IconInfos(IconThemeType iconTheme)");
+            sourceText.AppendLine(@"    {");
+            sourceText.AppendLine(@"        return iconTheme switch");
+            sourceText.AppendLine(@"        {");
+            foreach (var themeGroup in categoryGroup.GroupBy(iconFileInfo => iconFileInfo.ThemeType).OrderBy(group => group.Key))
+            {
+                sourceText.AppendLine($"            IconThemeType.{themeGroup.Key} => Create{categoryIdentifier}{themeGroup.Key}IconInfos(),");
+            }
+            sourceText.AppendLine(@"            _ => []");
+            sourceText.AppendLine(@"        };");
+            sourceText.AppendLine(@"    }");
+
+            foreach (var themeGroup in categoryGroup.GroupBy(iconFileInfo => iconFileInfo.ThemeType).OrderBy(group => group.Key))
+            {
+                sourceText.AppendLine("");
+                sourceText.AppendLine($"    private static List<IconInfo> Create{categoryIdentifier}{themeGroup.Key}IconInfos()");
+                sourceText.AppendLine(@"    {");
+                sourceText.AppendLine(@"        return [");
+                foreach (var iconFileInfo in themeGroup.OrderBy(iconFileInfo => iconFileInfo.Name))
+                {
+                    AppendIconInfo(sourceText, iconFileInfo);
+                }
+                sourceText.AppendLine(@"        ];");
+                sourceText.AppendLine(@"    }");
+            }
+        }
         sourceText.AppendLine(@"}");
         await stream.WriteAsync(Encoding.UTF8.GetBytes(sourceText.ToString()));
+    }
+
+    private static void AppendIconInfo(StringBuilder sourceText, IconFileInfo iconFileInfo)
+    {
+        var name = $"{iconFileInfo.Name}{iconFileInfo.ThemeType}";
+        sourceText.AppendLine(@"            new IconInfo {");
+        sourceText.AppendLine($"                Name = \"{name}\",");
+        sourceText.AppendLine($"                Category = \"{iconFileInfo.Category}\",");
+        sourceText.AppendLine($"                ThemeType = IconThemeType.{iconFileInfo.ThemeType},");
+        sourceText.AppendLine($"                IconType = typeof(AtomUI.Icons.Material.{name}),");
+        sourceText.AppendLine($"                Creator = () => new AtomUI.Icons.Material.{name}()");
+        sourceText.AppendLine(@"            },");
+    }
+
+    private static string ToIdentifierPart(string value)
+    {
+        return Regex.Replace(value, @"[^a-zA-Z0-9_]", string.Empty);
     }
     
     public static string CapitalizeFirstLetter(string str)

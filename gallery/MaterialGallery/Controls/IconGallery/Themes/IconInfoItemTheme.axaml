@@ -12,7 +12,7 @@
                     CornerRadius="{TemplateBinding CornerRadius}"
                     Padding="{TemplateBinding Padding}">
                     <StackPanel Orientation="Vertical"
-                                Spacing="{DynamicResource {x:Static atom:SharedTokenKey.SpacingLG}}">
+                                Spacing="{atom:SharedTokenResource SpacingLG}">
                         <atom:IconPresenter
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top"
@@ -27,22 +27,22 @@
             </ControlTemplate>
         </Setter>
         
-        <Setter Property="IsMotionEnabled" Value="{DynamicResource {x:Static  atom:SharedTokenKey.EnableMotion}}"/>
+        <Setter Property="IsMotionEnabled" Value="{atom:SharedTokenResource EnableMotion}"/>
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="CornerRadius" Value="{DynamicResource {x:Static atom:SharedTokenKey.BorderRadius}}" />
-        <Setter Property="Padding" Value="{DynamicResource {x:Static atom:SharedTokenKey.PaddingXS}}" />
-        <Setter Property="Height" Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.InfoItemSize}}" />
-        <Setter Property="Width" Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.InfoItemSize}}" />
-        <Setter Property="FontSize" Value="{DynamicResource {x:Static atom:SharedTokenKey.FontSizeSM}}" />
+        <Setter Property="CornerRadius" Value="{atom:SharedTokenResource BorderRadius}" />
+        <Setter Property="Padding" Value="{atom:SharedTokenResource PaddingXS}" />
+        <Setter Property="Height" Value="{gallery:IconGalleryTokenResource InfoItemSize}" />
+        <Setter Property="Width" Value="{gallery:IconGalleryTokenResource InfoItemSize}" />
+        <Setter Property="FontSize" Value="{atom:SharedTokenResource FontSizeSM}" />
         <Setter Property="Cursor" Value="Hand" />
         
         <Style Selector="^ /template/ atom|IconPresenter">
-            <Setter Property="Height" Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.IconSize}}" />
-            <Setter Property="Width" Value="{DynamicResource {x:Static gallery:IconGalleryTokenKey.IconSize}}" />
+            <Setter Property="Height" Value="{gallery:IconGalleryTokenResource IconSize}" />
+            <Setter Property="Width" Value="{gallery:IconGalleryTokenResource IconSize}" />
         </Style>
         
         <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource {x:Static atom:SharedTokenKey.ColorBgTextHover}}" />
+            <Setter Property="Background" Value="{atom:SharedTokenResource ColorBgTextHover}" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>

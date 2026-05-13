@@ -1,3 +1,4 @@
+using AtomUI.Theme.Language;
 using Avalonia.Metadata;
 
 [assembly: XmlnsPrefix("https://atomui.net/icons/material/icons-gallery", "material-gallery")]
@@ -6,3 +7,5 @@ using Avalonia.Metadata;
 [assembly: XmlnsDefinition("https://atomui.net/icons/material/icons-gallery", "MaterialGallery.Controls.DesignTokens")]
 [assembly: XmlnsDefinition("https://atomui.net/icons/material/icons-gallery", "MaterialGallery.Controls.Themes")]
 [assembly: XmlnsDefinition("https://atomui.net/icons/material/icons-gallery", "MaterialGallery")]
+[assembly: XmlnsDefinition("https://atomui.net/icons/material/icons-gallery", "MaterialGallery.Localization")]
+[assembly: LanguageSgMetaInfo("MaterialGallery.Localization")]
