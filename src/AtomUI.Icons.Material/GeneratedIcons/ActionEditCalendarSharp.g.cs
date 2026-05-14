@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionEditCalendarSharp : Icon
+public class ActionEditCalendarSharp : MaterialIcon
 {
     public ActionEditCalendarSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 2, 20.539999999999999, 21);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0610079575596818, 0, 0, 1.0610079575596818, -0.73209549071618163, -0.73209549071618163);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

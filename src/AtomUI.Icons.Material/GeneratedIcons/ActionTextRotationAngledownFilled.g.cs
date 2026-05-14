@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionTextRotationAngledownFilled : Icon
+public class ActionTextRotationAngledownFilled : MaterialIcon
 {
     public ActionTextRotationAngledownFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.5999999999999996, 3.8500000000000001, 16.799999999999997, 17.149999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1214953271028039, 0, 0, 1.1214953271028039, -1.4579439252336464, -1.4579439252336464);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

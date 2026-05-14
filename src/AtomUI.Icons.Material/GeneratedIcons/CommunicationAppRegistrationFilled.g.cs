@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationAppRegistrationFilled : Icon
+public class CommunicationAppRegistrationFilled : MaterialIcon
 {
     public CommunicationAppRegistrationFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 4, 17.039999999999999, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2658227848101264, 0, 0, 1.2658227848101264, -3.1898734177215182, -3.1898734177215182);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -53,7 +56,7 @@ public class CommunicationAppRegistrationFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(14, 12.42),new Point(14, 10),new Point(10, 10),new Point(10, 14),new Point(12.42, 14)]
+            Points = [new Avalonia.Point(14, 12.42),new Avalonia.Point(14, 10),new Avalonia.Point(10, 10),new Avalonia.Point(10, 14),new Avalonia.Point(12.42, 14)]
         },
         new PathDrawingInstruction()
         {
@@ -65,7 +68,7 @@ public class CommunicationAppRegistrationFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(11, 18.25),new Point(11, 20),new Point(12.75, 20),new Point(19.42, 13.33),new Point(17.67, 11.58)]
+            Points = [new Avalonia.Point(11, 18.25),new Avalonia.Point(11, 20),new Avalonia.Point(12.75, 20),new Avalonia.Point(19.42, 13.33),new Avalonia.Point(17.67, 11.58)]
         },
         new RectDrawingInstruction()
         {

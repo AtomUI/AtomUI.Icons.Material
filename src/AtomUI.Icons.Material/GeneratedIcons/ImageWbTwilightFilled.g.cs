@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageWbTwilightFilled : Icon
+public class ImageWbTwilightFilled : MaterialIcon
 {
     public ImageWbTwilightFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 4, 20, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -24,7 +27,7 @@ public class ImageWbTwilightFilled : Icon
             Rect = new Rect(17.22, 7.31, 3, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7069 -0.7074 0.7074 0.7069 -0.3887 15.676)").Value
+            Transform = new Matrix(0.70689999999999997, -0.70740000000000003, 0.70740000000000003, 0.70689999999999997, -0.38869999999999999, 15.676)
         },
         new RectDrawingInstruction()
         {
@@ -49,7 +52,7 @@ public class ImageWbTwilightFilled : Icon
             Rect = new Rect(4.31, 6.78, 2, 3),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -4.2992 6.1783)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -4.2991999999999999, 6.1783000000000001)
         },
         new PathDrawingInstruction()
         {

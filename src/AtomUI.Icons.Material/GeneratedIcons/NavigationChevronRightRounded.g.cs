@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NavigationChevronRightRounded : Icon
+public class NavigationChevronRightRounded : MaterialIcon
 {
     public NavigationChevronRightRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(8.8999999999999986, 6.3200000000000003, 6.7800000000000011, 11.359999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.3574660633484164, 0, 0, 1.3574660633484164, -4.2895927601809944, -4.2895927601809944);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

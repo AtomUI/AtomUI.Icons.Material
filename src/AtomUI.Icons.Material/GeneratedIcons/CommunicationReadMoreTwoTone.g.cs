@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationReadMoreTwoTone : Icon
+public class CommunicationReadMoreTwoTone : MaterialIcon
 {
     public CommunicationReadMoreTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 7, 20, 10);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -45,7 +48,7 @@ public class CommunicationReadMoreTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(13, 12),new Point(8, 7),new Point(8, 11),new Point(2, 11),new Point(2, 13),new Point(8, 13),new Point(8, 17)]
+            Points = [new Avalonia.Point(13, 12),new Avalonia.Point(8, 7),new Avalonia.Point(8, 11),new Avalonia.Point(2, 11),new Avalonia.Point(2, 13),new Avalonia.Point(8, 13),new Avalonia.Point(8, 17)]
         },
     ];
 

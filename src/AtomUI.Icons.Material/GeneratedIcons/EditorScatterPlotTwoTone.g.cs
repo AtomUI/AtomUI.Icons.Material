@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class EditorScatterPlotTwoTone : Icon
+public class EditorScatterPlotTwoTone : MaterialIcon
 {
     public EditorScatterPlotTwoTone()
     {
@@ -16,26 +14,31 @@ public class EditorScatterPlotTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 2, 17.600000000000001, 19.600000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(11, 6),
+            Center = new Avalonia.Point(11, 6),
             Radius = 2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(16.6, 17.6),
+            Center = new Avalonia.Point(16.6, 17.6),
             Radius = 2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(7, 14),
+            Center = new Avalonia.Point(7, 14),
             Radius = 2
         },
         new PathDrawingInstruction()

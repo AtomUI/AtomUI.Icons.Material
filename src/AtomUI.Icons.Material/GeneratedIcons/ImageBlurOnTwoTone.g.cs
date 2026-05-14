@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageBlurOnTwoTone : Icon
+public class ImageBlurOnTwoTone : MaterialIcon
 {
     public ImageBlurOnTwoTone()
     {
@@ -16,33 +14,38 @@ public class ImageBlurOnTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.5, 2.5, 19, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1162790697674418, 0, 0, 1.1162790697674418, -1.3953488372093013, -1.3953488372093013);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(14, 10),
+            Center = new Avalonia.Point(14, 10),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(14, 18),
+            Center = new Avalonia.Point(14, 18),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(14, 14),
+            Center = new Avalonia.Point(14, 14),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(14, 6),
+            Center = new Avalonia.Point(14, 6),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -55,7 +58,7 @@ public class ImageBlurOnTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(18, 18),
+            Center = new Avalonia.Point(18, 18),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -68,28 +71,28 @@ public class ImageBlurOnTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(18, 14),
+            Center = new Avalonia.Point(18, 14),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(18, 6),
+            Center = new Avalonia.Point(18, 6),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(6, 18),
+            Center = new Avalonia.Point(6, 18),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(6, 14),
+            Center = new Avalonia.Point(6, 14),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -102,21 +105,21 @@ public class ImageBlurOnTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(10, 6),
+            Center = new Avalonia.Point(10, 6),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(6, 10),
+            Center = new Avalonia.Point(6, 10),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(6, 6),
+            Center = new Avalonia.Point(6, 6),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -129,7 +132,7 @@ public class ImageBlurOnTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(10, 18),
+            Center = new Avalonia.Point(10, 18),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -142,21 +145,21 @@ public class ImageBlurOnTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(10, 14),
+            Center = new Avalonia.Point(10, 14),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(10, 10),
+            Center = new Avalonia.Point(10, 10),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(18, 10),
+            Center = new Avalonia.Point(18, 10),
             Radius = 1
         },
     ];

@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionRebaseEditFilled : Icon
+public class ActionRebaseEditFilled : MaterialIcon
 {
     public ActionRebaseEditFilled()
     {
@@ -16,12 +14,17 @@ public class ActionRebaseEditFilled : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 0.76000000000000001, 20.100000000000001, 21.239999999999998);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0327022375215145, 0, 0, 1.0327022375215145, -0.39242685025817359, -0.39242685025817359);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(19, 5),
+            Center = new Avalonia.Point(19, 5),
             Radius = 3
         },
         new PathDrawingInstruction()
@@ -34,7 +37,7 @@ public class ActionRebaseEditFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(10, 19),new Point(10, 22),new Point(13, 22),new Point(19.26, 15.74),new Point(16.26, 12.74)]
+            Points = [new Avalonia.Point(10, 19),new Avalonia.Point(10, 22),new Avalonia.Point(13, 22),new Avalonia.Point(19.26, 15.74),new Avalonia.Point(16.26, 12.74)]
         },
         new PathDrawingInstruction()
         {

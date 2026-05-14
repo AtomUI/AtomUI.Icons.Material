@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionVerifiedTwoTone : Icon
+public class ActionVerifiedTwoTone : MaterialIcon
 {
     public ActionVerifiedTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 1.5, 22, 21);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class ActionVerifiedTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(10.09, 13.75),new Point(7.77, 11.42),new Point(6.29, 12.91),new Point(10.09, 16.72),new Point(17.43, 9.36),new Point(15.95, 7.87)]
+            Points = [new Avalonia.Point(10.09, 13.75),new Avalonia.Point(7.77, 11.42),new Avalonia.Point(6.29, 12.91),new Avalonia.Point(10.09, 16.72),new Avalonia.Point(17.43, 9.36),new Avalonia.Point(15.95, 7.87)]
         },
     ];
 

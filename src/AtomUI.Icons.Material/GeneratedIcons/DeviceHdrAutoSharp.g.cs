@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceHdrAutoSharp : Icon
+public class DeviceHdrAutoSharp : MaterialIcon
 {
     public DeviceHdrAutoSharp()
     {
@@ -16,12 +14,17 @@ public class DeviceHdrAutoSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(12.04, 8.04),new Point(11.95, 8.04),new Point(10.35, 12.59),new Point(13.64, 12.59)]
+            Points = [new Avalonia.Point(12.04, 8.04),new Avalonia.Point(11.95, 8.04),new Avalonia.Point(10.35, 12.59),new Avalonia.Point(13.64, 12.59)]
         },
         new PathDrawingInstruction()
         {

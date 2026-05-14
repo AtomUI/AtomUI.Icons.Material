@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsElectricBikeTwoTone : Icon
+public class MapsElectricBikeTwoTone : MaterialIcon
 {
     public MapsElectricBikeTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 1, 24, 22);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class MapsElectricBikeTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(11, 20),new Point(7, 20),new Point(13, 23),new Point(13, 21),new Point(17, 21),new Point(11, 18)]
+            Points = [new Avalonia.Point(11, 20),new Avalonia.Point(7, 20),new Avalonia.Point(13, 23),new Avalonia.Point(13, 21),new Avalonia.Point(17, 21),new Avalonia.Point(11, 18)]
         },
     ];
 

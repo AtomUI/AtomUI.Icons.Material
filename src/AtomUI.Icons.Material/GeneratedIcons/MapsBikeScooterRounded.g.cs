@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsBikeScooterRounded : Icon
+public class MapsBikeScooterRounded : MaterialIcon
 {
     public MapsBikeScooterRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 3, 24.629999999999999, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(0.92699884125144849, 0, 0, 0.92699884125144849, 0.87601390498261722, 0.87601390498261722);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

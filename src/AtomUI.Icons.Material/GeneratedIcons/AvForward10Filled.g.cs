@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvForward10Filled : Icon
+public class AvForward10Filled : MaterialIcon
 {
     public AvForward10Filled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 1, 16, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class AvForward10Filled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(10.86, 15.94),new Point(10.86, 11.67),new Point(10.77, 11.67),new Point(9, 12.3),new Point(9, 12.99),new Point(10.01, 12.68),new Point(10.01, 15.94)]
+            Points = [new Avalonia.Point(10.86, 15.94),new Avalonia.Point(10.86, 11.67),new Avalonia.Point(10.77, 11.67),new Avalonia.Point(9, 12.3),new Avalonia.Point(9, 12.99),new Avalonia.Point(10.01, 12.68),new Avalonia.Point(10.01, 15.94)]
         },
         new PathDrawingInstruction()
         {

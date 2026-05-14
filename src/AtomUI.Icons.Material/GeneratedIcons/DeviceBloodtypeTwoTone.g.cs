@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceBloodtypeTwoTone : Icon
+public class DeviceBloodtypeTwoTone : MaterialIcon
 {
     public DeviceBloodtypeTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 2, 16, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -35,7 +38,7 @@ public class DeviceBloodtypeTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(13, 9),new Point(11, 9),new Point(11, 11),new Point(9, 11),new Point(9, 13),new Point(11, 13),new Point(11, 15),new Point(13, 15),new Point(13, 13),new Point(15, 13),new Point(15, 11),new Point(13, 11)]
+            Points = [new Avalonia.Point(13, 9),new Avalonia.Point(11, 9),new Avalonia.Point(11, 11),new Avalonia.Point(9, 11),new Avalonia.Point(9, 13),new Avalonia.Point(11, 13),new Avalonia.Point(11, 15),new Avalonia.Point(13, 15),new Avalonia.Point(13, 13),new Avalonia.Point(15, 13),new Avalonia.Point(15, 11),new Avalonia.Point(13, 11)]
         },
         new PathDrawingInstruction()
         {

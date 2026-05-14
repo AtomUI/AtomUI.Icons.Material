@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class PlacesVapeFreeTwoTone : Icon
+public class PlacesVapeFreeTwoTone : MaterialIcon
 {
     public PlacesVapeFreeTwoTone()
     {
@@ -16,12 +14,17 @@ public class PlacesVapeFreeTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.3899999999999999, 2, 20.609999999999999, 20.599999999999998);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0614772224679345, 0, 0, 1.0614772224679345, -0.73772666961521338, -0.73772666961521338);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10.5, 17.5),
+            Center = new Avalonia.Point(10.5, 17.5),
             Radius = 0.5
         },
         new PathDrawingInstruction()

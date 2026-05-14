@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageMusicOffTwoTone : Icon
+public class ImageMusicOffTwoTone : MaterialIcon
 {
     public ImageMusicOffTwoTone()
     {
@@ -16,12 +14,17 @@ public class ImageMusicOffTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 2.8599999999999999, 18.140000000000001, 18.519999999999996);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1483253588516744, 0, 0, 1.1483253588516744, -1.779904306220093, -1.779904306220093);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 17),
+            Center = new Avalonia.Point(10, 17),
             Radius = 2
         },
         new PathDrawingInstruction()

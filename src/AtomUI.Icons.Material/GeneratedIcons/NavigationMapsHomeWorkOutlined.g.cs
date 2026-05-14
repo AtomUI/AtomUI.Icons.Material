@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NavigationMapsHomeWorkOutlined : Icon
+public class NavigationMapsHomeWorkOutlined : MaterialIcon
 {
     public NavigationMapsHomeWorkOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 3, 22, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -51,7 +54,7 @@ public class NavigationMapsHomeWorkOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(10, 3),new Point(10, 4.97),new Point(12, 6.4),new Point(12, 5),new Point(21, 5),new Point(21, 19),new Point(17, 19),new Point(17, 21),new Point(23, 21),new Point(23, 3)]
+            Points = [new Avalonia.Point(10, 3),new Avalonia.Point(10, 4.97),new Avalonia.Point(12, 6.4),new Avalonia.Point(12, 5),new Avalonia.Point(21, 5),new Avalonia.Point(21, 19),new Avalonia.Point(17, 19),new Avalonia.Point(17, 21),new Avalonia.Point(23, 21),new Avalonia.Point(23, 3)]
         },
     ];
 

@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialHiveTwoTone : Icon
+public class SocialHiveTwoTone : MaterialIcon
 {
     public SocialHiveTwoTone()
     {
@@ -16,48 +14,53 @@ public class SocialHiveTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.5, 2, 19, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(5.92, 7),new Point(4.79, 9),new Point(5.92, 11),new Point(8.06, 11),new Point(9.19, 9),new Point(8.06, 7)]
+            Points = [new Avalonia.Point(5.92, 7),new Avalonia.Point(4.79, 9),new Avalonia.Point(5.92, 11),new Avalonia.Point(8.06, 11),new Avalonia.Point(9.19, 9),new Avalonia.Point(8.06, 7)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(10.94, 16),new Point(9.8, 18.02),new Point(10.92, 20),new Point(13.08, 20),new Point(14.2, 18.02),new Point(13.06, 16)]
+            Points = [new Avalonia.Point(10.94, 16),new Avalonia.Point(9.8, 18.02),new Avalonia.Point(10.92, 20),new Avalonia.Point(13.08, 20),new Avalonia.Point(14.2, 18.02),new Avalonia.Point(13.06, 16)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(13.06, 14),new Point(14.19, 12),new Point(13.06, 10),new Point(10.94, 10),new Point(9.81, 12),new Point(10.94, 14)]
+            Points = [new Avalonia.Point(13.06, 14),new Avalonia.Point(14.19, 12),new Avalonia.Point(13.06, 10),new Avalonia.Point(10.94, 10),new Avalonia.Point(9.81, 12),new Avalonia.Point(10.94, 14)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(5.92, 13),new Point(4.79, 15),new Point(5.92, 17),new Point(8.06, 17),new Point(9.19, 15),new Point(8.06, 13)]
+            Points = [new Avalonia.Point(5.92, 13),new Avalonia.Point(4.79, 15),new Avalonia.Point(5.92, 17),new Avalonia.Point(8.06, 17),new Avalonia.Point(9.19, 15),new Avalonia.Point(8.06, 13)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15.94, 7),new Point(14.81, 9),new Point(15.94, 11),new Point(18.08, 11),new Point(19.21, 9),new Point(18.08, 7)]
+            Points = [new Avalonia.Point(15.94, 7),new Avalonia.Point(14.81, 9),new Avalonia.Point(15.94, 11),new Avalonia.Point(18.08, 11),new Avalonia.Point(19.21, 9),new Avalonia.Point(18.08, 7)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(10.92, 4),new Point(9.8, 5.98),new Point(10.94, 8),new Point(13.06, 8),new Point(14.2, 5.98),new Point(13.08, 4)]
+            Points = [new Avalonia.Point(10.92, 4),new Avalonia.Point(9.8, 5.98),new Avalonia.Point(10.94, 8),new Avalonia.Point(13.06, 8),new Avalonia.Point(14.2, 5.98),new Avalonia.Point(13.08, 4)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15.94, 13),new Point(14.81, 15),new Point(15.94, 17),new Point(18.08, 17),new Point(19.21, 15),new Point(18.08, 13)]
+            Points = [new Avalonia.Point(15.94, 13),new Avalonia.Point(14.81, 15),new Avalonia.Point(15.94, 17),new Avalonia.Point(18.08, 17),new Avalonia.Point(19.21, 15),new Avalonia.Point(18.08, 13)]
         },
         new PathDrawingInstruction()
         {

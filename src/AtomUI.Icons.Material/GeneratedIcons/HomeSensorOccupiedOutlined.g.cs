@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class HomeSensorOccupiedOutlined : Icon
+public class HomeSensorOccupiedOutlined : MaterialIcon
 {
     public HomeSensorOccupiedOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0.91999999999999993, 0.92000000000000004, 22.160000000000004, 22.16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0398613518197577, 0, 0, 1.0398613518197577, -0.47833622183709323, -0.47833622183709323);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

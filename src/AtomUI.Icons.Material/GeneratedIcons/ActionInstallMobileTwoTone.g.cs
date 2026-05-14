@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionInstallMobileTwoTone : Icon
+public class ActionInstallMobileTwoTone : MaterialIcon
 {
     public ActionInstallMobileTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(5, 1, 18, 22);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -43,7 +46,7 @@ public class ActionInstallMobileTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(19, 3),new Point(17, 3),new Point(17, 10.17),new Point(14.41, 7.59),new Point(14, 8),new Point(13, 9),new Point(14, 10),new Point(18, 14),new Point(21, 11),new Point(23, 9),new Point(21.59, 7.59),new Point(21, 8.18),new Point(19, 10.17)]
+            Points = [new Avalonia.Point(19, 3),new Avalonia.Point(17, 3),new Avalonia.Point(17, 10.17),new Avalonia.Point(14.41, 7.59),new Avalonia.Point(14, 8),new Avalonia.Point(13, 9),new Avalonia.Point(14, 10),new Avalonia.Point(18, 14),new Avalonia.Point(21, 11),new Avalonia.Point(23, 9),new Avalonia.Point(21.59, 7.59),new Avalonia.Point(21, 8.18),new Avalonia.Point(19, 10.17)]
         },
     ];
 

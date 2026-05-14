@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsTempleHinduRounded : Icon
+public class MapsTempleHinduRounded : MaterialIcon
 {
     public MapsTempleHinduRounded()
     {
@@ -16,12 +14,17 @@ public class MapsTempleHinduRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 1, 20, 21);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(6.6, 11),new Point(17.4, 11),new Point(16.5, 8),new Point(7.5, 8)]
+            Points = [new Avalonia.Point(6.6, 11),new Avalonia.Point(17.4, 11),new Avalonia.Point(16.5, 8),new Avalonia.Point(7.5, 8)]
         },
         new PathDrawingInstruction()
         {

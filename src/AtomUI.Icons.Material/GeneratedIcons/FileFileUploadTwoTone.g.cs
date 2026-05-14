@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class FileFileUploadTwoTone : Icon
+public class FileFileUploadTwoTone : MaterialIcon
 {
     public FileFileUploadTwoTone()
     {
@@ -16,12 +14,17 @@ public class FileFileUploadTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(5, 3, 14, 17);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1428571428571428, 0, 0, 1.1428571428571428, -1.7142857142857135, -1.7142857142857135);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(9.83, 8),new Point(11, 8),new Point(11, 14),new Point(13, 14),new Point(13, 8),new Point(14.17, 8),new Point(12, 5.83)]
+            Points = [new Avalonia.Point(9.83, 8),new Avalonia.Point(11, 8),new Avalonia.Point(11, 14),new Avalonia.Point(13, 14),new Avalonia.Point(13, 8),new Avalonia.Point(14.17, 8),new Avalonia.Point(12, 5.83)]
         },
         new RectDrawingInstruction()
         {

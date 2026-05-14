@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvVideoSettingsRounded : Icon
+public class AvVideoSettingsRounded : MaterialIcon
 {
     public AvVideoSettingsRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 4, 22.910000000000004, 18.990000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0113780025284445, 0, 0, 1.0113780025284445, -0.13653603034133255, -0.13653603034133255);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class AvVideoSettingsRounded : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15, 12),new Point(9, 8),new Point(9, 16)]
+            Points = [new Avalonia.Point(15, 12),new Avalonia.Point(9, 8),new Avalonia.Point(9, 16)]
         },
         new PathDrawingInstruction()
         {

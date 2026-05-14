@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NotificationAccountTreeTwoTone : Icon
+public class NotificationAccountTreeTwoTone : MaterialIcon
 {
     public NotificationAccountTreeTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 20, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,19 +30,19 @@ public class NotificationAccountTreeTwoTone : Icon
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(7, 5),new Point(7, 9),new Point(4, 9),new Point(4, 5),new Point(7, 5)]
+            Points = [new Avalonia.Point(7, 5),new Avalonia.Point(7, 9),new Avalonia.Point(4, 9),new Avalonia.Point(4, 5),new Avalonia.Point(7, 5)]
         },
         new PolylineDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(20, 5),new Point(20, 9),new Point(17, 9),new Point(17, 5),new Point(20, 5)]
+            Points = [new Avalonia.Point(20, 5),new Avalonia.Point(20, 9),new Avalonia.Point(17, 9),new Avalonia.Point(17, 5),new Avalonia.Point(20, 5)]
         },
         new PolylineDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(20, 15),new Point(20, 19),new Point(17, 19),new Point(17, 15),new Point(20, 15)]
+            Points = [new Avalonia.Point(20, 15),new Avalonia.Point(20, 19),new Avalonia.Point(17, 19),new Avalonia.Point(17, 15),new Avalonia.Point(20, 15)]
         },
     ];
 

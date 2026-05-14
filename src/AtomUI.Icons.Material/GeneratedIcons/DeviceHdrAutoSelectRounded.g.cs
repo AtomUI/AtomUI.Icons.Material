@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceHdrAutoSelectRounded : Icon
+public class DeviceHdrAutoSelectRounded : MaterialIcon
 {
     public DeviceHdrAutoSelectRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 2, 24, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -45,7 +48,7 @@ public class DeviceHdrAutoSelectRounded : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(11.97, 5.3),new Point(10.95, 8.19),new Point(13.05, 8.19),new Point(12.03, 5.3)]
+            Points = [new Avalonia.Point(11.97, 5.3),new Avalonia.Point(10.95, 8.19),new Avalonia.Point(13.05, 8.19),new Avalonia.Point(12.03, 5.3)]
         },
         new PathDrawingInstruction()
         {

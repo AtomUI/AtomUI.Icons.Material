@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsEditRoadTwoTone : Icon
+public class MapsEditRoadTwoTone : MaterialIcon
 {
     public MapsEditRoadTwoTone()
     {
@@ -16,18 +14,23 @@ public class MapsEditRoadTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 4, 19.149999999999999, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1188811188811192, 0, 0, 1.1188811188811192, -1.4265734265734302, -1.4265734265734302);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15.55, 17.42),new Point(15.55, 18.45),new Point(16.58, 18.45),new Point(20.03, 15),new Point(19, 13.97)]
+            Points = [new Avalonia.Point(15.55, 17.42),new Avalonia.Point(15.55, 18.45),new Avalonia.Point(16.58, 18.45),new Avalonia.Point(20.03, 15),new Avalonia.Point(19, 13.97)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(18, 4),new Point(16, 4),new Point(16, 11.9),new Point(18, 9.9)]
+            Points = [new Avalonia.Point(18, 4),new Avalonia.Point(16, 4),new Avalonia.Point(16, 11.9),new Avalonia.Point(18, 9.9)]
         },
         new RectDrawingInstruction()
         {

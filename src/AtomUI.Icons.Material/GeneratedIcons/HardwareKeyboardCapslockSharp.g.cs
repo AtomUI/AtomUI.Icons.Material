@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class HardwareKeyboardCapslockSharp : Icon
+public class HardwareKeyboardCapslockSharp : MaterialIcon
 {
     public HardwareKeyboardCapslockSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(6, 5.5899999999999999, 12, 12.41);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.3036393264530146, 0, 0, 1.3036393264530146, -3.6436719174361762, -3.6436719174361762);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

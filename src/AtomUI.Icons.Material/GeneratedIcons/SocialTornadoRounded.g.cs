@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialTornadoRounded : Icon
+public class SocialTornadoRounded : MaterialIcon
 {
     public SocialTornadoRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.9699999999999998, 3, 20.07, 17.339999999999996);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0899182561307901, 0, 0, 1.0899182561307901, -1.07901907356948, -1.07901907356948);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class SocialTornadoRounded : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(18.95, 10),new Point(5.05, 10),new Point(6.79, 13),new Point(17.21, 13)]
+            Points = [new Avalonia.Point(18.95, 10),new Avalonia.Point(5.05, 10),new Avalonia.Point(6.79, 13),new Avalonia.Point(17.21, 13)]
         },
     ];
 

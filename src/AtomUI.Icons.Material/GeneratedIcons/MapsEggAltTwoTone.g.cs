@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsEggAltTwoTone : Icon
+public class MapsEggAltTwoTone : MaterialIcon
 {
     public MapsEggAltTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.9399999999999999, 2, 20.059999999999999, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0879419764279237, 0, 0, 1.0879419764279237, -1.0553037171350841, -1.0553037171350841);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class MapsEggAltTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(12, 12),
+            Center = new Avalonia.Point(12, 12),
             Radius = 3.5
         },
     ];

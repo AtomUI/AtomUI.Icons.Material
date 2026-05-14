@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceMedicationLiquidTwoTone : Icon
+public class DeviceMedicationLiquidTwoTone : MaterialIcon
 {
     public DeviceMedicationLiquidTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 21, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1428571428571428, 0, 0, 1.1428571428571428, -1.7142857142857135, -1.7142857142857135);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -24,12 +27,6 @@ public class DeviceMedicationLiquidTwoTone : Icon
             Rect = new Rect(4, 8, 10, 11),
             RadiusX = 0,
             RadiusY = 0,
-        },
-        new PathDrawingInstruction()
-        {
-            Opacity = 0.3,
-            FillBrush = IconBrushType.Fill,
-            Data = StreamGeometry.Parse("M4,19h10V8H4V19z M5,12h2.5V9.5h3V12H13v3h-2.5v2.5h-3V15H5V12z"),
         },
         new RectDrawingInstruction()
         {
@@ -49,13 +46,13 @@ public class DeviceMedicationLiquidTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(7.5, 17.5),new Point(10.5, 17.5),new Point(10.5, 15),new Point(13, 15),new Point(13, 12),new Point(10.5, 12),new Point(10.5, 9.5),new Point(7.5, 9.5),new Point(7.5, 12),new Point(5, 12),new Point(5, 15),new Point(7.5, 15)]
+            Points = [new Avalonia.Point(7.5, 17.5),new Avalonia.Point(10.5, 17.5),new Avalonia.Point(10.5, 15),new Avalonia.Point(13, 15),new Avalonia.Point(13, 12),new Avalonia.Point(10.5, 12),new Avalonia.Point(10.5, 9.5),new Avalonia.Point(7.5, 9.5),new Avalonia.Point(7.5, 12),new Avalonia.Point(5, 12),new Avalonia.Point(5, 15),new Avalonia.Point(7.5, 15)]
         },
         new EllipseDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(20, 10),
+            Center = new Avalonia.Point(20, 10),
             RadiusX = 1,
             RadiusY = 2
         },

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialOutdoorGrillSharp : Icon
+public class SocialOutdoorGrillSharp : MaterialIcon
 {
     public SocialOutdoorGrillSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4.620000000000001, 2, 15.379999999999999, 20.379999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1100832562442182, 0, 0, 1.1100832562442182, -1.3209990749306186, -1.3209990749306186);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

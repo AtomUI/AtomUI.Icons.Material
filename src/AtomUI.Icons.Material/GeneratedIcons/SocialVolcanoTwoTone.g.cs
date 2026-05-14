@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialVolcanoTwoTone : Icon
+public class SocialVolcanoTwoTone : MaterialIcon
 {
     public SocialVolcanoTwoTone()
     {
@@ -16,12 +14,17 @@ public class SocialVolcanoTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 1, 20, 21);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(16.49, 10),new Point(12.35, 10),new Point(10.86, 13.74),new Point(10.35, 15),new Point(9, 15),new Point(7.3, 15),new Point(5.08, 20),new Point(19.35, 20)]
+            Points = [new Avalonia.Point(16.49, 10),new Avalonia.Point(12.35, 10),new Avalonia.Point(10.86, 13.74),new Avalonia.Point(10.35, 15),new Avalonia.Point(9, 15),new Avalonia.Point(7.3, 15),new Avalonia.Point(5.08, 20),new Avalonia.Point(19.35, 20)]
         },
         new PathDrawingInstruction()
         {
@@ -44,7 +47,7 @@ public class SocialVolcanoTwoTone : Icon
             Rect = new Rect(16.24, 3.76, 4, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 1.9792 14.2929)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, 1.9792000000000001, 14.292899999999999)
         },
         new RectDrawingInstruction()
         {
@@ -53,7 +56,7 @@ public class SocialVolcanoTwoTone : Icon
             Rect = new Rect(8.76, 2.76, 2, 4),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -0.5061 8.2929)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -0.50609999999999999, 8.2928999999999995)
         },
     ];
 

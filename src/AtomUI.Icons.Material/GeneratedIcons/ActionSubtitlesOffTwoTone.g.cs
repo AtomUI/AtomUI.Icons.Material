@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionSubtitlesOffTwoTone : Icon
+public class ActionSubtitlesOffTwoTone : MaterialIcon
 {
     public ActionSubtitlesOffTwoTone()
     {
@@ -16,24 +14,29 @@ public class ActionSubtitlesOffTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.04, 2.4500000000000002, 20.960000000000001, 20.510000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0452961672473868, 0, 0, 1.0452961672473868, -0.54355400696864109, -0.54355400696864109);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(8.83, 6),new Point(12.83, 10),new Point(18, 10),new Point(18, 12),new Point(14.83, 12),new Point(20, 17.17),new Point(20, 6)]
+            Points = [new Avalonia.Point(8.83, 6),new Avalonia.Point(12.83, 10),new Avalonia.Point(18, 10),new Avalonia.Point(18, 12),new Avalonia.Point(14.83, 12),new Avalonia.Point(20, 17.17),new Avalonia.Point(20, 6)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15.17, 18),new Point(13.17, 16),new Point(6, 16),new Point(6, 14),new Point(11.17, 14),new Point(8, 10.83),new Point(8, 12),new Point(6, 12),new Point(6, 10),new Point(7.17, 10),new Point(4, 6.83),new Point(4, 18)]
+            Points = [new Avalonia.Point(15.17, 18),new Avalonia.Point(13.17, 16),new Avalonia.Point(6, 16),new Avalonia.Point(6, 14),new Avalonia.Point(11.17, 14),new Avalonia.Point(8, 10.83),new Avalonia.Point(8, 12),new Avalonia.Point(6, 12),new Avalonia.Point(6, 10),new Avalonia.Point(7.17, 10),new Avalonia.Point(4, 6.83),new Avalonia.Point(4, 18)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(18, 10),new Point(12.83, 10),new Point(14.83, 12),new Point(18, 12)]
+            Points = [new Avalonia.Point(18, 10),new Avalonia.Point(12.83, 10),new Avalonia.Point(14.83, 12),new Avalonia.Point(18, 12)]
         },
         new PathDrawingInstruction()
         {

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class FileCloudOffOutlined : Icon
+public class FileCloudOffOutlined : MaterialIcon
 {
     public FileCloudOffOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 3.8599999999999999, 24, 18.140000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

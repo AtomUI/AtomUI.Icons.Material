@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsPestControlRodentSharp : Icon
+public class MapsPestControlRodentSharp : MaterialIcon
 {
     public MapsPestControlRodentSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 20.739999999999998, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1288805268109123, 0, 0, 1.1288805268109123, -1.546566321730948, -1.546566321730948);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

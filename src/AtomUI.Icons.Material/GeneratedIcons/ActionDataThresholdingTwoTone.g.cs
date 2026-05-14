@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionDataThresholdingTwoTone : Icon
+public class ActionDataThresholdingTwoTone : MaterialIcon
 {
     public ActionDataThresholdingTwoTone()
     {
@@ -16,12 +14,17 @@ public class ActionDataThresholdingTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 3, 18, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1428571428571428, 0, 0, 1.1428571428571428, -1.7142857142857135, -1.7142857142857135);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(19, 19),new Point(19, 17.27),new Point(17.27, 19)]
+            Points = [new Avalonia.Point(19, 19),new Avalonia.Point(19, 17.27),new Avalonia.Point(17.27, 19)]
         },
         new PathDrawingInstruction()
         {
@@ -39,7 +42,7 @@ public class ActionDataThresholdingTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(10.67, 11),new Point(12.67, 13),new Point(17.75, 7.91),new Point(16.34, 6.5),new Point(12.67, 10.17),new Point(10.67, 8.17),new Point(6.25, 12.59),new Point(7.66, 14)]
+            Points = [new Avalonia.Point(10.67, 11),new Avalonia.Point(12.67, 13),new Avalonia.Point(17.75, 7.91),new Avalonia.Point(16.34, 6.5),new Avalonia.Point(12.67, 10.17),new Avalonia.Point(10.67, 8.17),new Avalonia.Point(6.25, 12.59),new Avalonia.Point(7.66, 14)]
         },
     ];
 

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionAssuredWorkloadFilled : Icon
+public class ActionAssuredWorkloadFilled : MaterialIcon
 {
     public ActionAssuredWorkloadFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 1, 22, 23);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -37,7 +40,7 @@ public class ActionAssuredWorkloadFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(22, 6),new Point(12, 1),new Point(2, 6),new Point(2, 8),new Point(22, 8)]
+            Points = [new Avalonia.Point(22, 6),new Avalonia.Point(12, 1),new Avalonia.Point(2, 6),new Avalonia.Point(2, 8),new Avalonia.Point(22, 8)]
         },
         new PathDrawingInstruction()
         {
@@ -49,7 +52,7 @@ public class ActionAssuredWorkloadFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(19, 12.26),new Point(19, 10),new Point(17, 10),new Point(17, 13.26)]
+            Points = [new Avalonia.Point(19, 12.26),new Avalonia.Point(19, 10),new Avalonia.Point(17, 10),new Avalonia.Point(17, 13.26)]
         },
         new PathDrawingInstruction()
         {

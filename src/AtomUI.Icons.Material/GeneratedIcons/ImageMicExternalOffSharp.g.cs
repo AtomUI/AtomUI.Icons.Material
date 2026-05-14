@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageMicExternalOffSharp : Icon
+public class ImageMicExternalOffSharp : MaterialIcon
 {
     public ImageMicExternalOffSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0.68999999999999995, 2, 21.210000000000001, 21.32);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0300429184549356, 0, 0, 1.0300429184549356, -0.36051502145922676, -0.36051502145922676);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class ImageMicExternalOffSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(14, 4),new Point(18, 4),new Point(18, 15.17),new Point(20, 17.17),new Point(20, 2),new Point(12, 2),new Point(12, 9.17),new Point(14, 11.17)]
+            Points = [new Avalonia.Point(14, 4),new Avalonia.Point(18, 4),new Avalonia.Point(18, 15.17),new Avalonia.Point(20, 17.17),new Avalonia.Point(20, 2),new Avalonia.Point(12, 2),new Avalonia.Point(12, 9.17),new Avalonia.Point(14, 11.17)]
         },
         new PathDrawingInstruction()
         {

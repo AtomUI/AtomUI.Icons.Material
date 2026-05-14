@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvPlaylistAddCheckRounded : Icon
+public class AvPlaylistAddCheckRounded : MaterialIcon
 {
     public AvPlaylistAddCheckRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 6, 20.690000000000001, 13.690000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1262318160488034, 0, 0, 1.1262318160488034, -1.5147817925856408, -1.5147817925856408);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

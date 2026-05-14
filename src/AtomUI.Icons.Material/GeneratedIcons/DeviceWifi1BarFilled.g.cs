@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceWifi1BarFilled : Icon
+public class DeviceWifi1BarFilled : MaterialIcon
 {
     public DeviceWifi1BarFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(8.4700000000000006, 16, 7.0599999999999987, 5);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.6000000000000001, 0, 0, 1.6000000000000001, -7.2000000000000028, -7.2000000000000028);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

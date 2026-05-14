@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialAssistWalkerFilled : Icon
+public class SocialAssistWalkerFilled : MaterialIcon
 {
     public SocialAssistWalkerFilled()
     {
@@ -16,12 +14,17 @@ public class SocialAssistWalkerFilled : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.1499999999999999, 2.5, 18.350000000000001, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0983981693363845, 0, 0, 1.0983981693363845, -1.1807780320366135, -1.1807780320366135);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(12.5, 4.5),
+            Center = new Avalonia.Point(12.5, 4.5),
             Radius = 2
         },
         new PathDrawingInstruction()

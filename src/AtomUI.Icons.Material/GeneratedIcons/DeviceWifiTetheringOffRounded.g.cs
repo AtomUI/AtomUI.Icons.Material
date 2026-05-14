@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceWifiTetheringOffRounded : Icon
+public class DeviceWifiTetheringOffRounded : MaterialIcon
 {
     public DeviceWifiTetheringOffRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.71, 3, 20.289999999999999, 19.280000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0767160161507403, 0, 0, 1.0767160161507403, -0.9205921938088828, -0.9205921938088828);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialSportsCricketOutlined : Icon
+public class SocialSportsCricketOutlined : MaterialIcon
 {
     public SocialSportsCricketOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.8999999999999999, 2, 20.100000000000001, 19.998799999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0859728506787332, 0, 0, 1.0859728506787332, -1.031674208144798, -1.031674208144798);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -30,7 +33,7 @@ public class SocialSportsCricketOutlined : Icon
             Rect = new Rect(16.17, 16.17, 2, 6),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -8.5264 17.7562)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -8.5264000000000006, 17.7562)
         },
         new PathDrawingInstruction()
         {

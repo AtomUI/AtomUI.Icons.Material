@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationRssFeedRounded : Icon
+public class CommunicationRssFeedRounded : MaterialIcon
 {
     public CommunicationRssFeedRounded()
     {
@@ -16,12 +14,17 @@ public class CommunicationRssFeedRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3.9999999999999996, 4.4299999999999997, 15.559999999999999, 15.570000000000004);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2000000000000002, 0, 0, 1.2000000000000002, -2.4000000000000021, -2.4000000000000021);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6.18, 17.82),
+            Center = new Avalonia.Point(6.18, 17.82),
             Radius = 2.18
         },
         new PathDrawingInstruction()

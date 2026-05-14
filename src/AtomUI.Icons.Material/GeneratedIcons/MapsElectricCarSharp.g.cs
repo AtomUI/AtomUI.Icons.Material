@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsElectricCarSharp : Icon
+public class MapsElectricCarSharp : MaterialIcon
 {
     public MapsElectricCarSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 1, 18, 22);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class MapsElectricCarSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(7, 20),new Point(11, 20),new Point(11, 18),new Point(17, 21),new Point(13, 21),new Point(13, 23)]
+            Points = [new Avalonia.Point(7, 20),new Avalonia.Point(11, 20),new Avalonia.Point(11, 18),new Avalonia.Point(17, 21),new Avalonia.Point(13, 21),new Avalonia.Point(13, 23)]
         },
     ];
 

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialThunderstormOutlined : Icon
+public class SocialThunderstormOutlined : MaterialIcon
 {
     public SocialThunderstormOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 22);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,13 +30,13 @@ public class SocialThunderstormOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(14.8, 17),new Point(11.9, 20.32),new Point(13.9, 21.32),new Point(11.55, 24),new Point(14.2, 24),new Point(17.1, 20.68),new Point(15.1, 19.68),new Point(17.45, 17)]
+            Points = [new Avalonia.Point(14.8, 17),new Avalonia.Point(11.9, 20.32),new Avalonia.Point(13.9, 21.32),new Avalonia.Point(11.55, 24),new Avalonia.Point(14.2, 24),new Avalonia.Point(17.1, 20.68),new Avalonia.Point(15.1, 19.68),new Avalonia.Point(17.45, 17)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(8.8, 17),new Point(5.9, 20.32),new Point(7.9, 21.32),new Point(5.55, 24),new Point(8.2, 24),new Point(11.1, 20.68),new Point(9.1, 19.68),new Point(11.45, 17)]
+            Points = [new Avalonia.Point(8.8, 17),new Avalonia.Point(5.9, 20.32),new Avalonia.Point(7.9, 21.32),new Avalonia.Point(5.55, 24),new Avalonia.Point(8.2, 24),new Avalonia.Point(11.1, 20.68),new Avalonia.Point(9.1, 19.68),new Avalonia.Point(11.45, 17)]
         },
     ];
 

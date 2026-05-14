@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageDeblurSharp : Icon
+public class ImageDeblurSharp : MaterialIcon
 {
     public ImageDeblurSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.5, 2.5, 18.5, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1162790697674418, 0, 0, 1.1162790697674418, -1.3953488372093013, -1.3953488372093013);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,84 +30,84 @@ public class ImageDeblurSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 14),
+            Center = new Avalonia.Point(6, 14),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 18),
+            Center = new Avalonia.Point(6, 18),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 10),
+            Center = new Avalonia.Point(6, 10),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(3, 10),
+            Center = new Avalonia.Point(3, 10),
             Radius = 0.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 6),
+            Center = new Avalonia.Point(6, 6),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(3, 14),
+            Center = new Avalonia.Point(3, 14),
             Radius = 0.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 21),
+            Center = new Avalonia.Point(10, 21),
             Radius = 0.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 3),
+            Center = new Avalonia.Point(10, 3),
             Radius = 0.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 6),
+            Center = new Avalonia.Point(10, 6),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 14),
+            Center = new Avalonia.Point(10, 14),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 10),
+            Center = new Avalonia.Point(10, 10),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 18),
+            Center = new Avalonia.Point(10, 18),
             Radius = 1
         },
     ];

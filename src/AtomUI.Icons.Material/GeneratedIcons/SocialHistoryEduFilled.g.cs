@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialHistoryEduFilled : Icon
+public class SocialHistoryEduFilled : MaterialIcon
 {
     public SocialHistoryEduFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.4400000000000004, 4, 19.559999999999999, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0638297872340425, 0, 0, 1.0638297872340425, -0.76595744680851041, -0.76595744680851041);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

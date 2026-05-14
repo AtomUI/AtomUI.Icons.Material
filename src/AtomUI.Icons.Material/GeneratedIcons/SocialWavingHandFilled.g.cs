@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialWavingHandFilled : Icon
+public class SocialWavingHandFilled : MaterialIcon
 {
     public SocialWavingHandFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0.18999999999999995, 1, 22.809999999999999, 22.810000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0079798404031919, 0, 0, 1.0079798404031919, -0.095758084838301727, -0.095758084838301727);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

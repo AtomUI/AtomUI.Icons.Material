@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionSubtitlesOffSharp : Icon
+public class ActionSubtitlesOffSharp : MaterialIcon
 {
     public ActionSubtitlesOffSharp()
     {
@@ -16,12 +14,17 @@ public class ActionSubtitlesOffSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.04, 2.4500000000000002, 20.960000000000001, 20.510000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0452961672473868, 0, 0, 1.0452961672473868, -0.54355400696864109, -0.54355400696864109);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(6.83, 4),new Point(14.83, 12),new Point(20, 12),new Point(20, 14),new Point(16.83, 14),new Point(22, 19.17),new Point(22, 4)]
+            Points = [new Avalonia.Point(6.83, 4),new Avalonia.Point(14.83, 12),new Avalonia.Point(20, 12),new Avalonia.Point(20, 14),new Avalonia.Point(16.83, 14),new Avalonia.Point(22, 19.17),new Avalonia.Point(22, 4)]
         },
         new PathDrawingInstruction()
         {

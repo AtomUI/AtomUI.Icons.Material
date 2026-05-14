@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvAvTimerRounded : Icon
+public class AvAvTimerRounded : MaterialIcon
 {
     public AvAvTimerRounded()
     {
@@ -16,26 +14,31 @@ public class AvAvTimerRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 3, 18.16, 18.119999999999997);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1516314779270633, 0, 0, 1.1516314779270633, -1.81957773512476, -1.81957773512476);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(12, 17),
+            Center = new Avalonia.Point(12, 17),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(7, 12),
+            Center = new Avalonia.Point(7, 12),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(17, 12),
+            Center = new Avalonia.Point(17, 12),
             Radius = 1
         },
         new PathDrawingInstruction()

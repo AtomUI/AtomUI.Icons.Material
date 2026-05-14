@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialCoronavirusOutlined : Icon
+public class SocialCoronavirusOutlined : MaterialIcon
 {
     public SocialCoronavirusOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 20.009999999999994);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0914051841746246, 0, 0, 1.0914051841746246, -1.0968622100954946, -1.0968622100954946);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

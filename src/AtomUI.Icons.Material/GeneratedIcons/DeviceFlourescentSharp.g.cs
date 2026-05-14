@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceFlourescentSharp : Icon
+public class DeviceFlourescentSharp : MaterialIcon
 {
     public DeviceFlourescentSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3.4921619999999987, 2, 17.007838, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -40,7 +43,7 @@ public class DeviceFlourescentSharp : Icon
             Rect = new Rect(17.62, 5.2, 2.54, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7046 -0.7096 0.7096 0.7046 1.1814 15.2381)").Value
+            Transform = new Matrix(0.7046, -0.70960000000000001, 0.70960000000000001, 0.7046, 1.1814, 15.238099999999999)
         },
         new RectDrawingInstruction()
         {
@@ -54,7 +57,7 @@ public class DeviceFlourescentSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(17.29, 17.71),new Point(19.08, 19.51),new Point(20.5, 18.09),new Point(18.7, 16.3)]
+            Points = [new Avalonia.Point(17.29, 17.71),new Avalonia.Point(19.08, 19.51),new Avalonia.Point(20.5, 18.09),new Avalonia.Point(18.7, 16.3)]
         },
         new RectDrawingInstruction()
         {
@@ -63,7 +66,7 @@ public class DeviceFlourescentSharp : Icon
             Rect = new Rect(4.1, 4.93, 1.99, 2.53),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -2.8904 5.4222)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -2.8904000000000001, 5.4222000000000001)
         },
         new RectDrawingInstruction()
         {
@@ -72,7 +75,7 @@ public class DeviceFlourescentSharp : Icon
             Rect = new Rect(3.83, 16.89, 2.54, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7096 -0.7046 0.7046 0.7096 -11.1263 8.7897)").Value
+            Transform = new Matrix(0.70960000000000001, -0.7046, 0.7046, 0.70960000000000001, -11.126300000000001, 8.7896999999999998)
         },
     ];
 

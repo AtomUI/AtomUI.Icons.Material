@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsTakeoutDiningTwoTone : Icon
+public class MapsTakeoutDiningTwoTone : MaterialIcon
 {
     public MapsTakeoutDiningTwoTone()
     {
@@ -16,18 +14,23 @@ public class MapsTakeoutDiningTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 20, 17);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(9.83, 5),new Point(7.03, 7.73),new Point(7.12, 9),new Point(16.87, 9),new Point(16.96, 7.73),new Point(14.16, 5)]
+            Points = [new Avalonia.Point(9.83, 5),new Avalonia.Point(7.03, 7.73),new Avalonia.Point(7.12, 9),new Avalonia.Point(16.87, 9),new Avalonia.Point(16.96, 7.73),new Avalonia.Point(14.16, 5)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(7.79, 18),new Point(16.23, 18),new Point(16.74, 11),new Point(7.28, 11)]
+            Points = [new Avalonia.Point(7.79, 18),new Avalonia.Point(16.23, 18),new Avalonia.Point(16.74, 11),new Avalonia.Point(7.28, 11)]
         },
         new PathDrawingInstruction()
         {

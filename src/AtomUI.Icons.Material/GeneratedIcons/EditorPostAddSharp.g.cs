@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class EditorPostAddSharp : Icon
+public class EditorPostAddSharp : MaterialIcon
 {
     public EditorPostAddSharp()
     {
@@ -16,12 +14,17 @@ public class EditorPostAddSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 2, 19, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(17, 19.22),new Point(5, 19.22),new Point(5, 7),new Point(12, 7),new Point(12, 5),new Point(3, 5),new Point(3, 21),new Point(19, 21),new Point(19, 12),new Point(17, 12)]
+            Points = [new Avalonia.Point(17, 19.22),new Avalonia.Point(5, 19.22),new Avalonia.Point(5, 7),new Avalonia.Point(12, 7),new Avalonia.Point(12, 5),new Avalonia.Point(3, 5),new Avalonia.Point(3, 21),new Avalonia.Point(19, 21),new Avalonia.Point(19, 12),new Avalonia.Point(17, 12)]
         },
         new PathDrawingInstruction()
         {
@@ -41,7 +44,7 @@ public class EditorPostAddSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(7, 12),new Point(7, 14),new Point(15, 14),new Point(15, 12),new Point(12, 12)]
+            Points = [new Avalonia.Point(7, 12),new Avalonia.Point(7, 14),new Avalonia.Point(15, 14),new Avalonia.Point(15, 12),new Avalonia.Point(12, 12)]
         },
         new RectDrawingInstruction()
         {

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageAutoFixNormalTwoTone : Icon
+public class ImageAutoFixNormalTwoTone : MaterialIcon
 {
     public ImageAutoFixNormalTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.8999999999999999, 1, 21.100000000000001, 21);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -24,13 +27,13 @@ public class ImageAutoFixNormalTwoTone : Icon
             Rect = new Rect(3.64, 14.29, 10.14, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -8.2634 10.636)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -8.2634000000000007, 10.635999999999999)
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(20, 7),new Point(20.94, 4.94),new Point(23, 4),new Point(20.94, 3.06),new Point(20, 1),new Point(19.06, 3.06),new Point(17, 4),new Point(19.06, 4.94)]
+            Points = [new Avalonia.Point(20, 7),new Avalonia.Point(20.94, 4.94),new Avalonia.Point(23, 4),new Avalonia.Point(20.94, 3.06),new Avalonia.Point(20, 1),new Avalonia.Point(19.06, 3.06),new Avalonia.Point(17, 4),new Avalonia.Point(19.06, 4.94)]
         },
         new PathDrawingInstruction()
         {

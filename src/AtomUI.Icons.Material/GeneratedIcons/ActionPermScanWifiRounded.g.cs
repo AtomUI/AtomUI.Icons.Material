@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionPermScanWifiRounded : Icon
+public class ActionPermScanWifiRounded : MaterialIcon
 {
     public ActionPermScanWifiRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0.30000000000000004, 3, 23.399999999999999, 18.079999999999998);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0126582278481013, 0, 0, 1.0126582278481013, -0.151898734177216, -0.151898734177216);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

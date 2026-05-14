@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class HomeNestCamWiredStandSharp : Icon
+public class HomeNestCamWiredStandSharp : MaterialIcon
 {
     public HomeNestCamWiredStandSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(5.6500000000000004, 0.84999999999999998, 12.35, 22.149999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0367170626349891, 0, 0, 1.0367170626349891, -0.44060475161986901, -0.44060475161986901);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

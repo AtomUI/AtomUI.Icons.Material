@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NotificationAirlineSeatReclineExtraRounded : Icon
+public class NotificationAirlineSeatReclineExtraRounded : MaterialIcon
 {
     public NotificationAirlineSeatReclineExtraRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.1200000000000001, 1.7299999999999995, 19.489999999999998, 19.27);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0776829815895823, 0, 0, 1.0776829815895823, -0.93219577907498774, -0.93219577907498774);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

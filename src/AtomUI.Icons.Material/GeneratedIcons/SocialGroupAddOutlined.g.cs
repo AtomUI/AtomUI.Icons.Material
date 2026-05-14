@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialGroupAddOutlined : Icon
+public class SocialGroupAddOutlined : MaterialIcon
 {
     public SocialGroupAddOutlined()
     {
@@ -16,12 +14,17 @@ public class SocialGroupAddOutlined : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 4, 24, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(22, 9),new Point(22, 7),new Point(20, 7),new Point(20, 9),new Point(18, 9),new Point(18, 11),new Point(20, 11),new Point(20, 13),new Point(22, 13),new Point(22, 11),new Point(24, 11),new Point(24, 9)]
+            Points = [new Avalonia.Point(22, 9),new Avalonia.Point(22, 7),new Avalonia.Point(20, 7),new Avalonia.Point(20, 9),new Avalonia.Point(18, 9),new Avalonia.Point(18, 11),new Avalonia.Point(20, 11),new Avalonia.Point(20, 13),new Avalonia.Point(22, 13),new Avalonia.Point(22, 11),new Avalonia.Point(24, 11),new Avalonia.Point(24, 9)]
         },
         new PathDrawingInstruction()
         {

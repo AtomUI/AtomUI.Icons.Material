@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class EditorBubbleChartFilled : Icon
+public class EditorBubbleChartFilled : MaterialIcon
 {
     public EditorBubbleChartFilled()
     {
@@ -16,26 +14,31 @@ public class EditorBubbleChartFilled : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 4.0000000000000009, 16, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2, 0, 0, 1.2, -2.3999999999999986, -2.3999999999999986);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(7.2, 14.4),
+            Center = new Avalonia.Point(7.2, 14.4),
             Radius = 3.2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(14.8, 18),
+            Center = new Avalonia.Point(14.8, 18),
             Radius = 2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(15.2, 8.8),
+            Center = new Avalonia.Point(15.2, 8.8),
             Radius = 4.8
         },
     ];

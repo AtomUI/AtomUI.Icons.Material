@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationCellWifiOutlined : Icon
+public class CommunicationCellWifiOutlined : MaterialIcon
 {
     public CommunicationCellWifiOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3.9300000000000002, 2.0199999999999996, 18.07, 19.98);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0928961748633879, 0, 0, 1.0928961748633879, -1.1147540983606543, -1.1147540983606543);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

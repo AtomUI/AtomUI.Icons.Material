@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionFilterAltTwoTone : Icon
+public class ActionFilterAltTwoTone : MaterialIcon
 {
     public ActionFilterAltTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3.7400000000000002, 4, 16.509999999999998, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1846001974333664, 0, 0, 1.1846001974333664, -2.2152023692003979, -2.2152023692003979);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class ActionFilterAltTwoTone : Icon
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(7, 6),new Point(17, 6),new Point(11.99, 12.3)]
+            Points = [new Avalonia.Point(7, 6),new Avalonia.Point(17, 6),new Avalonia.Point(11.99, 12.3)]
         },
     ];
 

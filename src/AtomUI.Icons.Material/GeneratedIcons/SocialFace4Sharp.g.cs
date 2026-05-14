@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialFace4Sharp : Icon
+public class SocialFace4Sharp : MaterialIcon
 {
     public SocialFace4Sharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 0, 22, 22);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,14 +30,14 @@ public class SocialFace4Sharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(9, 13),
+            Center = new Avalonia.Point(9, 13),
             Radius = 1.25
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(15, 13),
+            Center = new Avalonia.Point(15, 13),
             Radius = 1.25
         },
     ];

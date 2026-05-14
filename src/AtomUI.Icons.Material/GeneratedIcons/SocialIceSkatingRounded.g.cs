@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialIceSkatingRounded : Icon
+public class SocialIceSkatingRounded : MaterialIcon
 {
     public SocialIceSkatingRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 21.010000000000002, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1412268188302424, 0, 0, 1.1412268188302424, -1.6947218259629082, -1.6947218259629082);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

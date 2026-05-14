@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageBlurOffSharp : Icon
+public class ImageBlurOffSharp : MaterialIcon
 {
     public ImageBlurOffSharp()
     {
@@ -16,12 +14,17 @@ public class ImageBlurOffSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.5, 2.5, 19, 19.000000000000004);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1162790697674421, 0, 0, 1.1162790697674421, -1.3953488372093048, -1.3953488372093048);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(14, 6),
+            Center = new Avalonia.Point(14, 6),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -34,14 +37,14 @@ public class ImageBlurOffSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(18, 10),
+            Center = new Avalonia.Point(18, 10),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(18, 6),
+            Center = new Avalonia.Point(18, 6),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -54,21 +57,21 @@ public class ImageBlurOffSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 6),
+            Center = new Avalonia.Point(10, 6),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(18, 14),
+            Center = new Avalonia.Point(18, 14),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 18),
+            Center = new Avalonia.Point(6, 18),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -81,7 +84,7 @@ public class ImageBlurOffSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 18),
+            Center = new Avalonia.Point(10, 18),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -94,7 +97,7 @@ public class ImageBlurOffSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 14),
+            Center = new Avalonia.Point(6, 14),
             Radius = 1
         },
         new PathDrawingInstruction()

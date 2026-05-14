@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ContentBiotechTwoTone : Icon
+public class ContentBiotechTwoTone : MaterialIcon
 {
     public ContentBiotechTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(5, 2, 14, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -24,13 +27,13 @@ public class ContentBiotechTwoTone : Icon
             Rect = new Rect(12.75, 4.54, 1, 5),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.9397 -0.342 0.342 0.9397 -1.6091 4.9556)").Value
+            Transform = new Matrix(0.93969999999999998, -0.34200000000000003, 0.34200000000000003, 0.93969999999999998, -1.6091, 4.9555999999999996)
         },
         new CircleDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10.5, 8),
+            Center = new Avalonia.Point(10.5, 8),
             Radius = 1
         },
         new PathDrawingInstruction()

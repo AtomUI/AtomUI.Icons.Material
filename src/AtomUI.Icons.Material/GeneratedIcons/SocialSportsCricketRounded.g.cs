@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialSportsCricketRounded : Icon
+public class SocialSportsCricketRounded : MaterialIcon
 {
     public SocialSportsCricketRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.9299999999999997, 2, 20.07, 19.680000000000003);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0874490258269143, 0, 0, 1.0874490258269143, -1.0493883099229713, -1.0493883099229713);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class SocialSportsCricketRounded : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(18.5, 5.5),
+            Center = new Avalonia.Point(18.5, 5.5),
             Radius = 3.5
         },
     ];

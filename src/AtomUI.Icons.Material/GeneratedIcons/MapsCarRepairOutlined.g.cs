@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsCarRepairOutlined : Icon
+public class MapsCarRepairOutlined : MaterialIcon
 {
     public MapsCarRepairOutlined()
     {
@@ -16,19 +14,24 @@ public class MapsCarRepairOutlined : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 3, 16, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2, 0, 0, 1.2, -2.3999999999999986, -2.3999999999999986);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(9, 10.5),
+            Center = new Avalonia.Point(9, 10.5),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(15, 10.5),
+            Center = new Avalonia.Point(15, 10.5),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -41,7 +44,7 @@ public class MapsCarRepairOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(4, 17.01),new Point(4, 19),new Point(11, 19),new Point(11, 22),new Point(13, 22),new Point(13, 19),new Point(20, 19),new Point(20, 17.01)]
+            Points = [new Avalonia.Point(4, 17.01),new Avalonia.Point(4, 19),new Avalonia.Point(11, 19),new Avalonia.Point(11, 22),new Avalonia.Point(13, 22),new Avalonia.Point(13, 19),new Avalonia.Point(20, 19),new Avalonia.Point(20, 17.01)]
         },
     ];
 

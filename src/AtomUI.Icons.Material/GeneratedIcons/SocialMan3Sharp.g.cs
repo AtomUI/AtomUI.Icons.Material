@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialMan3Sharp : Icon
+public class SocialMan3Sharp : MaterialIcon
 {
     public SocialMan3Sharp()
     {
@@ -16,12 +14,17 @@ public class SocialMan3Sharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(8, 1.7513219999999992, 8, 20.248678000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0787157780790391, 0, 0, 1.0787157780790391, -0.94458933694846792, -0.94458933694846792);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(16, 7),new Point(8, 7),new Point(8, 15),new Point(10, 15),new Point(10, 22),new Point(14, 22),new Point(14, 15),new Point(16, 15)]
+            Points = [new Avalonia.Point(16, 7),new Avalonia.Point(8, 7),new Avalonia.Point(8, 15),new Avalonia.Point(10, 15),new Avalonia.Point(10, 22),new Avalonia.Point(14, 22),new Avalonia.Point(14, 15),new Avalonia.Point(16, 15)]
         },
         new RectDrawingInstruction()
         {
@@ -30,7 +33,7 @@ public class SocialMan3Sharp : Icon
             Rect = new Rect(10.41, 2.41, 3.18, 3.18),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 0.7071 -0.7071 0.7071 6.3431 -7.3137)").Value
+            Transform = new Matrix(0.70709999999999995, 0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 6.3430999999999997, -7.3136999999999999)
         },
     ];
 

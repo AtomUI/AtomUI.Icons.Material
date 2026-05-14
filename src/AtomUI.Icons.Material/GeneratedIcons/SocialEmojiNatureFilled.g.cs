@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialEmojiNatureFilled : Icon
+public class SocialEmojiNatureFilled : MaterialIcon
 {
     public SocialEmojiNatureFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.8999999999999999, 2, 20.220000000000002, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0869565217391306, 0, 0, 1.0869565217391306, -1.0434782608695663, -1.0434782608695663);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

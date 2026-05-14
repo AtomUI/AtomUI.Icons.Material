@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialVolcanoFilled : Icon
+public class SocialVolcanoFilled : MaterialIcon
 {
     public SocialVolcanoFilled()
     {
@@ -16,12 +14,17 @@ public class SocialVolcanoFilled : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 1, 20, 21);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(18, 8),new Point(11, 8),new Point(9, 13),new Point(6, 13),new Point(2, 22),new Point(22, 22)]
+            Points = [new Avalonia.Point(18, 8),new Avalonia.Point(11, 8),new Avalonia.Point(9, 13),new Avalonia.Point(6, 13),new Avalonia.Point(2, 22),new Avalonia.Point(22, 22)]
         },
         new RectDrawingInstruction()
         {
@@ -38,7 +41,7 @@ public class SocialVolcanoFilled : Icon
             Rect = new Rect(16.24, 3.76, 4, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 1.9792 14.2929)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, 1.9792000000000001, 14.292899999999999)
         },
         new RectDrawingInstruction()
         {
@@ -47,7 +50,7 @@ public class SocialVolcanoFilled : Icon
             Rect = new Rect(8.76, 2.76, 2, 4),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -0.5061 8.2929)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -0.50609999999999999, 8.2928999999999995)
         },
     ];
 

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceBluetoothDriveRounded : Icon
+public class DeviceBluetoothDriveRounded : MaterialIcon
 {
     public DeviceBluetoothDriveRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 1.05, 19.850000000000001, 19.949999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0457516339869282, 0, 0, 1.0457516339869282, -0.54901960784313886, -0.54901960784313886);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

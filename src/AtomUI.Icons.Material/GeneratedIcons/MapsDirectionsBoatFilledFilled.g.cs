@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsDirectionsBoatFilledFilled : Icon
+public class MapsDirectionsBoatFilledFilled : MaterialIcon
 {
     public MapsDirectionsBoatFilledFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.8999999999999999, 1, 20.16, 22.300000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0572687224669604, 0, 0, 1.0572687224669604, -0.68722466960352335, -0.68722466960352335);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

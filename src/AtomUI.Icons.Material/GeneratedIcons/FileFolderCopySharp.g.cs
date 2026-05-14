@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class FileFolderCopySharp : Icon
+public class FileFolderCopySharp : MaterialIcon
 {
     public FileFolderCopySharp()
     {
@@ -16,12 +14,17 @@ public class FileFolderCopySharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 2, 22, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(3, 6),new Point(1, 6),new Point(1, 21),new Point(20, 21),new Point(20, 19),new Point(3, 19)]
+            Points = [new Avalonia.Point(3, 6),new Avalonia.Point(1, 6),new Avalonia.Point(1, 21),new Avalonia.Point(20, 21),new Avalonia.Point(20, 19),new Avalonia.Point(3, 19)]
         },
         new PathDrawingInstruction()
         {

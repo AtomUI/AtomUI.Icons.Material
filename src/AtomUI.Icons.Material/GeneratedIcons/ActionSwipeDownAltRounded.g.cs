@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionSwipeDownAltRounded : Icon
+public class ActionSwipeDownAltRounded : MaterialIcon
 {
     public ActionSwipeDownAltRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(7, 4, 10, 17.680000000000003);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.3100436681222709, 0, 0, 1.3100436681222709, -3.7205240174672518, -3.7205240174672518);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

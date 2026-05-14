@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsWrongLocationTwoTone : Icon
+public class MapsWrongLocationTwoTone : MaterialIcon
 {
     public MapsWrongLocationTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 1.46, 18.539999999999999, 21.539999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0869565217391306, 0, 0, 1.0869565217391306, -1.0434782608695663, -1.0434782608695663);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,14 +30,14 @@ public class MapsWrongLocationTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(12, 11),
+            Center = new Avalonia.Point(12, 11),
             Radius = 2
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(22.54, 2.88),new Point(21.12, 1.46),new Point(19, 3.59),new Point(16.88, 1.46),new Point(15.46, 2.88),new Point(17.59, 5),new Point(15.46, 7.12),new Point(16.88, 8.54),new Point(19, 6.41),new Point(21.12, 8.54),new Point(22.54, 7.12),new Point(20.41, 5)]
+            Points = [new Avalonia.Point(22.54, 2.88),new Avalonia.Point(21.12, 1.46),new Avalonia.Point(19, 3.59),new Avalonia.Point(16.88, 1.46),new Avalonia.Point(15.46, 2.88),new Avalonia.Point(17.59, 5),new Avalonia.Point(15.46, 7.12),new Avalonia.Point(16.88, 8.54),new Avalonia.Point(19, 6.41),new Avalonia.Point(21.12, 8.54),new Avalonia.Point(22.54, 7.12),new Avalonia.Point(20.41, 5)]
         },
     ];
 

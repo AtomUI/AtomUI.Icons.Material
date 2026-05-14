@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialDiversity2Outlined : Icon
+public class SocialDiversity2Outlined : MaterialIcon
 {
     public SocialDiversity2Outlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(-0.43000000000000083, 1, 24.869999999999997, 22.57);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(0.94786729857819929, 0, 0, 0.94786729857819929, 0.62559241706160762, 0.62559241706160762);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

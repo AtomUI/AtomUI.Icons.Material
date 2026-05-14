@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class PlacesRoomPreferencesOutlined : Icon
+public class PlacesRoomPreferencesOutlined : MaterialIcon
 {
     public PlacesRoomPreferencesOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 3, 19.830000000000002, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1713030746705706, 0, 0, 1.1713030746705706, -2.0556368960468472, -2.0556368960468472);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

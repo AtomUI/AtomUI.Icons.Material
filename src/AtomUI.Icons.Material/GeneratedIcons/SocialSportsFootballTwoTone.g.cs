@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialSportsFootballTwoTone : Icon
+public class SocialSportsFootballTwoTone : MaterialIcon
 {
     public SocialSportsFootballTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.8700000000000001, 3, 20.259999999999998, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0845006778129236, 0, 0, 1.0845006778129236, -1.0140081337550839, -1.0140081337550839);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -48,7 +51,7 @@ public class SocialSportsFootballTwoTone : Icon
             Rect = new Rect(8.04, 11.01, 7.92, 1.98),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -4.9706 12.0001)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -4.9706000000000001, 12.0001)
         },
     ];
 

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionFactCheckTwoTone : Icon
+public class ActionFactCheckTwoTone : MaterialIcon
 {
     public ActionFactCheckTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 20, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class ActionFactCheckTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(19.41, 10.42),new Point(17.99, 9),new Point(14.82, 12.17),new Point(13.41, 10.75),new Point(12, 12.16),new Point(14.82, 15)]
+            Points = [new Avalonia.Point(19.41, 10.42),new Avalonia.Point(17.99, 9),new Avalonia.Point(14.82, 12.17),new Avalonia.Point(13.41, 10.75),new Avalonia.Point(12, 12.16),new Avalonia.Point(14.82, 15)]
         },
         new RectDrawingInstruction()
         {

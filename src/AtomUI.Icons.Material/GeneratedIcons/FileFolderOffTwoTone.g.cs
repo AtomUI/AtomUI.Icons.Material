@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class FileFolderOffTwoTone : Icon
+public class FileFolderOffTwoTone : MaterialIcon
 {
     public FileFolderOffTwoTone()
     {
@@ -16,18 +14,23 @@ public class FileFolderOffTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0.68999999999999995, 2.1000000000000001, 21.309999999999999, 21.209999999999997);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0296010296010294, 0, 0, 1.0296010296010294, -0.35521235521235184, -0.35521235521235184);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15.17, 18),new Point(4, 6.83),new Point(4, 18)]
+            Points = [new Avalonia.Point(15.17, 18),new Avalonia.Point(4, 6.83),new Avalonia.Point(4, 18)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(11.17, 8),new Point(20, 17.17),new Point(20, 8)]
+            Points = [new Avalonia.Point(11.17, 8),new Avalonia.Point(20, 17.17),new Avalonia.Point(20, 8)]
         },
         new PathDrawingInstruction()
         {

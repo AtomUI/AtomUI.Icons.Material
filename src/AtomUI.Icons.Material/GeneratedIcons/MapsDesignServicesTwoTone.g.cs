@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsDesignServicesTwoTone : Icon
+public class MapsDesignServicesTwoTone : MaterialIcon
 {
     public MapsDesignServicesTwoTone()
     {
@@ -16,24 +14,29 @@ public class MapsDesignServicesTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.8399999999999999, 2.6400000000000001, 18.52, 18.68);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1235955056179776, 0, 0, 1.1235955056179776, -1.4831460674157313, -1.4831460674157313);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15.91, 9.28),new Point(14.61, 7.98),new Point(5, 17.59),new Point(5, 19),new Point(6.41, 19),new Point(16.02, 9.39)]
+            Points = [new Avalonia.Point(15.91, 9.28),new Avalonia.Point(14.61, 7.98),new Avalonia.Point(5, 17.59),new Avalonia.Point(5, 19),new Avalonia.Point(6.41, 19),new Avalonia.Point(16.02, 9.39)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(10.83, 8.93),new Point(9.63, 7.73),new Point(8.44, 8.92),new Point(7.02, 7.5),new Point(8.21, 6.32),new Point(6.94, 5.04),new Point(6.94, 5.04),new Point(5.04, 6.94),new Point(8.93, 10.83)]
+            Points = [new Avalonia.Point(10.83, 8.93),new Avalonia.Point(9.63, 7.73),new Avalonia.Point(8.44, 8.92),new Avalonia.Point(7.02, 7.5),new Avalonia.Point(8.21, 6.32),new Avalonia.Point(6.94, 5.04),new Avalonia.Point(6.94, 5.04),new Avalonia.Point(5.04, 6.94),new Avalonia.Point(8.93, 10.83)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(16.27, 14.38),new Point(15.07, 13.17),new Point(13.17, 15.07),new Point(17.06, 18.96),new Point(18.96, 17.06),new Point(17.69, 15.79),new Point(16.5, 16.98),new Point(15.08, 15.57)]
+            Points = [new Avalonia.Point(16.27, 14.38),new Avalonia.Point(15.07, 13.17),new Avalonia.Point(13.17, 15.07),new Avalonia.Point(17.06, 18.96),new Avalonia.Point(18.96, 17.06),new Avalonia.Point(17.69, 15.79),new Avalonia.Point(16.5, 16.98),new Avalonia.Point(15.08, 15.57)]
         },
         new RectDrawingInstruction()
         {
@@ -42,7 +45,7 @@ public class MapsDesignServicesTwoTone : Icon
             Rect = new Rect(16.44, 5.56, 2, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 0.4645 14.2513)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, 0.46450000000000002, 14.251300000000001)
         },
         new PathDrawingInstruction()
         {

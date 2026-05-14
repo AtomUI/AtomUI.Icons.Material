@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class Av5gSharp : Icon
+public class Av5gSharp : MaterialIcon
 {
     public Av5gSharp()
     {
@@ -16,18 +14,23 @@ public class Av5gSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 7, 18, 10);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1428571428571428, 0, 0, 1.1428571428571428, -1.7142857142857135, -1.7142857142857135);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(17, 13),new Point(19, 13),new Point(19, 15),new Point(14, 15),new Point(14, 9),new Point(21, 9),new Point(21, 7),new Point(12, 7),new Point(12, 17),new Point(21, 17),new Point(21, 11),new Point(17, 11)]
+            Points = [new Avalonia.Point(17, 13),new Avalonia.Point(19, 13),new Avalonia.Point(19, 15),new Avalonia.Point(14, 15),new Avalonia.Point(14, 9),new Avalonia.Point(21, 9),new Avalonia.Point(21, 7),new Avalonia.Point(12, 7),new Avalonia.Point(12, 17),new Avalonia.Point(21, 17),new Avalonia.Point(21, 11),new Avalonia.Point(17, 11)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(3, 13),new Point(8, 13),new Point(8, 15),new Point(3, 15),new Point(3, 17),new Point(10, 17),new Point(10, 11),new Point(5, 11),new Point(5, 9),new Point(10, 9),new Point(10, 7),new Point(3, 7)]
+            Points = [new Avalonia.Point(3, 13),new Avalonia.Point(8, 13),new Avalonia.Point(8, 15),new Avalonia.Point(3, 15),new Avalonia.Point(3, 17),new Avalonia.Point(10, 17),new Avalonia.Point(10, 11),new Avalonia.Point(5, 11),new Avalonia.Point(5, 9),new Avalonia.Point(10, 9),new Avalonia.Point(10, 7),new Avalonia.Point(3, 7)]
         },
     ];
 

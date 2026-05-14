@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class PlacesPoolFilled : Icon
+public class PlacesPoolFilled : MaterialIcon
 {
     public PlacesPoolFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.0000000000000027, 2.9900000000000002, 19.999999999999996, 18.009999999999998);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090913, 0, 0, 1.0909090909090913, -1.0909090909090953, -1.0909090909090953);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class PlacesPoolFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(16.5, 5.5),
+            Center = new Avalonia.Point(16.5, 5.5),
             Radius = 2.5
         },
     ];

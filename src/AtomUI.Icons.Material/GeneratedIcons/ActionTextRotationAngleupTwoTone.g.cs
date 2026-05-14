@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionTextRotationAngleupTwoTone : Icon
+public class ActionTextRotationAngleupTwoTone : MaterialIcon
 {
     public ActionTextRotationAngleupTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3.5, 4.2300000000000004, 17.5, 16.780000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2006003001500751, 0, 0, 1.2006003001500751, -2.4072036018009015, -2.4072036018009015);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionTourTwoTone : Icon
+public class ActionTourTwoTone : MaterialIcon
 {
     public ActionTourTwoTone()
     {
@@ -16,12 +14,17 @@ public class ActionTourTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(5, 2, 16, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(7, 12),new Point(7, 6),new Point(18.05, 6),new Point(16.85, 9),new Point(18.05, 12)]
+            Points = [new Avalonia.Point(7, 12),new Avalonia.Point(7, 6),new Avalonia.Point(18.05, 6),new Avalonia.Point(16.85, 9),new Avalonia.Point(18.05, 12)]
         },
         new PathDrawingInstruction()
         {

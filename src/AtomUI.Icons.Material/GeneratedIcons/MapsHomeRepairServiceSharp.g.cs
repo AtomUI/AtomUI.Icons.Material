@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsHomeRepairServiceSharp : Icon
+public class MapsHomeRepairServiceSharp : MaterialIcon
 {
     public MapsHomeRepairServiceSharp()
     {
@@ -16,12 +14,17 @@ public class MapsHomeRepairServiceSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 4, 20, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(18, 16),new Point(16, 16),new Point(16, 15),new Point(8, 15),new Point(8, 16),new Point(6, 16),new Point(6, 15),new Point(2, 15),new Point(2, 20),new Point(22, 20),new Point(22, 15),new Point(18, 15)]
+            Points = [new Avalonia.Point(18, 16),new Avalonia.Point(16, 16),new Avalonia.Point(16, 15),new Avalonia.Point(8, 15),new Avalonia.Point(8, 16),new Avalonia.Point(6, 16),new Avalonia.Point(6, 15),new Avalonia.Point(2, 15),new Avalonia.Point(2, 20),new Avalonia.Point(22, 20),new Avalonia.Point(22, 15),new Avalonia.Point(18, 15)]
         },
         new PathDrawingInstruction()
         {

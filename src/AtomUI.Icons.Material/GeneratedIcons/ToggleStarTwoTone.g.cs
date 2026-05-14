@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ToggleStarTwoTone : Icon
+public class ToggleStarTwoTone : MaterialIcon
 {
     public ToggleStarTwoTone()
     {
@@ -16,12 +14,17 @@ public class ToggleStarTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(12, 15.4),new Point(8.24, 17.67),new Point(9.24, 13.39),new Point(5.92, 10.51),new Point(10.3, 10.13),new Point(12, 6.1),new Point(13.71, 10.14),new Point(18.09, 10.52),new Point(14.77, 13.4),new Point(15.77, 17.68)]
+            Points = [new Avalonia.Point(12, 15.4),new Avalonia.Point(8.24, 17.67),new Avalonia.Point(9.24, 13.39),new Avalonia.Point(5.92, 10.51),new Avalonia.Point(10.3, 10.13),new Avalonia.Point(12, 6.1),new Avalonia.Point(13.71, 10.14),new Avalonia.Point(18.09, 10.52),new Avalonia.Point(14.77, 13.4),new Avalonia.Point(15.77, 17.68)]
         },
         new PathDrawingInstruction()
         {

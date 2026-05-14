@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageLoupeSharp : Icon
+public class ImageLoupeSharp : MaterialIcon
 {
     public ImageLoupeSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.5899999999999999, 1.5900000000000003, 20.41, 20.41);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.07095046854083, 0, 0, 1.07095046854083, -0.85140562248995977, -0.85140562248995977);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

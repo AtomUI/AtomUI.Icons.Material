@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionZoomInRounded : Icon
+public class ActionZoomInRounded : MaterialIcon
 {
     public ActionZoomInRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.5400000000000018, 2.5300000000000007, 17.620000000000001, 17.629999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1178388448998604, 0, 0, 1.1178388448998604, -1.4140661387983258, -1.4140661387983258);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

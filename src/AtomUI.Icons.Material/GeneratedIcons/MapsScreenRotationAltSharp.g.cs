@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsScreenRotationAltSharp : Icon
+public class MapsScreenRotationAltSharp : MaterialIcon
 {
     public MapsScreenRotationAltSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 1.1799999999999997, 20, 21.649999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0521701008329678, 0, 0, 1.0521701008329678, -0.62604120999561275, -0.62604120999561275);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class HomeElectricMeterOutlined : Icon
+public class HomeElectricMeterOutlined : MaterialIcon
 {
     public HomeElectricMeterOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 2, 18, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -35,7 +38,7 @@ public class HomeElectricMeterOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(12.75, 10),new Point(9.75, 13),new Point(11, 14.25),new Point(9.75, 15.5),new Point(11.25, 17),new Point(14.25, 14),new Point(13, 12.75),new Point(14.25, 11.5)]
+            Points = [new Avalonia.Point(12.75, 10),new Avalonia.Point(9.75, 13),new Avalonia.Point(11, 14.25),new Avalonia.Point(9.75, 15.5),new Avalonia.Point(11.25, 17),new Avalonia.Point(14.25, 14),new Avalonia.Point(13, 12.75),new Avalonia.Point(14.25, 11.5)]
         },
     ];
 

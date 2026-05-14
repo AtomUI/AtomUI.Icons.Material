@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsVolunteerActivismSharp : Icon
+public class MapsVolunteerActivismSharp : MaterialIcon
 {
     public MapsVolunteerActivismSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 2, 21, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -35,7 +38,7 @@ public class MapsVolunteerActivismSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(22, 17),new Point(13, 17),new Point(10.91, 16.27),new Point(11.24, 15.32),new Point(13, 16),new Point(17, 16),new Point(17, 14),new Point(8.97, 11),new Point(7, 11),new Point(7, 20.02),new Point(14, 22),new Point(22, 19)]
+            Points = [new Avalonia.Point(22, 17),new Avalonia.Point(13, 17),new Avalonia.Point(10.91, 16.27),new Avalonia.Point(11.24, 15.32),new Avalonia.Point(13, 16),new Avalonia.Point(17, 16),new Avalonia.Point(17, 14),new Avalonia.Point(8.97, 11),new Avalonia.Point(7, 11),new Avalonia.Point(7, 20.02),new Avalonia.Point(14, 22),new Avalonia.Point(22, 19)]
         },
     ];
 

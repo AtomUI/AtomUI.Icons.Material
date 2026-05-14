@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceCameraswitchOutlined : Icon
+public class DeviceCameraswitchOutlined : MaterialIcon
 {
     public DeviceCameraswitchOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, -1.6699999999999999, 24, 27.340000000000003);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(0.82730093071354693, 0, 0, 0.82730093071354693, 2.0723888314374364, 2.0723888314374364);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class DeviceCameraswitchOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(12, 12),
+            Center = new Avalonia.Point(12, 12),
             Radius = 2
         },
         new PathDrawingInstruction()

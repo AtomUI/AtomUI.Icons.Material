@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialEmojiSymbolsSharp : Icon
+public class SocialEmojiSymbolsSharp : MaterialIcon
 {
     public SocialEmojiSymbolsSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.7399999999999993, 2, 18.85595, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -29,7 +32,7 @@ public class SocialEmojiSymbolsSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(6, 11),new Point(8, 11),new Point(8, 7),new Point(11, 7),new Point(11, 5),new Point(3, 5),new Point(3, 7),new Point(6, 7)]
+            Points = [new Avalonia.Point(6, 11),new Avalonia.Point(8, 11),new Avalonia.Point(8, 7),new Avalonia.Point(11, 7),new Avalonia.Point(11, 5),new Avalonia.Point(3, 5),new Avalonia.Point(3, 7),new Avalonia.Point(6, 7)]
         },
         new RectDrawingInstruction()
         {
@@ -38,20 +41,20 @@ public class SocialEmojiSymbolsSharp : Icon
             Rect = new Rect(11.5, 16, 11, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -7.0416 16.9999)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -7.0415999999999999, 16.9999)
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(14.5, 14.5),
+            Center = new Avalonia.Point(14.5, 14.5),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(19.5, 19.5),
+            Center = new Avalonia.Point(19.5, 19.5),
             Radius = 1.5
         },
         new PathDrawingInstruction()

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialSportsEsportsOutlined : Icon
+public class SocialSportsEsportsOutlined : MaterialIcon
 {
     public SocialSportsEsportsOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.2000000000000002, 5, 19.600000000000001, 14);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1009174311926606, 0, 0, 1.1009174311926606, -1.2110091743119273, -1.2110091743119273);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,20 +30,20 @@ public class SocialSportsEsportsOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(9, 8),new Point(8, 8),new Point(8, 10),new Point(6, 10),new Point(6, 11),new Point(8, 11),new Point(8, 13),new Point(9, 13),new Point(9, 11),new Point(11, 11),new Point(11, 10),new Point(9, 10)]
+            Points = [new Avalonia.Point(9, 8),new Avalonia.Point(8, 8),new Avalonia.Point(8, 10),new Avalonia.Point(6, 10),new Avalonia.Point(6, 11),new Avalonia.Point(8, 11),new Avalonia.Point(8, 13),new Avalonia.Point(9, 13),new Avalonia.Point(9, 11),new Avalonia.Point(11, 11),new Avalonia.Point(11, 10),new Avalonia.Point(9, 10)]
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(17, 12),
+            Center = new Avalonia.Point(17, 12),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(15, 9),
+            Center = new Avalonia.Point(15, 9),
             Radius = 1
         },
     ];

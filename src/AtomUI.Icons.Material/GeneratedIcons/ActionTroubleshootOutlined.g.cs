@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionTroubleshootOutlined : Icon
+public class ActionTroubleshootOutlined : MaterialIcon
 {
     public ActionTroubleshootOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 3, 21, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class ActionTroubleshootOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(8.43, 9.69),new Point(9.65, 15),new Point(11.29, 15),new Point(12.55, 11.22),new Point(13.5, 13.5),new Point(15.5, 13.5),new Point(15.5, 12),new Point(14.5, 12),new Point(13.25, 9),new Point(11.71, 9),new Point(10.59, 12.37),new Point(9.35, 7),new Point(7.7, 7),new Point(6.45, 11),new Point(1, 11),new Point(1, 12.5),new Point(7.55, 12.5)]
+            Points = [new Avalonia.Point(8.43, 9.69),new Avalonia.Point(9.65, 15),new Avalonia.Point(11.29, 15),new Avalonia.Point(12.55, 11.22),new Avalonia.Point(13.5, 13.5),new Avalonia.Point(15.5, 13.5),new Avalonia.Point(15.5, 12),new Avalonia.Point(14.5, 12),new Avalonia.Point(13.25, 9),new Avalonia.Point(11.71, 9),new Avalonia.Point(10.59, 12.37),new Avalonia.Point(9.35, 7),new Avalonia.Point(7.7, 7),new Avalonia.Point(6.45, 11),new Avalonia.Point(1, 11),new Avalonia.Point(1, 12.5),new Avalonia.Point(7.55, 12.5)]
         },
     ];
 

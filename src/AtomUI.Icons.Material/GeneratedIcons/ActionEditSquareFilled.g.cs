@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionEditSquareFilled : Icon
+public class ActionEditSquareFilled : MaterialIcon
 {
     public ActionEditSquareFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 0.30000000000000027, 20.699999999999999, 20.699999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0126582278481013, 0, 0, 1.0126582278481013, -0.151898734177216, -0.151898734177216);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class ActionEditSquareFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(9, 15),new Point(13.24, 15),new Point(20.44, 7.8),new Point(16.2, 3.56),new Point(9, 10.76)]
+            Points = [new Avalonia.Point(9, 15),new Avalonia.Point(13.24, 15),new Avalonia.Point(20.44, 7.8),new Avalonia.Point(16.2, 3.56),new Avalonia.Point(9, 10.76)]
         },
         new PathDrawingInstruction()
         {

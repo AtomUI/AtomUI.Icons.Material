@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageVideoStableTwoTone : Icon
+public class ImageVideoStableTwoTone : MaterialIcon
 {
     public ImageVideoStableTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 4, 20, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -24,7 +27,7 @@ public class ImageVideoStableTwoTone : Icon
             Rect = new Rect(9.45, 7.57, 5.1, 8.86),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.2589 -0.9659 0.9659 0.2589 -2.6958 20.4865)").Value
+            Transform = new Matrix(0.25890000000000002, -0.96589999999999998, 0.96589999999999998, 0.25890000000000002, -2.6958000000000002, 20.486499999999999)
         },
         new PathDrawingInstruction()
         {

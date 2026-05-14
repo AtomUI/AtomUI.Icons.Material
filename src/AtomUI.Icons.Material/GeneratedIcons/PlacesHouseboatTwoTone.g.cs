@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class PlacesHouseboatTwoTone : Icon
+public class PlacesHouseboatTwoTone : MaterialIcon
 {
     public PlacesHouseboatTwoTone()
     {
@@ -16,12 +14,17 @@ public class PlacesHouseboatTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3.5, 20, 15.5);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(13, 13),new Point(13, 11),new Point(11, 11),new Point(11, 13),new Point(9, 13),new Point(9, 8.18),new Point(12, 5.98),new Point(15, 8.18),new Point(15, 13)]
+            Points = [new Avalonia.Point(13, 13),new Avalonia.Point(13, 11),new Avalonia.Point(11, 11),new Avalonia.Point(11, 13),new Avalonia.Point(9, 13),new Avalonia.Point(9, 8.18),new Avalonia.Point(12, 5.98),new Avalonia.Point(15, 8.18),new Avalonia.Point(15, 13)]
         },
         new PathDrawingInstruction()
         {

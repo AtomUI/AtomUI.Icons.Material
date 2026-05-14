@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionDisplaySettingsFilled : Icon
+public class ActionDisplaySettingsFilled : MaterialIcon
 {
     public ActionDisplaySettingsFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 20, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -35,7 +38,7 @@ public class ActionDisplaySettingsFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(16.5, 9.75),new Point(18, 9.75),new Point(18, 8.25),new Point(16.5, 8.25),new Point(16.5, 7),new Point(15, 7),new Point(15, 11),new Point(16.5, 11)]
+            Points = [new Avalonia.Point(16.5, 9.75),new Avalonia.Point(18, 9.75),new Avalonia.Point(18, 8.25),new Avalonia.Point(16.5, 8.25),new Avalonia.Point(16.5, 7),new Avalonia.Point(15, 7),new Avalonia.Point(15, 11),new Avalonia.Point(16.5, 11)]
         },
         new RectDrawingInstruction()
         {
@@ -49,7 +52,7 @@ public class ActionDisplaySettingsFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(7.5, 15),new Point(9, 15),new Point(9, 11),new Point(7.5, 11),new Point(7.5, 12.25),new Point(6, 12.25),new Point(6, 13.75),new Point(7.5, 13.75)]
+            Points = [new Avalonia.Point(7.5, 15),new Avalonia.Point(9, 15),new Avalonia.Point(9, 11),new Avalonia.Point(7.5, 11),new Avalonia.Point(7.5, 12.25),new Avalonia.Point(6, 12.25),new Avalonia.Point(6, 13.75),new Avalonia.Point(7.5, 13.75)]
         },
     ];
 

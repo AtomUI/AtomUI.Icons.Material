@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class Image4mpOutlined : Icon
+public class Image4mpOutlined : MaterialIcon
 {
     public Image4mpOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 3, 18, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1428571428571428, 0, 0, 1.1428571428571428, -1.7142857142857135, -1.7142857142857135);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -39,7 +42,7 @@ public class Image4mpOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(12.5, 11.5),new Point(14, 11.5),new Point(14, 10),new Point(15, 10),new Point(15, 8.5),new Point(14, 8.5),new Point(14, 5.5),new Point(12.5, 5.5),new Point(12.5, 8.5),new Point(11, 8.5),new Point(11, 5.5),new Point(9.5, 5.5),new Point(9.5, 10),new Point(12.5, 10)]
+            Points = [new Avalonia.Point(12.5, 11.5),new Avalonia.Point(14, 11.5),new Avalonia.Point(14, 10),new Avalonia.Point(15, 10),new Avalonia.Point(15, 8.5),new Avalonia.Point(14, 8.5),new Avalonia.Point(14, 5.5),new Avalonia.Point(12.5, 5.5),new Avalonia.Point(12.5, 8.5),new Avalonia.Point(11, 8.5),new Avalonia.Point(11, 5.5),new Avalonia.Point(9.5, 5.5),new Avalonia.Point(9.5, 10),new Avalonia.Point(12.5, 10)]
         },
     ];
 

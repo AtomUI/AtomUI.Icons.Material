@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionHotelClassRounded : Icon
+public class ActionHotelClassRounded : MaterialIcon
 {
     public ActionHotelClassRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.8700000000000001, 3.0999999999999988, 20.939999999999998, 18.260000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.118881118881119, 0, 0, 1.118881118881119, -1.4265734265734267, -1.4265734265734267);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

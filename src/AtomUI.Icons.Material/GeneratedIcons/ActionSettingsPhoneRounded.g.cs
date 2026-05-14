@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionSettingsPhoneRounded : Icon
+public class ActionSettingsPhoneRounded : MaterialIcon
 {
     public ActionSettingsPhoneRounded()
     {
@@ -16,26 +14,31 @@ public class ActionSettingsPhoneRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.9700000000000002, 3, 18.030000000000001, 18.030000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1412268188302426, 0, 0, 1.1412268188302426, -1.6947218259629118, -1.6947218259629118);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(12, 10),
+            Center = new Avalonia.Point(12, 10),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(16, 10),
+            Center = new Avalonia.Point(16, 10),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(20, 10),
+            Center = new Avalonia.Point(20, 10),
             Radius = 1
         },
         new PathDrawingInstruction()

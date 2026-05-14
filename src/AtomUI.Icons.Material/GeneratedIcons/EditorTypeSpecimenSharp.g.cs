@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class EditorTypeSpecimenSharp : Icon
+public class EditorTypeSpecimenSharp : MaterialIcon
 {
     public EditorTypeSpecimenSharp()
     {
@@ -16,12 +14,17 @@ public class EditorTypeSpecimenSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(4, 6),new Point(2, 6),new Point(2, 22),new Point(18, 22),new Point(18, 20),new Point(4, 20)]
+            Points = [new Avalonia.Point(4, 6),new Avalonia.Point(2, 6),new Avalonia.Point(2, 22),new Avalonia.Point(18, 22),new Avalonia.Point(18, 20),new Avalonia.Point(4, 20)]
         },
         new PathDrawingInstruction()
         {
@@ -33,7 +36,7 @@ public class EditorTypeSpecimenSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(13.96, 7.17),new Point(12.65, 10.89),new Point(15.34, 10.89),new Point(14.04, 7.17)]
+            Points = [new Avalonia.Point(13.96, 7.17),new Avalonia.Point(12.65, 10.89),new Avalonia.Point(15.34, 10.89),new Avalonia.Point(14.04, 7.17)]
         },
     ];
 

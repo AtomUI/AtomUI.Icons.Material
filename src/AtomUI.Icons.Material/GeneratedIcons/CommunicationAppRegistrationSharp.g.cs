@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationAppRegistrationSharp : Icon
+public class CommunicationAppRegistrationSharp : MaterialIcon
 {
     public CommunicationAppRegistrationSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 4, 17.206850000000003, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2770610568212355, 0, 0, 1.2770610568212355, -3.324732681854826, -3.324732681854826);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -61,13 +64,13 @@ public class CommunicationAppRegistrationSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(11, 17.86),new Point(11, 20),new Point(13.1, 20),new Point(19.08, 14.03),new Point(16.96, 11.91)]
+            Points = [new Avalonia.Point(11, 17.86),new Avalonia.Point(11, 20),new Avalonia.Point(13.1, 20),new Avalonia.Point(19.08, 14.03),new Avalonia.Point(16.96, 11.91)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(14, 12.03),new Point(14, 10),new Point(10, 10),new Point(10, 14),new Point(12.03, 14)]
+            Points = [new Avalonia.Point(14, 12.03),new Avalonia.Point(14, 10),new Avalonia.Point(10, 10),new Avalonia.Point(10, 14),new Avalonia.Point(12.03, 14)]
         },
         new RectDrawingInstruction()
         {
@@ -76,7 +79,7 @@ public class CommunicationAppRegistrationSharp : Icon
             Rect = new Rect(18.44, 10.06, 2, 3),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -2.481 17.1312)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -2.4809999999999999, 17.1312)
         },
     ];
 

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NotificationDoNotDisturbOffOutlined : Icon
+public class NotificationDoNotDisturbOffOutlined : MaterialIcon
 {
     public NotificationDoNotDisturbOffOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.3899999999999999, 2, 20.609999999999999, 20.609999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0614772224679345, 0, 0, 1.0614772224679345, -0.73772666961521338, -0.73772666961521338);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class NotificationDoNotDisturbOffOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(13.83, 11),new Point(15.83, 13),new Point(17, 13),new Point(17, 11)]
+            Points = [new Avalonia.Point(13.83, 11),new Avalonia.Point(15.83, 13),new Avalonia.Point(17, 13),new Avalonia.Point(17, 11)]
         },
     ];
 

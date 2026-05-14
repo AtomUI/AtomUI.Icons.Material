@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialTornadoTwoTone : Icon
+public class SocialTornadoTwoTone : MaterialIcon
 {
     public SocialTornadoTwoTone()
     {
@@ -16,24 +14,29 @@ public class SocialTornadoTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 3, 22, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(9.1, 13),new Point(14.9, 13),new Point(16.64, 10),new Point(7.36, 10)]
+            Points = [new Avalonia.Point(9.1, 13),new Avalonia.Point(14.9, 13),new Avalonia.Point(16.64, 10),new Avalonia.Point(7.36, 10)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(12, 18.01),new Point(13.74, 15),new Point(10.26, 15)]
+            Points = [new Avalonia.Point(12, 18.01),new Avalonia.Point(13.74, 15),new Avalonia.Point(10.26, 15)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(4.47, 5),new Point(6.21, 8),new Point(17.79, 8),new Point(19.53, 5)]
+            Points = [new Avalonia.Point(4.47, 5),new Avalonia.Point(6.21, 8),new Avalonia.Point(17.79, 8),new Avalonia.Point(19.53, 5)]
         },
         new PathDrawingInstruction()
         {

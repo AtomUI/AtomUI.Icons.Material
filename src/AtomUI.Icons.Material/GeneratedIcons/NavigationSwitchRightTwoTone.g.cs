@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NavigationSwitchRightTwoTone : Icon
+public class NavigationSwitchRightTwoTone : MaterialIcon
 {
     public NavigationSwitchRightTwoTone()
     {
@@ -16,12 +14,17 @@ public class NavigationSwitchRightTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 5, 18, 14);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1428571428571428, 0, 0, 1.1428571428571428, -1.7142857142857135, -1.7142857142857135);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolylineDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15.5, 15.38),new Point(15.5, 8.62),new Point(18.88, 12),new Point(15.5, 15.38)]
+            Points = [new Avalonia.Point(15.5, 15.38),new Avalonia.Point(15.5, 8.62),new Avalonia.Point(18.88, 12),new Avalonia.Point(15.5, 15.38)]
         },
         new PathDrawingInstruction()
         {

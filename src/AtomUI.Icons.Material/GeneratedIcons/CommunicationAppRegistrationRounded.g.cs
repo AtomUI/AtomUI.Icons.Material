@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationAppRegistrationRounded : Icon
+public class CommunicationAppRegistrationRounded : MaterialIcon
 {
     public CommunicationAppRegistrationRounded()
     {
@@ -16,40 +14,45 @@ public class CommunicationAppRegistrationRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 4, 17.050000000000001, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2664907651715041, 0, 0, 1.2664907651715041, -3.1978891820580486, -3.1978891820580486);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(12, 6),
+            Center = new Avalonia.Point(12, 6),
             Radius = 2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 18),
+            Center = new Avalonia.Point(6, 18),
             Radius = 2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 12),
+            Center = new Avalonia.Point(6, 12),
             Radius = 2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(6, 6),
+            Center = new Avalonia.Point(6, 6),
             Radius = 2
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(18, 6),
+            Center = new Avalonia.Point(18, 6),
             Radius = 2
         },
         new PathDrawingInstruction()

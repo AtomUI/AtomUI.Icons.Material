@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialDiversity2TwoTone : Icon
+public class SocialDiversity2TwoTone : MaterialIcon
 {
     public SocialDiversity2TwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(-0.43000000000000083, 1, 24.869999999999997, 22.57);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(0.94786729857819929, 0, 0, 0.94786729857819929, 0.62559241706160762, 0.62559241706160762);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class SocialDiversity2TwoTone : Icon
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(12, 4),
+            Center = new Avalonia.Point(12, 4),
             Radius = 1
         },
         new PathDrawingInstruction()

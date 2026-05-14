@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceWifiCalling1TwoTone : Icon
+public class DeviceWifiCalling1TwoTone : MaterialIcon
 {
     public DeviceWifiCalling1TwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.9700000000000002, 3, 19.170000000000002, 18.030000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2048192771084338, 0, 0, 1.2048192771084338, -2.457831325301207, -2.457831325301207);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

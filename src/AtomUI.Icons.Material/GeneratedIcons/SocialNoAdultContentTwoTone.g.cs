@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialNoAdultContentTwoTone : Icon
+public class SocialNoAdultContentTwoTone : MaterialIcon
 {
     public SocialNoAdultContentTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,19 +30,19 @@ public class SocialNoAdultContentTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(14.25, 14),new Point(12.75, 12),new Point(14.25, 10),new Point(12.75, 10),new Point(12, 11),new Point(11.25, 10),new Point(9.75, 10),new Point(11.25, 12),new Point(9.75, 14),new Point(11.25, 14),new Point(12, 13),new Point(12.75, 14)]
+            Points = [new Avalonia.Point(14.25, 14),new Avalonia.Point(12.75, 12),new Avalonia.Point(14.25, 10),new Avalonia.Point(12.75, 10),new Avalonia.Point(12, 11),new Avalonia.Point(11.25, 10),new Avalonia.Point(9.75, 10),new Avalonia.Point(11.25, 12),new Avalonia.Point(9.75, 14),new Avalonia.Point(11.25, 14),new Avalonia.Point(12, 13),new Avalonia.Point(12.75, 14)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(8, 10),new Point(7.25, 11),new Point(6.5, 10),new Point(5, 10),new Point(6.5, 12),new Point(5, 14),new Point(6.5, 14),new Point(7.25, 13),new Point(8, 14),new Point(9.5, 14),new Point(8, 12),new Point(9.5, 10)]
+            Points = [new Avalonia.Point(8, 10),new Avalonia.Point(7.25, 11),new Avalonia.Point(6.5, 10),new Avalonia.Point(5, 10),new Avalonia.Point(6.5, 12),new Avalonia.Point(5, 14),new Avalonia.Point(6.5, 14),new Avalonia.Point(7.25, 13),new Avalonia.Point(8, 14),new Avalonia.Point(9.5, 14),new Avalonia.Point(8, 12),new Avalonia.Point(9.5, 10)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(16, 14),new Point(16.75, 13),new Point(17.5, 14),new Point(19, 14),new Point(17.5, 12),new Point(19, 10),new Point(17.5, 10),new Point(16.75, 11),new Point(16, 10),new Point(14.5, 10),new Point(16, 12),new Point(14.5, 14)]
+            Points = [new Avalonia.Point(16, 14),new Avalonia.Point(16.75, 13),new Avalonia.Point(17.5, 14),new Avalonia.Point(19, 14),new Avalonia.Point(17.5, 12),new Avalonia.Point(19, 10),new Avalonia.Point(17.5, 10),new Avalonia.Point(16.75, 11),new Avalonia.Point(16, 10),new Avalonia.Point(14.5, 10),new Avalonia.Point(16, 12),new Avalonia.Point(14.5, 14)]
         },
     ];
 

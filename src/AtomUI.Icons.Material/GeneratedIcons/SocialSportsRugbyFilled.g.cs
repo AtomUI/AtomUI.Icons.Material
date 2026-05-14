@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialSportsRugbyFilled : Icon
+public class SocialSportsRugbyFilled : MaterialIcon
 {
     public SocialSportsRugbyFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.6599999999999999, 2.54, 20.68, 18.919999999999998);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0743061772605194, 0, 0, 1.0743061772605194, -0.89167412712623317, -0.89167412712623317);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

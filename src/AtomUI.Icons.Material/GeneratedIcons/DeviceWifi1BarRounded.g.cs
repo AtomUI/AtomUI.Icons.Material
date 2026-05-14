@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceWifi1BarRounded : Icon
+public class DeviceWifi1BarRounded : MaterialIcon
 {
     public DeviceWifi1BarRounded()
     {
@@ -16,12 +14,17 @@ public class DeviceWifi1BarRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(10, 16, 4, 4);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(2, 0, 0, 2, -12, -12);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(12, 18),
+            Center = new Avalonia.Point(12, 18),
             Radius = 2
         },
     ];

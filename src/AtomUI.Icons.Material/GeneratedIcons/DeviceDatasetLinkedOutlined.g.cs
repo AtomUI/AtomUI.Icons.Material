@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceDatasetLinkedOutlined : Icon
+public class DeviceDatasetLinkedOutlined : MaterialIcon
 {
     public DeviceDatasetLinkedOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 3, 21, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -61,7 +64,7 @@ public class DeviceDatasetLinkedOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(20, 19),new Point(20, 17),new Point(17, 17),new Point(14, 17),new Point(14, 19),new Point(19, 19)]
+            Points = [new Avalonia.Point(20, 19),new Avalonia.Point(20, 17),new Avalonia.Point(17, 17),new Avalonia.Point(14, 17),new Avalonia.Point(14, 19),new Avalonia.Point(19, 19)]
         },
     ];
 

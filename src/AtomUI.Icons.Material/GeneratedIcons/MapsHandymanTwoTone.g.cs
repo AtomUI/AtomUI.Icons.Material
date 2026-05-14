@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsHandymanTwoTone : Icon
+public class MapsHandymanTwoTone : MaterialIcon
 {
     public MapsHandymanTwoTone()
     {
@@ -16,12 +14,17 @@ public class MapsHandymanTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.9099999999999997, 1, 20.149999999999999, 21.100000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(8.66, 14.64),new Point(4.41, 18.88),new Point(5.12, 19.59),new Point(9.36, 15.34),new Point(9.36, 15.34),new Point(8.66, 14.64)]
+            Points = [new Avalonia.Point(8.66, 14.64),new Avalonia.Point(4.41, 18.88),new Avalonia.Point(5.12, 19.59),new Avalonia.Point(9.36, 15.34),new Avalonia.Point(9.36, 15.34),new Avalonia.Point(8.66, 14.64)]
         },
         new RectDrawingInstruction()
         {
@@ -30,7 +33,7 @@ public class MapsHandymanTwoTone : Icon
             Rect = new Rect(16.57, 14.11, 1, 6),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -7.0983 17.0848)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -7.0983000000000001, 17.084800000000001)
         },
         new PathDrawingInstruction()
         {

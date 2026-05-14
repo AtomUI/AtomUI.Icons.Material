@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionPetsRounded : Icon
+public class ActionPetsRounded : MaterialIcon
 {
     public ActionPetsRounded()
     {
@@ -16,33 +14,38 @@ public class ActionPetsRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 3, 20, 19.129999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0973936899862826, 0, 0, 1.0973936899862826, -1.1687242798353914, -1.1687242798353914);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(4.5, 9.5),
+            Center = new Avalonia.Point(4.5, 9.5),
             Radius = 2.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(9, 5.5),
+            Center = new Avalonia.Point(9, 5.5),
             Radius = 2.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(15, 5.5),
+            Center = new Avalonia.Point(15, 5.5),
             Radius = 2.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(19.5, 9.5),
+            Center = new Avalonia.Point(19.5, 9.5),
             Radius = 2.5
         },
         new PathDrawingInstruction()

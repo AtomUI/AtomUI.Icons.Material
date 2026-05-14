@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialKayakingRounded : Icon
+public class SocialKayakingRounded : MaterialIcon
 {
     public SocialKayakingRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.609999999999999, 2.180000000000001, 20.789999999999999, 21.09);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1004126547455297, 0, 0, 1.1004126547455297, -1.2049518569463569, -1.2049518569463569);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationDomainVerificationTwoTone : Icon
+public class CommunicationDomainVerificationTwoTone : MaterialIcon
 {
     public CommunicationDomainVerificationTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 4, 18, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1428571428571428, 0, 0, 1.1428571428571428, -1.7142857142857135, -1.7142857142857135);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class CommunicationDomainVerificationTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(16.6, 10.88),new Point(15.18, 9.46),new Point(10.94, 13.71),new Point(8.82, 11.58),new Point(7.4, 13),new Point(10.94, 16.54)]
+            Points = [new Avalonia.Point(16.6, 10.88),new Avalonia.Point(15.18, 9.46),new Avalonia.Point(10.94, 13.71),new Avalonia.Point(8.82, 11.58),new Avalonia.Point(7.4, 13),new Avalonia.Point(10.94, 16.54)]
         },
         new PathDrawingInstruction()
         {

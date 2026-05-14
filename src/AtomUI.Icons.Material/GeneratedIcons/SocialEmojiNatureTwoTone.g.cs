@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialEmojiNatureTwoTone : Icon
+public class SocialEmojiNatureTwoTone : MaterialIcon
 {
     public SocialEmojiNatureTwoTone()
     {
@@ -16,12 +14,17 @@ public class SocialEmojiNatureTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.6299999999999999, 2, 20.490000000000002, 20.370000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0728654447921322, 0, 0, 1.0728654447921322, -0.87438533750558634, -0.87438533750558634);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(18, 6),
+            Center = new Avalonia.Point(18, 6),
             Radius = 1
         },
         new PathDrawingInstruction()

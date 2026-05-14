@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationMailLockTwoTone : Icon
+public class CommunicationMailLockTwoTone : MaterialIcon
 {
     public CommunicationMailLockTwoTone()
     {
@@ -16,12 +14,17 @@ public class CommunicationMailLockTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 4, 22, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(20, 6),new Point(4, 6),new Point(12, 11)]
+            Points = [new Avalonia.Point(20, 6),new Avalonia.Point(4, 6),new Avalonia.Point(12, 11)]
         },
         new PathDrawingInstruction()
         {

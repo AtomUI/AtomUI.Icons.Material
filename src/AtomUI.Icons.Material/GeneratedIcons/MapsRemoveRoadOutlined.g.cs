@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsRemoveRoadOutlined : Icon
+public class MapsRemoveRoadOutlined : MaterialIcon
 {
     public MapsRemoveRoadOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 4, 18.5, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2307692307692308, 0, 0, 1.2307692307692308, -2.7692307692307701, -2.7692307692307701);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -61,7 +64,7 @@ public class MapsRemoveRoadOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(22.5, 16.41),new Point(21.09, 15),new Point(19, 17.09),new Point(16.91, 15),new Point(15.5, 16.41),new Point(17.59, 18.5),new Point(15.5, 20.59),new Point(16.91, 22),new Point(19, 19.91),new Point(21.09, 22),new Point(22.5, 20.59),new Point(20.41, 18.5)]
+            Points = [new Avalonia.Point(22.5, 16.41),new Avalonia.Point(21.09, 15),new Avalonia.Point(19, 17.09),new Avalonia.Point(16.91, 15),new Avalonia.Point(15.5, 16.41),new Avalonia.Point(17.59, 18.5),new Avalonia.Point(15.5, 20.59),new Avalonia.Point(16.91, 22),new Avalonia.Point(19, 19.91),new Avalonia.Point(21.09, 22),new Avalonia.Point(22.5, 20.59),new Avalonia.Point(20.41, 18.5)]
         },
     ];
 

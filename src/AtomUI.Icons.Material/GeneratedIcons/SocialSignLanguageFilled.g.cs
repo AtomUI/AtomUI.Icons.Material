@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialSignLanguageFilled : Icon
+public class SocialSignLanguageFilled : MaterialIcon
 {
     public SocialSignLanguageFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, -0.10999999999999949, 19.999999999999996, 24.109999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(0.99543757776856079, 0, 0, 0.99543757776856079, 0.054749066777270983, 0.054749066777270983);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

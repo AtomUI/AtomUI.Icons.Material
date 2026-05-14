@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionThumbDownOffAltTwoTone : Icon
+public class ActionThumbDownOffAltTwoTone : MaterialIcon
 {
     public ActionThumbDownOffAltTwoTone()
     {
@@ -16,12 +14,17 @@ public class ActionThumbDownOffAltTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 3, 22, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(3, 12),new Point(3, 14),new Point(12, 14),new Point(10.66, 19.34),new Point(15, 15),new Point(15, 5),new Point(6, 5)]
+            Points = [new Avalonia.Point(3, 12),new Avalonia.Point(3, 14),new Avalonia.Point(12, 14),new Avalonia.Point(10.66, 19.34),new Avalonia.Point(15, 15),new Avalonia.Point(15, 5),new Avalonia.Point(6, 5)]
         },
         new RectDrawingInstruction()
         {

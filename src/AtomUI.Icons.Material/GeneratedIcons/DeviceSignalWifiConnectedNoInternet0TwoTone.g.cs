@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DeviceSignalWifiConnectedNoInternet0TwoTone : Icon
+public class DeviceSignalWifiConnectedNoInternet0TwoTone : MaterialIcon
 {
     public DeviceSignalWifiConnectedNoInternet0TwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 4, 24, 17);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class DeviceSignalWifiConnectedNoInternet0TwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(19.59, 14),new Point(17.5, 16.09),new Point(17.2, 15.79),new Point(15.41, 14),new Point(14, 15.41),new Point(15.79, 17.2),new Point(16.09, 17.5),new Point(14, 19.59),new Point(15.41, 21),new Point(17.5, 18.92),new Point(19.59, 21),new Point(21, 19.59),new Point(18.92, 17.5),new Point(21, 15.41)]
+            Points = [new Avalonia.Point(19.59, 14),new Avalonia.Point(17.5, 16.09),new Avalonia.Point(17.2, 15.79),new Avalonia.Point(15.41, 14),new Avalonia.Point(14, 15.41),new Avalonia.Point(15.79, 17.2),new Avalonia.Point(16.09, 17.5),new Avalonia.Point(14, 19.59),new Avalonia.Point(15.41, 21),new Avalonia.Point(17.5, 18.92),new Avalonia.Point(19.59, 21),new Avalonia.Point(21, 19.59),new Avalonia.Point(18.92, 17.5),new Avalonia.Point(21, 15.41)]
         },
     ];
 

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class PlacesFoodBankRounded : Icon
+public class PlacesFoodBankRounded : MaterialIcon
 {
     public PlacesFoodBankRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 3.3700000000000001, 16, 17.629999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1846001974333664, 0, 0, 1.1846001974333664, -2.2152023692003979, -2.2152023692003979);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

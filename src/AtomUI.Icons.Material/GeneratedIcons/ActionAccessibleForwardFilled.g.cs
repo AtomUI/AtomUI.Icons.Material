@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionAccessibleForwardFilled : Icon
+public class ActionAccessibleForwardFilled : MaterialIcon
 {
     public ActionAccessibleForwardFilled()
     {
@@ -16,12 +14,17 @@ public class ActionAccessibleForwardFilled : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 2.54, 15, 19.460000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1472275334608029, 0, 0, 1.1472275334608029, -1.7667304015296352, -1.7667304015296352);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(17, 4.54),
+            Center = new Avalonia.Point(17, 4.54),
             Radius = 2
         },
         new PathDrawingInstruction()

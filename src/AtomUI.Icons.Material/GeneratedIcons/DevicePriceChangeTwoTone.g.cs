@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class DevicePriceChangeTwoTone : Icon
+public class DevicePriceChangeTwoTone : MaterialIcon
 {
     public DevicePriceChangeTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 4, 20, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -39,13 +42,13 @@ public class DevicePriceChangeTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(16, 8),new Point(14, 10),new Point(18, 10)]
+            Points = [new Avalonia.Point(16, 8),new Avalonia.Point(14, 10),new Avalonia.Point(18, 10)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(18, 14.25),new Point(14, 14.25),new Point(16, 16.25)]
+            Points = [new Avalonia.Point(18, 14.25),new Avalonia.Point(14, 14.25),new Avalonia.Point(16, 16.25)]
         },
     ];
 

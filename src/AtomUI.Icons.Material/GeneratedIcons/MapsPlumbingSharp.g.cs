@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsPlumbingSharp : Icon
+public class MapsPlumbingSharp : MaterialIcon
 {
     public MapsPlumbingSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3.4199999999999999, 1.3999999999999995, 17.449999999999996, 21.210000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0624169986719787, 0, 0, 1.0624169986719787, -0.74900398406374435, -0.74900398406374435);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -30,7 +33,7 @@ public class MapsPlumbingSharp : Icon
             Rect = new Rect(5.17, 10.5, 5, 3),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -6.2383 8.9393)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -6.2382999999999997, 8.9392999999999994)
         },
         new PathDrawingInstruction()
         {

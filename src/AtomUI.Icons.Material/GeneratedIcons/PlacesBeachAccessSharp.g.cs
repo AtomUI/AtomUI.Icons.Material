@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class PlacesBeachAccessSharp : Icon
+public class PlacesBeachAccessSharp : MaterialIcon
 {
     public PlacesBeachAccessSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.0100000000000002, 2.0100000000000007, 18.985999999999997, 18.991999999999997);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0914051841746246, 0, 0, 1.0914051841746246, -1.0968622100954946, -1.0968622100954946);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

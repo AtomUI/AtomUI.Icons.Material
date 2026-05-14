@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class HardwareKeyboardArrowRightRounded : Icon
+public class HardwareKeyboardArrowRightRounded : MaterialIcon
 {
     public HardwareKeyboardArrowRightRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(8.8999999999999986, 6.3199999999999994, 6.7800000000000011, 11.370000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.3582342954159592, 0, 0, 1.3582342954159592, -4.2988115449915085, -4.2988115449915085);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

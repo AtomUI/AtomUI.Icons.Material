@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionSpatialAudioOffRounded : Icon
+public class ActionSpatialAudioOffRounded : MaterialIcon
 {
     public ActionSpatialAudioOffRounded()
     {
@@ -16,12 +14,17 @@ public class ActionSpatialAudioOffRounded : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 1.3300000000000001, 22.460000000000001, 19.670000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(0.94562647754137108, 0, 0, 0.94562647754137108, 0.65248226950354749, 0.65248226950354749);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(10, 9),
+            Center = new Avalonia.Point(10, 9),
             Radius = 4
         },
         new PathDrawingInstruction()

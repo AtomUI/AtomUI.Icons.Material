@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsTheaterComedyOutlined : Icon
+public class MapsTheaterComedyOutlined : MaterialIcon
 {
     public MapsTheaterComedyOutlined()
     {
@@ -16,19 +14,24 @@ public class MapsTheaterComedyOutlined : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 2, 22, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(19, 6.5),
+            Center = new Avalonia.Point(19, 6.5),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(15, 6.5),
+            Center = new Avalonia.Point(15, 6.5),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -53,14 +56,14 @@ public class MapsTheaterComedyOutlined : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(5, 13.5),
+            Center = new Avalonia.Point(5, 13.5),
             Radius = 1
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(9, 13.5),
+            Center = new Avalonia.Point(9, 13.5),
             Radius = 1
         },
         new PathDrawingInstruction()

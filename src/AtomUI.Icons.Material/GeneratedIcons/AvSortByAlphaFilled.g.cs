@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvSortByAlphaFilled : Icon
+public class AvSortByAlphaFilled : MaterialIcon
 {
     public AvSortByAlphaFilled()
     {
         IconTheme = IconThemeType.Filled;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.6000000000000001, 2.3000000000000003, 20.25, 19.400000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0714285714285714, 0, 0, 1.0714285714285714, -0.85714285714285765, -0.85714285714285765);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialEmojiObjectsOutlined : Icon
+public class SocialEmojiObjectsOutlined : MaterialIcon
 {
     public SocialEmojiObjectsOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4.6400000000000006, 3, 14.359999999999999, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2, 0, 0, 1.2, -2.3999999999999986, -2.3999999999999986);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -38,7 +41,7 @@ public class SocialEmojiObjectsOutlined : Icon
             Rect = new Rect(10.59, 8.79, 1, 3),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -4.0312 10.8536)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -4.0312000000000001, 10.8536)
         },
         new RectDrawingInstruction()
         {
@@ -47,7 +50,7 @@ public class SocialEmojiObjectsOutlined : Icon
             Rect = new Rect(12.41, 8.79, 1, 3),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(-0.7071 -0.7071 0.7071 -0.7071 14.7678 26.7028)").Value
+            Transform = new Matrix(-0.70709999999999995, -0.70709999999999995, 0.70709999999999995, -0.70709999999999995, 14.767799999999999, 26.7028)
         },
     ];
 

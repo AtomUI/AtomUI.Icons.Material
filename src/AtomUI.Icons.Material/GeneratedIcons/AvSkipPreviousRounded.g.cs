@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvSkipPreviousRounded : Icon
+public class AvSkipPreviousRounded : MaterialIcon
 {
     public AvSkipPreviousRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(6, 6, 12.009999999999998, 12);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.3340744858254585, 0, 0, 1.3340744858254585, -4.008893829905503, -4.008893829905503);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

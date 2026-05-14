@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageHdrPlusTwoTone : Icon
+public class ImageHdrPlusTwoTone : MaterialIcon
 {
     public ImageHdrPlusTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -49,7 +52,7 @@ public class ImageHdrPlusTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(10.5, 8),new Point(8.5, 8),new Point(8.5, 6),new Point(7, 6),new Point(7, 12),new Point(8.5, 12),new Point(8.5, 9.5),new Point(10.5, 9.5),new Point(10.5, 12),new Point(12, 12),new Point(12, 6),new Point(10.5, 6)]
+            Points = [new Avalonia.Point(10.5, 8),new Avalonia.Point(8.5, 8),new Avalonia.Point(8.5, 6),new Avalonia.Point(7, 6),new Avalonia.Point(7, 12),new Avalonia.Point(8.5, 12),new Avalonia.Point(8.5, 9.5),new Avalonia.Point(10.5, 9.5),new Avalonia.Point(10.5, 12),new Avalonia.Point(12, 12),new Avalonia.Point(12, 6),new Avalonia.Point(10.5, 6)]
         },
         new PathDrawingInstruction()
         {
@@ -61,7 +64,7 @@ public class ImageHdrPlusTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(16, 13),new Point(14.5, 13),new Point(14.5, 14.5),new Point(13, 14.5),new Point(13, 16),new Point(14.5, 16),new Point(14.5, 17.5),new Point(16, 17.5),new Point(16, 16),new Point(17.5, 16),new Point(17.5, 14.49),new Point(16, 14.49)]
+            Points = [new Avalonia.Point(16, 13),new Avalonia.Point(14.5, 13),new Avalonia.Point(14.5, 14.5),new Avalonia.Point(13, 14.5),new Avalonia.Point(13, 16),new Avalonia.Point(14.5, 16),new Avalonia.Point(14.5, 17.5),new Avalonia.Point(16, 17.5),new Avalonia.Point(16, 16),new Avalonia.Point(17.5, 16),new Avalonia.Point(17.5, 14.49),new Avalonia.Point(16, 14.49)]
         },
     ];
 

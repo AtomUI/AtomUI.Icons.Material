@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class HardwareHeadsetOffTwoTone : Icon
+public class HardwareHeadsetOffTwoTone : MaterialIcon
 {
     public HardwareHeadsetOffTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0.68999999999999995, 2, 21.199999999999999, 21.310000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0296010296010296, 0, 0, 1.0296010296010296, -0.35521235521235539, -0.35521235521235539);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -29,7 +32,7 @@ public class HardwareHeadsetOffTwoTone : Icon
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(16.83, 14),new Point(19, 16.17),new Point(19, 14)]
+            Points = [new Avalonia.Point(16.83, 14),new Avalonia.Point(19, 16.17),new Avalonia.Point(19, 14)]
         },
         new PathDrawingInstruction()
         {

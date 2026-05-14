@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationAppRegistrationTwoTone : Icon
+public class CommunicationAppRegistrationTwoTone : MaterialIcon
 {
     public CommunicationAppRegistrationTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 4, 17.050000000000001, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2664907651715041, 0, 0, 1.2664907651715041, -3.1978891820580486, -3.1978891820580486);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -61,13 +64,13 @@ public class CommunicationAppRegistrationTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(11, 17.86),new Point(11, 20),new Point(13.1, 20),new Point(19.08, 14.03),new Point(16.96, 11.91)]
+            Points = [new Avalonia.Point(11, 17.86),new Avalonia.Point(11, 20),new Avalonia.Point(13.1, 20),new Avalonia.Point(19.08, 14.03),new Avalonia.Point(16.96, 11.91)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(14, 12.03),new Point(14, 10),new Point(10, 10),new Point(10, 14),new Point(12.03, 14)]
+            Points = [new Avalonia.Point(14, 12.03),new Avalonia.Point(14, 10),new Avalonia.Point(10, 10),new Avalonia.Point(10, 14),new Avalonia.Point(12.03, 14)]
         },
         new PathDrawingInstruction()
         {

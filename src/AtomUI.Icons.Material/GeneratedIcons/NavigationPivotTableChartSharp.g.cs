@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NavigationPivotTableChartSharp : Icon
+public class NavigationPivotTableChartSharp : MaterialIcon
 {
     public NavigationPivotTableChartSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 3, 19, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2, 0, 0, 1.2, -2.3999999999999986, -2.3999999999999986);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -45,7 +48,7 @@ public class NavigationPivotTableChartSharp : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(18, 9),new Point(14, 13),new Point(17, 13),new Point(17, 17),new Point(13, 17),new Point(13, 14),new Point(9, 18),new Point(13, 22),new Point(13, 19),new Point(19, 19),new Point(19, 13),new Point(22, 13)]
+            Points = [new Avalonia.Point(18, 9),new Avalonia.Point(14, 13),new Avalonia.Point(17, 13),new Avalonia.Point(17, 17),new Avalonia.Point(13, 17),new Avalonia.Point(13, 14),new Avalonia.Point(9, 18),new Avalonia.Point(13, 22),new Avalonia.Point(13, 19),new Avalonia.Point(19, 19),new Avalonia.Point(19, 13),new Avalonia.Point(22, 13)]
         },
     ];
 

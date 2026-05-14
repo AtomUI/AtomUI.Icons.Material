@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ToggleStarBorderPurple500Rounded : Icon
+public class ToggleStarBorderPurple500Rounded : MaterialIcon
 {
     public ToggleStarBorderPurple500Rounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3.75, 4.219999999999998, 16.5, 16.489999999999998);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2127337038908539, 0, 0, 1.2127337038908539, -2.5528044466902458, -2.5528044466902458);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

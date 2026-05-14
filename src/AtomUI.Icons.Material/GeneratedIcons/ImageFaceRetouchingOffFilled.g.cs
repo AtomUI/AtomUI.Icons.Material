@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageFaceRetouchingOffFilled : Icon
+public class ImageFaceRetouchingOffFilled : MaterialIcon
 {
     public ImageFaceRetouchingOffFilled()
     {
@@ -16,12 +14,17 @@ public class ImageFaceRetouchingOffFilled : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1.8899999999999999, 2, 20.109999999999999, 20.110000000000003);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.085481682496608, 0, 0, 1.085481682496608, -1.0257801899592955, -1.0257801899592955);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(9, 13),
+            Center = new Avalonia.Point(9, 13),
             Radius = 1.25
         },
         new PathDrawingInstruction()

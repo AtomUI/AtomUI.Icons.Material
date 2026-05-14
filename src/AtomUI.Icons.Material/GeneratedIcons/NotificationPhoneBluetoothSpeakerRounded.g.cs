@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class NotificationPhoneBluetoothSpeakerRounded : Icon
+public class NotificationPhoneBluetoothSpeakerRounded : MaterialIcon
 {
     public NotificationPhoneBluetoothSpeakerRounded()
     {
         IconTheme = IconThemeType.Rounded;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.9600000000000004, 1.1000000000000005, 18.040000000000003, 19.940000000000001);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0480349344978166, 0, 0, 1.0480349344978166, -0.57641921397380003, -0.57641921397380003);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

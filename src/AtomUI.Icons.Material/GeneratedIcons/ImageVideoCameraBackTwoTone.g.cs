@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageVideoCameraBackTwoTone : Icon
+public class ImageVideoCameraBackTwoTone : MaterialIcon
 {
     public ImageVideoCameraBackTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 4, 20, 16);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class ImageVideoCameraBackTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(11.62, 11.5),new Point(9, 15),new Point(7.38, 12.83),new Point(5, 16),new Point(15, 16)]
+            Points = [new Avalonia.Point(11.62, 11.5),new Avalonia.Point(9, 15),new Avalonia.Point(7.38, 12.83),new Avalonia.Point(5, 16),new Avalonia.Point(15, 16)]
         },
         new PathDrawingInstruction()
         {

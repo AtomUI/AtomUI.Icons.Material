@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvPlaylistAddCheckTwoTone : Icon
+public class AvPlaylistAddCheckTwoTone : MaterialIcon
 {
     public AvPlaylistAddCheckTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 6, 19, 13);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2, 0, 0, 1.2, -2.3999999999999986, -2.3999999999999986);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new RectDrawingInstruction()
@@ -45,7 +48,7 @@ public class AvPlaylistAddCheckTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(20.59, 11.93),new Point(16.34, 16.17),new Point(14.22, 14.05),new Point(12.81, 15.46),new Point(16.34, 19),new Point(22, 13.34)]
+            Points = [new Avalonia.Point(20.59, 11.93),new Avalonia.Point(16.34, 16.17),new Avalonia.Point(14.22, 14.05),new Avalonia.Point(12.81, 15.46),new Avalonia.Point(16.34, 19),new Avalonia.Point(22, 13.34)]
         },
     ];
 

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class MapsEditLocationTwoTone : Icon
+public class MapsEditLocationTwoTone : MaterialIcon
 {
     public MapsEditLocationTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(4, 0.86000000000000021, 17.149999999999999, 21.150000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0371650821089022, 0, 0, 1.0371650821089022, -0.44598098530682684, -0.44598098530682684);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -33,7 +36,7 @@ public class MapsEditLocationTwoTone : Icon
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(18.17, 4.91),new Point(17.1, 3.84),new Point(11.55, 9.39),new Point(11.55, 10.47),new Point(12.63, 10.47)]
+            Points = [new Avalonia.Point(18.17, 4.91),new Avalonia.Point(17.1, 3.84),new Avalonia.Point(11.55, 9.39),new Avalonia.Point(11.55, 10.47),new Avalonia.Point(12.63, 10.47)]
         },
     ];
 

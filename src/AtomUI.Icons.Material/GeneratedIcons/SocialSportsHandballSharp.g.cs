@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialSportsHandballSharp : Icon
+public class SocialSportsHandballSharp : MaterialIcon
 {
     public SocialSportsHandballSharp()
     {
         IconTheme = IconThemeType.Sharp;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(5.5099999999999998, 0.79000000000000026, 13.619999999999999, 23.129999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0101010101010104, 0, 0, 1.0101010101010104, -0.12121212121212466, -0.12121212121212466);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationCoPresentSharp : Icon
+public class CommunicationCoPresentSharp : MaterialIcon
 {
     public CommunicationCoPresentSharp()
     {
@@ -16,18 +14,23 @@ public class CommunicationCoPresentSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 3, 22, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(23, 3),new Point(1, 3),new Point(1, 13),new Point(3, 13),new Point(3, 5),new Point(21, 5),new Point(21, 21),new Point(23, 21)]
+            Points = [new Avalonia.Point(23, 3),new Avalonia.Point(1, 3),new Avalonia.Point(1, 13),new Avalonia.Point(3, 13),new Avalonia.Point(3, 5),new Avalonia.Point(21, 5),new Avalonia.Point(21, 21),new Avalonia.Point(23, 21)]
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(9, 10),
+            Center = new Avalonia.Point(9, 10),
             Radius = 4
         },
         new PathDrawingInstruction()

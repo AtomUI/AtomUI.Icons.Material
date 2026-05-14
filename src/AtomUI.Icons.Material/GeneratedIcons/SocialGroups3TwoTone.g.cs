@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialGroups3TwoTone : Icon
+public class SocialGroups3TwoTone : MaterialIcon
 {
     public SocialGroups3TwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 6, 24, 12);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,7 +30,7 @@ public class SocialGroups3TwoTone : Icon
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Center = new Point(12, 9),
+            Center = new Avalonia.Point(12, 9),
             Radius = 1
         },
         new PathDrawingInstruction()
@@ -61,13 +64,13 @@ public class SocialGroups3TwoTone : Icon
             Rect = new Rect(2.23, 9.23, 3.54, 3.54),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -6.6066 6.0503)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -6.6066000000000003, 6.0503)
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(20, 9),new Point(17.5, 13),new Point(22.5, 13)]
+            Points = [new Avalonia.Point(20, 9),new Avalonia.Point(17.5, 13),new Avalonia.Point(22.5, 13)]
         },
     ];
 

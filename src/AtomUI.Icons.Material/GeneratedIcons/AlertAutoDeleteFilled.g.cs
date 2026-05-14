@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AlertAutoDeleteFilled : Icon
+public class AlertAutoDeleteFilled : MaterialIcon
 {
     public AlertAutoDeleteFilled()
     {
@@ -16,12 +14,17 @@ public class AlertAutoDeleteFilled : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 1, 22, 22);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(15, 2),new Point(11.5, 2),new Point(10.5, 1),new Point(5.5, 1),new Point(4.5, 2),new Point(1, 2),new Point(1, 4),new Point(15, 4)]
+            Points = [new Avalonia.Point(15, 2),new Avalonia.Point(11.5, 2),new Avalonia.Point(10.5, 1),new Avalonia.Point(5.5, 1),new Avalonia.Point(4.5, 2),new Avalonia.Point(1, 2),new Avalonia.Point(1, 4),new Avalonia.Point(15, 4)]
         },
         new PathDrawingInstruction()
         {
@@ -33,7 +36,7 @@ public class AlertAutoDeleteFilled : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(16.5, 12),new Point(15, 12),new Point(15, 17),new Point(18.6, 19.1),new Point(19.4, 17.9),new Point(16.5, 16.2)]
+            Points = [new Avalonia.Point(16.5, 12),new Avalonia.Point(15, 12),new Avalonia.Point(15, 17),new Avalonia.Point(18.6, 19.1),new Avalonia.Point(19.4, 17.9),new Avalonia.Point(16.5, 16.2)]
         },
     ];
 

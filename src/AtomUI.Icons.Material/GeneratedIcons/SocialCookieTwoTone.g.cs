@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class SocialCookieTwoTone : Icon
+public class SocialCookieTwoTone : MaterialIcon
 {
     public SocialCookieTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 0.73999999999999999, 20.539999999999999, 21.260000000000002);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0318142734307825, 0, 0, 1.0318142734307825, -0.38177128116938874, -0.38177128116938874);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -27,21 +30,21 @@ public class SocialCookieTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(10.5, 8.5),
+            Center = new Avalonia.Point(10.5, 8.5),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(8.5, 13.5),
+            Center = new Avalonia.Point(8.5, 13.5),
             Radius = 1.5
         },
         new CircleDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Center = new Point(15, 15),
+            Center = new Avalonia.Point(15, 15),
             Radius = 1
         },
         new PathDrawingInstruction()

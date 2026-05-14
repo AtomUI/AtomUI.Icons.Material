@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ActionHourglassDisabledTwoTone : Icon
+public class ActionHourglassDisabledTwoTone : MaterialIcon
 {
     public ActionHourglassDisabledTwoTone()
     {
@@ -16,12 +14,17 @@ public class ActionHourglassDisabledTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0.68999999999999995, 2, 21.210000000000001, 21.32);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0300429184549356, 0, 0, 1.0300429184549356, -0.36051502145922676, -0.36051502145922676);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(8, 4),new Point(16, 4),new Point(16, 7.5),new Point(13.16, 10.34),new Point(14.41, 11.59),new Point(18, 8.01),new Point(17.99, 8),new Point(18, 8),new Point(18, 2),new Point(6, 2),new Point(6, 3.17),new Point(8, 5.17)]
+            Points = [new Avalonia.Point(8, 4),new Avalonia.Point(16, 4),new Avalonia.Point(16, 7.5),new Avalonia.Point(13.16, 10.34),new Avalonia.Point(14.41, 11.59),new Avalonia.Point(18, 8.01),new Avalonia.Point(17.99, 8),new Avalonia.Point(18, 8),new Avalonia.Point(18, 2),new Avalonia.Point(6, 2),new Avalonia.Point(6, 3.17),new Avalonia.Point(8, 5.17)]
         },
         new PathDrawingInstruction()
         {

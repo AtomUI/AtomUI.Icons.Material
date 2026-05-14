@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageAutoAwesomeOutlined : Icon
+public class ImageAutoAwesomeOutlined : MaterialIcon
 {
     public ImageAutoAwesomeOutlined()
     {
@@ -16,18 +14,23 @@ public class ImageAutoAwesomeOutlined : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(1, 1, 22, 22);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0434782608695652, 0, 0, 1.0434782608695652, -0.52173913043478137, -0.52173913043478137);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(19, 9),new Point(20.25, 6.25),new Point(23, 5),new Point(20.25, 3.75),new Point(19, 1),new Point(17.75, 3.75),new Point(15, 5),new Point(17.75, 6.25)]
+            Points = [new Avalonia.Point(19, 9),new Avalonia.Point(20.25, 6.25),new Avalonia.Point(23, 5),new Avalonia.Point(20.25, 3.75),new Avalonia.Point(19, 1),new Avalonia.Point(17.75, 3.75),new Avalonia.Point(15, 5),new Avalonia.Point(17.75, 6.25)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(19, 15),new Point(17.75, 17.75),new Point(15, 19),new Point(17.75, 20.25),new Point(19, 23),new Point(20.25, 20.25),new Point(23, 19),new Point(20.25, 17.75)]
+            Points = [new Avalonia.Point(19, 15),new Avalonia.Point(17.75, 17.75),new Avalonia.Point(15, 19),new Avalonia.Point(17.75, 20.25),new Avalonia.Point(19, 23),new Avalonia.Point(20.25, 20.25),new Avalonia.Point(23, 19),new Avalonia.Point(20.25, 17.75)]
         },
         new PathDrawingInstruction()
         {

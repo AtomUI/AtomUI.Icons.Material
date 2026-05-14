@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class ImageAutofpsSelectSharp : Icon
+public class ImageAutofpsSelectSharp : MaterialIcon
 {
     public ImageAutofpsSelectSharp()
     {
@@ -16,12 +14,17 @@ public class ImageAutofpsSelectSharp : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(3, 3, 18, 19);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.2, 0, 0, 1.2, -2.3999999999999986, -2.3999999999999986);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 1,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(12.03, 6.3),new Point(11.97, 6.3),new Point(10.95, 9.19),new Point(13.05, 9.19)]
+            Points = [new Avalonia.Point(12.03, 6.3),new Avalonia.Point(11.97, 6.3),new Avalonia.Point(10.95, 9.19),new Avalonia.Point(13.05, 9.19)]
         },
         new RectDrawingInstruction()
         {

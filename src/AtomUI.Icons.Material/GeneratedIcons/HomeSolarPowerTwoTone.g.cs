@@ -1,14 +1,12 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class HomeSolarPowerTwoTone : Icon
+public class HomeSolarPowerTwoTone : MaterialIcon
 {
     public HomeSolarPowerTwoTone()
     {
@@ -16,30 +14,35 @@ public class HomeSolarPowerTwoTone : Icon
         ViewBox = new Rect(0, 0, 24, 24);
     }
 
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2, 2, 20, 20);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.0909090909090908, 0, 0, 1.0909090909090908, -1.0909090909090899, -1.0909090909090899);
+
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(4.44, 20),new Point(11, 20),new Point(11, 18),new Point(4.84, 18)]
+            Points = [new Avalonia.Point(4.44, 20),new Avalonia.Point(11, 20),new Avalonia.Point(11, 18),new Avalonia.Point(4.84, 18)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(18.36, 14),new Point(13, 14),new Point(13, 16),new Point(18.76, 16)]
+            Points = [new Avalonia.Point(18.36, 14),new Avalonia.Point(13, 14),new Avalonia.Point(13, 16),new Avalonia.Point(18.76, 16)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(13, 18),new Point(13, 20),new Point(19.56, 20),new Point(19.16, 18)]
+            Points = [new Avalonia.Point(13, 18),new Avalonia.Point(13, 20),new Avalonia.Point(19.56, 20),new Avalonia.Point(19.16, 18)]
         },
         new PolygonDrawingInstruction()
         {
             Opacity = 0.3,
             FillBrush = IconBrushType.Fill,
-            Points = [new Point(5.24, 16),new Point(11, 16),new Point(11, 14),new Point(5.64, 14)]
+            Points = [new Avalonia.Point(5.24, 16),new Avalonia.Point(11, 16),new Avalonia.Point(11, 14),new Avalonia.Point(5.64, 14)]
         },
         new PathDrawingInstruction()
         {
@@ -62,7 +65,7 @@ public class HomeSolarPowerTwoTone : Icon
             Rect = new Rect(16.53, 6.06, 2, 3),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -0.2089 14.6085)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -0.2089, 14.608499999999999)
         },
         new RectDrawingInstruction()
         {
@@ -71,7 +74,7 @@ public class HomeSolarPowerTwoTone : Icon
             Rect = new Rect(4.97, 6.56, 3, 2),
             RadiusX = 0,
             RadiusY = 0,
-            Transform = TransformParser.Parse("matrix(0.7071 -0.7071 0.7071 0.7071 -3.448 6.7885)").Value
+            Transform = new Matrix(0.70709999999999995, -0.70709999999999995, 0.70709999999999995, 0.70709999999999995, -3.448, 6.7885)
         },
         new RectDrawingInstruction()
         {

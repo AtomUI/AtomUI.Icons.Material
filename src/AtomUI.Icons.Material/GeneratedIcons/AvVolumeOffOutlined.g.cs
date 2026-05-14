@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class AvVolumeOffOutlined : Icon
+public class AvVolumeOffOutlined : MaterialIcon
 {
     public AvVolumeOffOutlined()
     {
         IconTheme = IconThemeType.Outlined;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(2.9300000000000002, 2.9300000000000002, 18.140000000000001, 18.129999999999999);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1.1390602752728998, 0, 0, 1.1390602752728998, -1.6687233032747972, -1.6687233032747972);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()

@@ -1,20 +1,23 @@
 // This code is auto generated. Do not modify.
-// Generated Date: 2025-12-03
 
+using System.Collections.Generic;
 using Avalonia;
-using System;
 using Avalonia.Media;
 using AtomUI.Controls;
-using AtomUI.Media;
 namespace AtomUI.Icons.Material;
 
-public class CommunicationContactEmergencyTwoTone : Icon
+public class CommunicationContactEmergencyTwoTone : MaterialIcon
 {
     public CommunicationContactEmergencyTwoTone()
     {
         IconTheme = IconThemeType.TwoTone;
         ViewBox = new Rect(0, 0, 24, 24);
     }
+
+    internal override bool HasGeneratedGeometryMetadata => true;
+    internal override Rect GeneratedViewBox => new Rect(0, 0, 24, 24);
+    internal override Rect GeneratedGeometryBounds => new Rect(0, 3, 24, 18);
+    internal override Matrix GeneratedZoomMatrix => new Matrix(1, 0, 0, 1, 0, 0);
 
     private static readonly DrawingInstruction[] StaticInstructions = [
         new PathDrawingInstruction()
@@ -39,7 +42,7 @@ public class CommunicationContactEmergencyTwoTone : Icon
         {
             Opacity = 1,
             FillBrush = IconBrushType.Stroke,
-            Points = [new Point(15.78, 11.15),new Point(17.25, 10.3),new Point(17.25, 12),new Point(18.75, 12),new Point(18.75, 10.3),new Point(20.22, 11.15),new Point(20.97, 9.85),new Point(19.5, 9),new Point(20.97, 8.15),new Point(20.22, 6.85),new Point(18.75, 7.7),new Point(18.75, 6),new Point(17.25, 6),new Point(17.25, 7.7),new Point(15.78, 6.85),new Point(15.03, 8.15),new Point(16.5, 9),new Point(15.03, 9.85)]
+            Points = [new Avalonia.Point(15.78, 11.15),new Avalonia.Point(17.25, 10.3),new Avalonia.Point(17.25, 12),new Avalonia.Point(18.75, 12),new Avalonia.Point(18.75, 10.3),new Avalonia.Point(20.22, 11.15),new Avalonia.Point(20.97, 9.85),new Avalonia.Point(19.5, 9),new Avalonia.Point(20.97, 8.15),new Avalonia.Point(20.22, 6.85),new Avalonia.Point(18.75, 7.7),new Avalonia.Point(18.75, 6),new Avalonia.Point(17.25, 6),new Avalonia.Point(17.25, 7.7),new Avalonia.Point(15.78, 6.85),new Avalonia.Point(15.03, 8.15),new Avalonia.Point(16.5, 9),new Avalonia.Point(15.03, 9.85)]
         },
     ];
 
