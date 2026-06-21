@@ -39,12 +39,13 @@ internal class Program
 
     public static AppBuilder BuildAvaloniaApp()
     {
-        return AppBuilder.Configure<GalleryApplication>()
+        var builder = AppBuilder.Configure<GalleryApplication>()
             .UseReactiveUI(_ => { })
             .UsePlatformDetect()
-            .WithAtomUIDefaultOptions()
-            .WithDeveloperTools()
-            .LogToTrace();
-        
+            .WithAtomUIDefaultOptions();
+#if DEBUG
+        builder = builder.WithDeveloperTools();
+#endif
+        return builder.LogToTrace();
     }
 }

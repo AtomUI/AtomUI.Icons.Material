@@ -10,9 +10,9 @@ public static class ThemeManagerBuilderExtensions
     {
         var controlTokenTypes = ControlTokenTypePool.GetTokenTypes();
         themeManagerBuilder.AddControlThemesProvider(new GalleryControlThemesProvider());
-        foreach (var controlType in controlTokenTypes)
+        foreach (var controlToken in controlTokenTypes)
         {
-            themeManagerBuilder.AddControlToken(controlType);
+            themeManagerBuilder.AddControlToken(controlToken.TokenType);
         }
         var languageProviders = LanguageProviderPool.GetLanguageProviders();
         foreach (var languageProvider in languageProviders)

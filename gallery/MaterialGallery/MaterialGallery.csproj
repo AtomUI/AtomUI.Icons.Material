@@ -25,11 +25,11 @@
                           PrivateAssets="all"/>
     </ItemGroup>
 
-    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <ItemGroup Condition="'$(UsePublishedMaterialPackage)' != 'true'">
         <ProjectReference Include="../../src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj"/>
     </ItemGroup>
 
-    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <ItemGroup Condition="'$(UsePublishedMaterialPackage)' == 'true'">
         <PackageReference Include="AtomUI.Icons.Material"/>
     </ItemGroup>
     

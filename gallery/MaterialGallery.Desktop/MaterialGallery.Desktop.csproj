@@ -29,6 +29,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Avalonia.Desktop" />
+    </ItemGroup>
+
+    <ItemGroup>
         <None Include="Assets/Images/MaterialGallery.ico">
             <Link>MaterialGallery.ico</Link>
         </None>

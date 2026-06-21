@@ -4,6 +4,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageVersion Include="Avalonia.Headless" Version="$(AvaloniaVersion)"/>
+        <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
         <PackageVersion Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.1"/>
         <PackageVersion Include="AtomUI.Core" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Desktop.Controls" Version="$(AtomUIVersion)"/>
