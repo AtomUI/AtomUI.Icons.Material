@@ -1,6 +1,5 @@
 using AtomUI.Animations;
 using AtomUI.Controls;
-using AtomUI.Theme;
 using AtomUI.Utils;
 using Avalonia;
 using Avalonia.Controls;
@@ -46,11 +45,6 @@ public class IconInfoItem : TemplatedControl, IMotionAwareControl
     {
         add => AddHandler(ClickedEvent, value);
         remove => RemoveHandler(ClickedEvent, value);
-    }
-    
-    public IconInfoItem()
-    {
-        this.RegisterTokenResourceScope(IconGalleryToken.ScopeProvider);
     }
     
     protected override void OnLoaded(RoutedEventArgs e)

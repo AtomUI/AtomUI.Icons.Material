@@ -1,5 +1,6 @@
 using AtomUI.Theme;
 using AtomUI.Theme.Language;
+using AtomUI.Generated.MaterialGallery;
 using MaterialGallery.Controls;
 
 namespace MaterialGallery;
@@ -8,12 +9,13 @@ public static class ThemeManagerBuilderExtensions
 {
     public static IThemeManagerBuilder UseGalleryControls(this IThemeManagerBuilder themeManagerBuilder)
     {
-        var controlTokenTypes = ControlTokenTypePool.GetTokenTypes();
-        themeManagerBuilder.AddControlThemesProvider(new GalleryControlThemesProvider());
-        foreach (var controlToken in controlTokenTypes)
+        foreach (var descriptor in GeneratedThemeSchema.GetControls())
         {
-            themeManagerBuilder.AddControlToken(controlToken.TokenType);
+            themeManagerBuilder.AddControlToken(descriptor);
         }
+
+        themeManagerBuilder.AddControlThemesProvider(new GalleryControlThemesProvider());
+
         var languageProviders = LanguageProviderPool.GetLanguageProviders();
         foreach (var languageProvider in languageProviders)
         {

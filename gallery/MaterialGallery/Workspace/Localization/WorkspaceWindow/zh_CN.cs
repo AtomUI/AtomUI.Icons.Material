@@ -7,6 +7,11 @@ namespace MaterialGallery.Workspace.Localization.WorkspaceWindowLang;
 [LanguageProvider(LanguageCode.zh_CN, WorkspaceWindow.LanguageId)]
 internal class zh_CN : LanguageProvider
 {
+    public zh_CN()
+        : base(LanguageCode.zh_CN, WorkspaceWindow.LanguageId)
+    {
+    }
+
     public const string MenuItemSettings = "设置";
     public const string MenuItemTheme = "主题";
     public const string MenuItemLanguage = "语言";

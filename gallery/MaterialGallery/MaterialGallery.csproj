@@ -25,7 +25,12 @@
                           PrivateAssets="all"/>
     </ItemGroup>
 
-    <ItemGroup Condition="'$(UsePublishedMaterialPackage)' != 'true'">
+    <ItemGroup Condition="'$(UsePublishedMaterialPackage)' != 'true' and '$(TargetFramework)' != ''">
+        <ProjectReference Include="../../src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj"
+                          SetTargetFramework="TargetFramework=$(TargetFramework)"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(UsePublishedMaterialPackage)' != 'true' and '$(TargetFramework)' == ''">
         <ProjectReference Include="../../src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj"/>
     </ItemGroup>
 

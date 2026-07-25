@@ -2,7 +2,6 @@ using System.Reactive.Disposables;
 using AtomUI.Controls;
 using AtomUI.Data;
 using AtomUI.Desktop.Controls;
-using AtomUI.Theme;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -66,11 +65,6 @@ public class IconGallery : TemplatedControl, IMotionAwareControl
     private ScrollViewer? _scrollViewer;
     private SearchEdit? _searchEdit;
     
-    public IconGallery()
-    {
-        this.RegisterTokenResourceScope(IconGalleryToken.ScopeProvider);
-    }
-
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);

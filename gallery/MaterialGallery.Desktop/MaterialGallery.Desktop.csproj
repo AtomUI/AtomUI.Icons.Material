@@ -8,10 +8,6 @@
         <ApplicationIcon>Assets/MaterialGallery.ico</ApplicationIcon>
     </PropertyGroup>
 
-    <ItemGroup>
-        <TrimmerRootDescriptor Include="Roots.xml"/>
-    </ItemGroup>
-
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
         <!--        <IsTrimmable>true</IsTrimmable>-->
         <!--        <PublishTrimmed>true</PublishTrimmed>-->
@@ -24,7 +20,12 @@
         <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
 
-    <ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' != ''">
+        <ProjectReference Include="../MaterialGallery/MaterialGallery.csproj"
+                          SetTargetFramework="TargetFramework=$(TargetFramework)" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == ''">
         <ProjectReference Include="../MaterialGallery/MaterialGallery.csproj" />
     </ItemGroup>
 

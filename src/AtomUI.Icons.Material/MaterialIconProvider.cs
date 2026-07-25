@@ -1,9 +1,9 @@
-using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
 using AtomUI.Controls;
 
 namespace AtomUI.Icons.Material;
 
-public class MaterialIconProvider : IconProvider<MaterialIconKind>
+public partial class MaterialIconProvider : IconProvider<MaterialIconKind>
 {
     public MaterialIconProvider()
     {
@@ -13,17 +13,21 @@ public class MaterialIconProvider : IconProvider<MaterialIconKind>
     {
     }
 
+    protected override Icon GetIcon(MaterialIconKind kind)
+    {
+        try
+        {
+            return CreateIcon(kind);
+        }
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException($"Create icon {kind} failed", ex);
+        }
+    }
+
+    [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)]
     protected override Type GetTypeForKind(MaterialIconKind kind)
     {
-        var typeName = $"AtomUI.Icons.Material.{kind.ToString()}";
-
-        var type = Type.GetType(typeName)
-                   ?? Assembly.GetExecutingAssembly().GetType(typeName);
-        if (type == null)
-        {
-            throw new InvalidOperationException($"Type {typeName} does not exist");
-        }
-
-        return type;
+        return GetIconType(kind);
     }
 }
