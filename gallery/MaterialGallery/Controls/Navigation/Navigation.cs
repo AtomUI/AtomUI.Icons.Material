@@ -7,6 +7,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using MaterialGallery.Controls.Themes;
+using MaterialGallery.Models;
 using ComboBox = AtomUI.Desktop.Controls.ComboBox;
 using ComboBoxItem = AtomUI.Desktop.Controls.ComboBoxItem;
 
@@ -16,8 +17,8 @@ public class Navigation : TemplatedControl
 {
     #region 公共属性定义
 
-    public static readonly StyledProperty<List<string>?> CategoriesProperty = 
-        AvaloniaProperty.Register<Navigation, List<string>?>(nameof (Categories));
+    public static readonly StyledProperty<IReadOnlyList<IconCategory>?> CategoriesProperty =
+        AvaloniaProperty.Register<Navigation, IReadOnlyList<IconCategory>?>(nameof(Categories));
     
     public static readonly StyledProperty<string?> CategoryProperty = 
         AvaloniaProperty.Register<Navigation, string?>(nameof (Category), "Action");
@@ -25,7 +26,7 @@ public class Navigation : TemplatedControl
     public static readonly StyledProperty<IconThemeType> IconThemeProperty = 
         AvaloniaProperty.Register<Navigation, IconThemeType>(nameof (IconTheme));
 
-    public List<string>? Categories
+    public IReadOnlyList<IconCategory>? Categories
     {
         get => GetValue(CategoriesProperty);
         set => SetValue(CategoriesProperty, value);
@@ -86,11 +87,14 @@ public class Navigation : TemplatedControl
             {
                 menuItems.Add(new NavMenuNode
                 {
-                    Header = category,
-                    ItemKey = category,
+                    Header  = category.Header,
+                    ItemKey = category.Key,
                 });
             }
             SetCurrentValue(CategoryMavMenuItemsProperty, menuItems);
+            _categoryNavMenu?.SetCurrentValue(
+                NavMenu.DefaultSelectedPathProperty,
+                new TreeNodePath($"/{Category ?? "Action"}"));
         }
     }
 

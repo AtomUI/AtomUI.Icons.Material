@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="2.1" srcLang="en-US" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="MaterialGallery.Localization.WorkspaceWindowLangResourceKind">
+    <unit id="MenuItemSettings">
+      <segment>
+        <source>Settings</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemTheme">
+      <segment>
+        <source>Theme</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemLanguage">
+      <segment>
+        <source>Language</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemWindowOptions">
+      <segment>
+        <source>Window Options</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableFullScreen">
+      <segment>
+        <source>Enable FullScreen</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnablePin">
+      <segment>
+        <source>Enable Pin</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMinimize">
+      <segment>
+        <source>Enable Minimize</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMaximize">
+      <segment>
+        <source>Enable Maximize</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMove">
+      <segment>
+        <source>Enable Move</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableResize">
+      <segment>
+        <source>Enable Resize</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemDarkMode">
+      <segment>
+        <source>Dark Mode</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemCompactMode">
+      <segment>
+        <source>Compact Mode</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMotion">
+      <segment>
+        <source>Enable Motion</source>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableWaveSpirit">
+      <segment>
+        <source>Enable WaveSpirit</source>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeOutlined">
+      <segment>
+        <source>Outlined</source>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeFilled">
+      <segment>
+        <source>Filled</source>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeRounded">
+      <segment>
+        <source>Rounded</source>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeSharp">
+      <segment>
+        <source>Sharp</source>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeTwoTone">
+      <segment>
+        <source>Two tone</source>
+      </segment>
+    </unit>
+    <unit id="NavigationCategoryLabel">
+      <segment>
+        <source>Category:</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryAction">
+      <segment>
+        <source>Action</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryAlert">
+      <segment>
+        <source>Alert</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryAv">
+      <segment>
+        <source>Av</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryCommunication">
+      <segment>
+        <source>Communication</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryContent">
+      <segment>
+        <source>Content</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryDevice">
+      <segment>
+        <source>Device</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryEditor">
+      <segment>
+        <source>Editor</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryFile">
+      <segment>
+        <source>File</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryHardware">
+      <segment>
+        <source>Hardware</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryHome">
+      <segment>
+        <source>Home</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryImage">
+      <segment>
+        <source>Image</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryMaps">
+      <segment>
+        <source>Maps</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryNavigation">
+      <segment>
+        <source>Navigation</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryNotification">
+      <segment>
+        <source>Notification</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryPlaces">
+      <segment>
+        <source>Places</source>
+      </segment>
+    </unit>
+    <unit id="IconCategorySearch">
+      <segment>
+        <source>Search</source>
+      </segment>
+    </unit>
+    <unit id="IconCategorySocial">
+      <segment>
+        <source>Social</source>
+      </segment>
+    </unit>
+    <unit id="IconCategoryToggle">
+      <segment>
+        <source>Toggle</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>

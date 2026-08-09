@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="2.1" srcLang="en-US" trgLang="zh-TW" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="MaterialGallery.Localization.WorkspaceWindowLangResourceKind">
+    <unit id="MenuItemSettings">
+      <segment>
+        <source>Settings</source>
+        <target state="translated">設置</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemTheme">
+      <segment>
+        <source>Theme</source>
+        <target state="translated">主題</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemLanguage">
+      <segment>
+        <source>Language</source>
+        <target state="translated">語言</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemWindowOptions">
+      <segment>
+        <source>Window Options</source>
+        <target state="translated">窗口選項</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableFullScreen">
+      <segment>
+        <source>Enable FullScreen</source>
+        <target state="translated">開啓全屏</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnablePin">
+      <segment>
+        <source>Enable Pin</source>
+        <target state="translated">開啓窗口固定</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMinimize">
+      <segment>
+        <source>Enable Minimize</source>
+        <target state="translated">開啓最小化</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMaximize">
+      <segment>
+        <source>Enable Maximize</source>
+        <target state="translated">開啓最大化</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMove">
+      <segment>
+        <source>Enable Move</source>
+        <target state="translated">開啓窗口移動</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableResize">
+      <segment>
+        <source>Enable Resize</source>
+        <target state="translated">開啓窗口設置大小</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemDarkMode">
+      <segment>
+        <source>Dark Mode</source>
+        <target state="translated">暗黑模式</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemCompactMode">
+      <segment>
+        <source>Compact Mode</source>
+        <target state="translated">緊湊模式</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableMotion">
+      <segment>
+        <source>Enable Motion</source>
+        <target state="translated">開啓動效</target>
+      </segment>
+    </unit>
+    <unit id="MenuItemEnableWaveSpirit">
+      <segment>
+        <source>Enable WaveSpirit</source>
+        <target state="translated">開啓波浪動畫</target>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeOutlined">
+      <segment>
+        <source>Outlined</source>
+        <target state="translated">線框</target>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeFilled">
+      <segment>
+        <source>Filled</source>
+        <target state="translated">填滿</target>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeRounded">
+      <segment>
+        <source>Rounded</source>
+        <target state="translated">圓角</target>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeSharp">
+      <segment>
+        <source>Sharp</source>
+        <target state="translated">銳角</target>
+      </segment>
+    </unit>
+    <unit id="NavigationIconThemeTwoTone">
+      <segment>
+        <source>Two tone</source>
+        <target state="translated">雙色</target>
+      </segment>
+    </unit>
+    <unit id="NavigationCategoryLabel">
+      <segment>
+        <source>Category:</source>
+        <target state="translated">分類:</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryAction">
+      <segment>
+        <source>Action</source>
+        <target state="translated">操作</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryAlert">
+      <segment>
+        <source>Alert</source>
+        <target state="translated">警示</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryAv">
+      <segment>
+        <source>Av</source>
+        <target state="translated">影音</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryCommunication">
+      <segment>
+        <source>Communication</source>
+        <target state="translated">通訊</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryContent">
+      <segment>
+        <source>Content</source>
+        <target state="translated">內容</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryDevice">
+      <segment>
+        <source>Device</source>
+        <target state="translated">裝置</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryEditor">
+      <segment>
+        <source>Editor</source>
+        <target state="translated">編輯器</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryFile">
+      <segment>
+        <source>File</source>
+        <target state="translated">檔案</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryHardware">
+      <segment>
+        <source>Hardware</source>
+        <target state="translated">硬體</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryHome">
+      <segment>
+        <source>Home</source>
+        <target state="translated">首頁</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryImage">
+      <segment>
+        <source>Image</source>
+        <target state="translated">影像</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryMaps">
+      <segment>
+        <source>Maps</source>
+        <target state="translated">地圖</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryNavigation">
+      <segment>
+        <source>Navigation</source>
+        <target state="translated">導航</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryNotification">
+      <segment>
+        <source>Notification</source>
+        <target state="translated">通知</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryPlaces">
+      <segment>
+        <source>Places</source>
+        <target state="translated">地點</target>
+      </segment>
+    </unit>
+    <unit id="IconCategorySearch">
+      <segment>
+        <source>Search</source>
+        <target state="translated">搜尋</target>
+      </segment>
+    </unit>
+    <unit id="IconCategorySocial">
+      <segment>
+        <source>Social</source>
+        <target state="translated">社交</target>
+      </segment>
+    </unit>
+    <unit id="IconCategoryToggle">
+      <segment>
+        <source>Toggle</source>
+        <target state="translated">切換</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

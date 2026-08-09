@@ -1,8 +1,10 @@
 using System.Reactive;
+using AtomUI;
 using AtomUI.Controls;
+using AtomUI.Localization;
 using AtomUI.Theme;
+using AtomUI.Theme.Algorithms;
 using AtomUI.Theme.Configuration;
-using AtomUI.Theme.Language;
 using AtomUI.Theme.Resources;
 using Avalonia;
 using MaterialGallery.Models;
@@ -18,7 +20,8 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
     private bool _isCompact;
     private bool _isMotionEnabled = true;
     private bool _isWaveSpiritEnabled = true;
-    private string[] _baseAlgorithms = ["Default"];
+    private ThemeAlgorithm[] _baseAlgorithms = [ThemeAlgorithm.Default];
+    private IReadOnlyList<string> _categoryKeys = [];
 
     public RoutingState Router { get; } = new RoutingState();
 
@@ -27,7 +30,9 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
     public ReactiveCommand<bool, Unit> ToggleMotionCommand      { get; }
     public ReactiveCommand<bool, Unit> ToggleWaveSpiritCommand  { get; }
     public ReactiveCommand<Unit, Unit> SwitchToZhCNCommand      { get; }
+    public ReactiveCommand<Unit, Unit> SwitchToZhTWCommand      { get; }
     public ReactiveCommand<Unit, Unit> SwitchToEnUSCommand      { get; }
+    public ReactiveCommand<Unit, Unit> SwitchToPtBRCommand      { get; }
 
     private bool _isZhCN;
 
@@ -37,6 +42,14 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
         private set => this.RaiseAndSetIfChanged(ref _isZhCN, value);
     }
 
+    private bool _isZhTW;
+
+    public bool IsZhTW
+    {
+        get => _isZhTW;
+        private set => this.RaiseAndSetIfChanged(ref _isZhTW, value);
+    }
+
     private bool _isEnUS;
 
     public bool IsEnUS
@@ -44,10 +57,18 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
         get => _isEnUS;
         private set => this.RaiseAndSetIfChanged(ref _isEnUS, value);
     }
-    
-    private List<string>? _categories;
 
-    public List<string>? Categories
+    private bool _isPtBR;
+
+    public bool IsPtBR
+    {
+        get => _isPtBR;
+        private set => this.RaiseAndSetIfChanged(ref _isPtBR, value);
+    }
+    
+    private List<IconCategory>? _categories;
+
+    public List<IconCategory>? Categories
     {
         get => _categories;
         set => this.RaiseAndSetIfChanged(ref _categories, value);
@@ -60,13 +81,19 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
         get => _iconInfoRepository;
         set => this.RaiseAndSetIfChanged(ref _iconInfoRepository, value);
     }
+
+    public void SetCategoryKeys(IReadOnlyList<string> categoryKeys)
+    {
+        _categoryKeys = categoryKeys;
+        RefreshCategories();
+    }
     
     public WorkspaceWindowViewModel()
     {
         _themeManager    = Application.Current?.GetThemeManager();
         _languageManager = Application.Current?.GetLanguageManager();
         SyncThemeState(_themeManager?.CurrentTheme, null);
-        SyncLanguageState(_languageManager?.LanguageVariant);
+        SyncLanguageState(_languageManager?.Current);
 
         ToggleDarkModeCommand = ReactiveCommand.CreateFromTask<bool>(SetDarkModeAsync);
 
@@ -77,10 +104,16 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
         ToggleWaveSpiritCommand = ReactiveCommand.CreateFromTask<bool>(SetWaveSpiritEnabledAsync);
 
         SwitchToZhCNCommand = ReactiveCommand.Create(() =>
-            SetLanguageVariant(LanguageVariant.zh_CN));
+            SetLanguage(LanguageTags.ZhCN));
+
+        SwitchToZhTWCommand = ReactiveCommand.Create(() =>
+            SetLanguage(LanguageTags.ZhTW));
 
         SwitchToEnUSCommand = ReactiveCommand.Create(() =>
-            SetLanguageVariant(LanguageVariant.en_US));
+            SetLanguage(LanguageTags.EnUS));
+
+        SwitchToPtBRCommand = ReactiveCommand.Create(() =>
+            SetLanguage(LanguageTags.PtBR));
 
         if (_themeManager is not null)
         {
@@ -88,7 +121,7 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
         }
         if (_languageManager is not null)
         {
-            _languageManager.LanguageVariantChanged += (_, args) => SyncLanguageState(args.NewLanguage);
+            _languageManager.LanguageChanged += (_, args) => SyncLanguageState(args.Result.NewState);
         }
     }
 
@@ -131,15 +164,15 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
             return;
         }
 
-        var algorithms = new List<string>(_baseAlgorithms.Length + 2);
+        var algorithms = new List<ThemeAlgorithm>(_baseAlgorithms.Length + 2);
         algorithms.AddRange(_baseAlgorithms);
         if (_isCompact)
         {
-            algorithms.Add("Compact");
+            algorithms.Add(ThemeAlgorithm.Compact);
         }
         if (_isDark)
         {
-            algorithms.Add("Dark");
+            algorithms.Add(ThemeAlgorithm.Dark);
         }
 
         var config = new ThemeConfigBuilder()
@@ -164,15 +197,14 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
         if (state is not null)
         {
             _isDark    = state.Appearance == ThemeAppearance.Dark;
-            _isCompact = state.Algorithms.Contains("Compact", StringComparer.Ordinal);
+            _isCompact = state.Algorithms.Contains(ThemeAlgorithm.Compact);
             _baseAlgorithms = state.Algorithms
                                    .Where(static algorithm =>
-                                       !string.Equals(algorithm, "Compact", StringComparison.Ordinal) &&
-                                       !string.Equals(algorithm, "Dark", StringComparison.Ordinal))
+                                       algorithm is not ThemeAlgorithm.Compact and not ThemeAlgorithm.Dark)
                                    .ToArray();
             if (_baseAlgorithms.Length == 0)
             {
-                _baseAlgorithms = ["Default"];
+                _baseAlgorithms = [ThemeAlgorithm.Default];
             }
         }
 
@@ -190,17 +222,28 @@ public class WorkspaceWindowViewModel : ReactiveObject, IScreen
             : defaultValue;
     }
 
-    private void SyncLanguageState(LanguageVariant? variant)
+    private void SyncLanguageState(LanguageState? state)
     {
-        IsZhCN = variant == LanguageVariant.zh_CN;
-        IsEnUS = variant == LanguageVariant.en_US;
+        IsZhCN = state?.CurrentLanguage == LanguageTags.ZhCN;
+        IsZhTW = state?.CurrentLanguage == LanguageTags.ZhTW;
+        IsEnUS = state?.CurrentLanguage == LanguageTags.EnUS;
+        IsPtBR = state?.CurrentLanguage == LanguageTags.PtBR;
+        RefreshCategories();
     }
 
-    private void SetLanguageVariant(LanguageVariant variant)
+    private void RefreshCategories()
+    {
+        if (_categoryKeys.Count > 0)
+        {
+            Categories = IconCategoryLocalization.Localize(_categoryKeys);
+        }
+    }
+
+    private void SetLanguage(LanguageTag language)
     {
         if (_languageManager is not null)
         {
-            _languageManager.LanguageVariant = variant;
+            _languageManager.ChangeLanguage(language);
         }
     }
 }

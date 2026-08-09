@@ -3,9 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:atom="https://atomui.net"
     xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
-    xmlns:themeResources="using:AtomUI.Theme.Resources"
-    xmlns:generated="using:AtomUI.Generated.MaterialGallery"
-    themeResources:ControlTokenScope.Identity="{x:Static generated:NavigationThemeAsset.Identity}"
     x:ClassModifier="internal">
     <ControlTheme x:Key="{x:Type gallery:Navigation}" TargetType="gallery:Navigation">
         <Setter Property="Template">
@@ -16,14 +13,20 @@
                                        HorizontalAlignment="Stretch" SelectedIndex="1"
                                        Margin="0 0 0 10"
                                        DockPanel.Dock="Top">
-                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Outlined}">Outlined</atom:ComboBoxItem>
-                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Filled}">Filled</atom:ComboBoxItem>
-                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Rounded}">Rounded</atom:ComboBoxItem>
-                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Sharp}">Sharp</atom:ComboBoxItem>
-                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.TwoTone}">Two tone</atom:ComboBoxItem>
+                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Outlined}"
+                                               Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeOutlined}" />
+                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Filled}"
+                                               Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeFilled}" />
+                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Rounded}"
+                                               Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeRounded}" />
+                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.Sharp}"
+                                               Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeSharp}" />
+                            <atom:ComboBoxItem Tag="{x:Static atom:IconThemeType.TwoTone}"
+                                               Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeTwoTone}" />
                         </atom:ComboBox>
                         <TextBlock FontWeight="Bold"
-                                   DockPanel.Dock="Top">Category:</TextBlock>
+                                   DockPanel.Dock="Top"
+                                   Text="{gallery:WorkspaceWindowLangResource NavigationCategoryLabel}" />
                         <atom:NavMenu Name="{x:Static gallery:NavigationThemeConstants.CategoryNavMenuPart}"
                                       Mode="Inline"
                                       ItemsSource="{TemplateBinding CategoryMavMenuItems}">

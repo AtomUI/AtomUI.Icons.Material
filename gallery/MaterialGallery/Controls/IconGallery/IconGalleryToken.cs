@@ -1,4 +1,3 @@
-using AtomUI.Theme;
 using AtomUI.Theme.DesignTokens;
 using Avalonia;
 using MaterialGallery.Controls.DesignTokens;
@@ -11,19 +10,22 @@ internal class IconGalleryToken : AbstractControlDesignToken
     public const string ID = "IconGallery";
     
     public Thickness SearchInputMargin { get; set; }
-    public double IconSize { get; set; }
+    public double GalleryIconSize { get; set; }
     public double InfoItemSize { get; set; }
 
     public IconGalleryToken()
-        : base(ID)
     {
     }
     
     public override void CalculateTokenValues(bool isDarkMode)
     {
         base.CalculateTokenValues(isDarkMode);
-        SearchInputMargin = new Thickness(0, SharedToken.UniformlyMarginXS, SharedToken.UniformlyMarginXS, SharedToken.UniformlyMarginXS);
-        IconSize = 48;
+        SearchInputMargin = new Thickness(
+            0,
+            EffectiveGlobalToken.UniformlyMarginXS,
+            EffectiveGlobalToken.UniformlyMarginXS,
+            EffectiveGlobalToken.UniformlyMarginXS);
+        GalleryIconSize = 48;
         InfoItemSize = 150;
     }
 }

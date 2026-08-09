@@ -1,19 +1,23 @@
 using System.Globalization;
 using AtomUI;
 using AtomUI.Desktop.Controls;
+using AtomUI.Localization;
 using AtomUI.Theme;
+using MaterialGallery.Localization;
 using Avalonia.Controls.ApplicationLifetimes;
 
 namespace MaterialGallery.Desktop;
 
-public class GalleryApplication : BaseGalleryApplication
+public partial class GalleryApplication : BaseGalleryApplication
 {
     public override void Initialize()
     {
         base.Initialize();
         this.UseAtomUI(builder =>
         {
-            builder.WithDefaultCultureInfo(CultureInfo.CurrentUICulture);
+            builder.UseLanguages(
+                GalleryLanguageDefaults.Resolve(CultureInfo.CurrentUICulture),
+                [LanguageTags.EnUS, LanguageTags.ZhCN, LanguageTags.ZhTW, LanguageTags.PtBR]);
             builder.WithInitialTheme(IThemeManager.DEFAULT_THEME_ID);
             builder.UseAlibabaSansFont();
             builder.UseDesktopControls();

@@ -3,9 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:atom="https://atomui.net"
     xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
-    xmlns:themeResources="using:AtomUI.Theme.Resources"
-    xmlns:generated="using:AtomUI.Generated.MaterialGallery"
-    themeResources:ControlTokenScope.Identity="{x:Static generated:IconGalleryThemeAsset.Identity}"
     x:ClassModifier="internal">
     <ControlTheme x:Key="{x:Type gallery:IconInfoItem}" TargetType="gallery:IconInfoItem">
         <Setter Property="Template">
@@ -40,8 +37,8 @@
         <Setter Property="Cursor" Value="Hand" />
         
         <Style Selector="^ /template/ atom|IconPresenter">
-            <Setter Property="Height" Value="{gallery:IconGalleryTokenResource IconSize}" />
-            <Setter Property="Width" Value="{gallery:IconGalleryTokenResource IconSize}" />
+            <Setter Property="Height" Value="{gallery:IconGalleryTokenResource GalleryIconSize}" />
+            <Setter Property="Width" Value="{gallery:IconGalleryTokenResource GalleryIconSize}" />
         </Style>
         
         <Style Selector="^:pointerover">

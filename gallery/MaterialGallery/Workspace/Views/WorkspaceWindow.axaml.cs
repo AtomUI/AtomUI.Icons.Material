@@ -23,7 +23,9 @@ internal enum WindowMenuItemKind
     Motion,
     WaveSpirit,
     LanguageZhCN,
+    LanguageZhTW,
     LanguageEnUS,
+    LanguagePtBR,
 }
 
 public partial class WorkspaceWindow : ReactiveWindow<WorkspaceWindowViewModel>
@@ -107,7 +109,7 @@ public partial class WorkspaceWindow : ReactiveWindow<WorkspaceWindowViewModel>
 
         var repository = new IconInfoRepository();
         viewModel.IconInfoRepository = repository;
-        viewModel.Categories         = repository.Categories;
+        viewModel.SetCategoryKeys(repository.Categories);
     }
 
     private void HandleMenuItemClick(object? sender, RoutedEventArgs e)
@@ -173,8 +175,16 @@ public partial class WorkspaceWindow : ReactiveWindow<WorkspaceWindowViewModel>
                     ViewModel.SwitchToZhCNCommand.Execute(Unit.Default)
                              .Subscribe();
                     break;
+                case WindowMenuItemKind.LanguageZhTW:
+                    ViewModel.SwitchToZhTWCommand.Execute(Unit.Default)
+                             .Subscribe();
+                    break;
                 case WindowMenuItemKind.LanguageEnUS:
                     ViewModel.SwitchToEnUSCommand.Execute(Unit.Default)
+                             .Subscribe();
+                    break;
+                case WindowMenuItemKind.LanguagePtBR:
+                    ViewModel.SwitchToPtBRCommand.Execute(Unit.Default)
                              .Subscribe();
                     break;
             }

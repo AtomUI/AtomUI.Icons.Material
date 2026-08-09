@@ -1,4 +1,3 @@
-using AtomUI.Theme;
 using AtomUI.Theme.DesignTokens;
 using MaterialGallery.Controls.DesignTokens;
 
@@ -15,7 +14,6 @@ internal class NavigationToken : AbstractControlDesignToken
     public const string ID = "Navigation";
 
     public NavigationToken()
-        : base(ID)
     {
     }
     
