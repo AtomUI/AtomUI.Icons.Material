@@ -2,77 +2,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:atom="https://atomui.net"
              xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
-             xmlns:workspaceviews="clr-namespace:MaterialGallery.Workspace.Views"
-             xmlns:viewModels="clr-namespace:MaterialGallery.Workspace.ViewModels"
+             xmlns:workspaceviews="using:MaterialGallery.Workspace.Views"
+             xmlns:viewModels="using:MaterialGallery.Workspace.ViewModels"
              x:Class="MaterialGallery.Workspace.Views.WorkspaceWindow"
              x:DataType="viewModels:WorkspaceWindowViewModel"
+             Icon="/Assets/MaterialGallery.ico"
+             Title="{x:Null}"
              IsPinCaptionButtonVisible="True"
              IsFullScreenCaptionButtonVisible="True"
              WindowState="Normal"
              WindowStartupLocation="CenterScreen"
              Height="900"
-             Width="1300">
-    <atom:Window.LogoTemplate>
-        <DataTemplate>
-            <Image Source="/Assets/gallery-logo.png" />
-        </DataTemplate>
-    </atom:Window.LogoTemplate>
-    <DockPanel LastChildFill="True">
-        <atom:Menu DockPanel.Dock="Top" Margin="4, 0, 4, 0">
+             MinHeight="720"
+             Width="1300"
+             MinWidth="1040">
+    <atom:Window.Resources>
+        <atom:Menu x:Key="WorkspaceTitleBarMenu">
             <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemSettings}">
-                <atom:MenuItem
-                    Header="{gallery:WorkspaceWindowLangResource MenuItemWindowOptions}">
-                    <atom:MenuItem
-                        Header="{gallery:WorkspaceWindowLangResource MenuItemEnableFullScreen}"
-                        ToggleType="CheckBox"
-                        IsChecked="True"
-                        Tag="{x:Static workspaceviews:WindowMenuItemKind.FullScreen}" />
-                    <atom:MenuItem
-                        Header="{gallery:WorkspaceWindowLangResource MenuItemEnablePin}"
-                        ToggleType="CheckBox"
-                        IsChecked="True"
-                        Tag="{x:Static workspaceviews:WindowMenuItemKind.Pin}" />
-                    <atom:MenuItem
-                        Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMinimize}"
-                        ToggleType="CheckBox"
-                        IsChecked="True"
-                        Tag="{x:Static workspaceviews:WindowMenuItemKind.Minimize}" />
-                    <atom:MenuItem
-                        Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMaximize}"
-                        ToggleType="CheckBox"
-                        IsChecked="True"
-                        Tag="{x:Static workspaceviews:WindowMenuItemKind.Maximize}" />
-                    <atom:MenuItem
-                        Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMove}"
-                        ToggleType="CheckBox"
-                        IsChecked="True"
-                        Tag="{x:Static workspaceviews:WindowMenuItemKind.Move}" />
-                    <atom:MenuItem
-                        Header="{gallery:WorkspaceWindowLangResource MenuItemEnableResize}"
-                        ToggleType="CheckBox"
-                        IsChecked="True"
-                        Tag="{x:Static workspaceviews:WindowMenuItemKind.Resize}" />
+                <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemWindowOptions}">
+                    <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnableFullScreen}"
+                                   ToggleType="CheckBox"
+                                   IsChecked="True"
+                                   Tag="{x:Static workspaceviews:WindowMenuItemKind.FullScreen}" />
+                    <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnablePin}"
+                                   ToggleType="CheckBox"
+                                   IsChecked="True"
+                                   Tag="{x:Static workspaceviews:WindowMenuItemKind.Pin}" />
+                    <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMinimize}"
+                                   ToggleType="CheckBox"
+                                   IsChecked="True"
+                                   Tag="{x:Static workspaceviews:WindowMenuItemKind.Minimize}" />
+                    <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMaximize}"
+                                   ToggleType="CheckBox"
+                                   IsChecked="True"
+                                   Tag="{x:Static workspaceviews:WindowMenuItemKind.Maximize}" />
+                    <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMove}"
+                                   ToggleType="CheckBox"
+                                   IsChecked="True"
+                                   Tag="{x:Static workspaceviews:WindowMenuItemKind.Move}" />
+                    <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnableResize}"
+                                   ToggleType="CheckBox"
+                                   IsChecked="True"
+                                   Tag="{x:Static workspaceviews:WindowMenuItemKind.Resize}" />
                 </atom:MenuItem>
             </atom:MenuItem>
             <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemTheme}">
-                <atom:MenuItem
-                    Header="{gallery:WorkspaceWindowLangResource MenuItemDarkMode}"
-                    ToggleType="CheckBox"
-                    Tag="{x:Static workspaceviews:WindowMenuItemKind.DarkMode}" />
-                <atom:MenuItem
-                    Header="{gallery:WorkspaceWindowLangResource MenuItemCompactMode}"
-                    ToggleType="CheckBox"
-                    Tag="{x:Static workspaceviews:WindowMenuItemKind.Compact}" />
-                <atom:MenuItem
-                    Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMotion}"
-                    ToggleType="CheckBox"
-                    IsChecked="True"
-                    Tag="{x:Static workspaceviews:WindowMenuItemKind.Motion}" />
-                <atom:MenuItem
-                    Header="{gallery:WorkspaceWindowLangResource MenuItemEnableWaveSpirit}"
-                    ToggleType="CheckBox"
-                    IsChecked="True"
-                    Tag="{x:Static workspaceviews:WindowMenuItemKind.WaveSpirit}" />
+                <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemDarkMode}"
+                               ToggleType="CheckBox"
+                               Tag="{x:Static workspaceviews:WindowMenuItemKind.DarkMode}" />
+                <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemCompactMode}"
+                               ToggleType="CheckBox"
+                               Tag="{x:Static workspaceviews:WindowMenuItemKind.Compact}" />
+                <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnableMotion}"
+                               ToggleType="CheckBox"
+                               IsChecked="True"
+                               Tag="{x:Static workspaceviews:WindowMenuItemKind.Motion}" />
+                <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemEnableWaveSpirit}"
+                               ToggleType="CheckBox"
+                               IsChecked="True"
+                               Tag="{x:Static workspaceviews:WindowMenuItemKind.WaveSpirit}" />
             </atom:MenuItem>
             <atom:MenuItem Header="{gallery:WorkspaceWindowLangResource MenuItemLanguage}">
                 <atom:MenuItem Header="简体中文"
@@ -93,12 +81,12 @@
                                Tag="{x:Static workspaceviews:WindowMenuItemKind.LanguagePtBR}" />
             </atom:MenuItem>
         </atom:Menu>
-        <gallery:Navigation Name="Navigation"
-                            DockPanel.Dock="Left"
-                            Categories="{Binding Categories}" />
-        <gallery:IconGallery Name="Gallery"
-                             IconInfoRepository="{Binding IconInfoRepository}"
-                             Category="{Binding #Navigation.Category}"
-                             IconTheme="{Binding #Navigation.IconTheme}" />
-    </DockPanel>
+    </atom:Window.Resources>
+    <Grid>
+        <Grid Name="ShellHost" />
+        <Border Height="1"
+                VerticalAlignment="Top"
+                Background="{atom:SharedTokenResource ColorBorderSecondary}"
+                IsHitTestVisible="False" />
+    </Grid>
 </atom:Window>

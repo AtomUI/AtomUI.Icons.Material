@@ -3,6 +3,7 @@ using AtomUI.Desktop.Controls;
 using AtomUI.Toolkits.GalleryBase;
 using Avalonia;
 using Avalonia.Headless;
+using ReactiveUI.Avalonia;
 
 [assembly: AvaloniaTestApplication(typeof(MaterialGallery.Tests.TestAppBuilder))]
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
@@ -15,12 +16,20 @@ internal static class AvaloniaTestApp
 
     public static void EnsureInitialized()
     {
-        if (Interlocked.Exchange(ref _initialized, 1) == 1)
+        if (Interlocked.CompareExchange(ref _initialized, 1, 0) != 0)
         {
             return;
         }
 
-        TestAppBuilder.BuildAvaloniaApp().SetupWithoutStarting();
+        try
+        {
+            TestAppBuilder.BuildAvaloniaApp().SetupWithoutStarting();
+        }
+        catch
+        {
+            Volatile.Write(ref _initialized, 0);
+            throw;
+        }
     }
 }
 
@@ -30,12 +39,10 @@ public static class TestAppBuilder
     {
         return AppBuilder.Configure<TestApplication>()
                          .UseHeadless(new AvaloniaHeadlessPlatformOptions())
-                         .UseAtomUI(builder =>
-                         {
-                             builder.UseDesktopControls();
-                             builder.UseGalleryBase(global::MaterialGallery.MaterialGalleryModule.Configure);
-                             builder.UseGalleryControls();
-                         });
+                         .UseReactiveUI(build =>
+                             build.ConfigureViewLocator(locator =>
+                                 global::MaterialGallery.MaterialGalleryModule.RegisterViews(locator)))
+                         .UseAtomUI(BaseGalleryApplication.ConfigureCore);
     }
 }
 

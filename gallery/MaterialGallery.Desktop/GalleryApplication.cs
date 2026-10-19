@@ -1,45 +1,18 @@
-using System.Globalization;
 using AtomUI;
-using AtomUI.Desktop.Controls;
-using AtomUI.Localization;
-using AtomUI.Theme;
-using MaterialGallery.Localization;
-using Avalonia.Controls.ApplicationLifetimes;
+using MaterialGallery.Workspace.Views;
+using Window = Avalonia.Controls.Window;
 
 namespace MaterialGallery.Desktop;
 
 public partial class GalleryApplication : BaseGalleryApplication
 {
-    public override void Initialize()
-    {
-        base.Initialize();
-        this.UseAtomUI(builder =>
-        {
-            builder.UseLanguages(
-                GalleryLanguageDefaults.Resolve(CultureInfo.CurrentUICulture),
-                [LanguageTags.EnUS, LanguageTags.ZhCN, LanguageTags.ZhTW, LanguageTags.PtBR]);
-            builder.WithInitialTheme(IThemeManager.DEFAULT_THEME_ID);
-            builder.UseAlibabaSansFont();
-            builder.UseDesktopControls();
-            builder.UseGalleryControls();
-        });
-    }
-
     public GalleryApplication()
     {
         Name = "Material Icons Gallery";
     }
-    
-    public override void OnFrameworkInitializationCompleted()
+    public static void Configure(IAtomUIBuilder builder)
     {
-        switch (ApplicationLifetime)
-        {
-            case IClassicDesktopStyleApplicationLifetime desktop:
-                desktop.MainWindow       = CreateWorkspaceWindow();
-                desktop.MainWindow.Title = Name;
-                break;
-        }
-
-        base.OnFrameworkInitializationCompleted();
+        BaseGalleryApplication.ConfigureCore(builder);
+        builder.UseMainWindow(static _ => Task.FromResult<Window>(new WorkspaceWindow()));
     }
 }

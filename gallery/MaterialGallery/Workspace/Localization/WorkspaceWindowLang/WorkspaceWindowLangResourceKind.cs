@@ -2,7 +2,7 @@ using AtomUI.Localization;
 
 namespace MaterialGallery.Localization;
 
-[LanguageCatalog(ContractVersion = 2)]
+[LanguageCatalog]
 public enum WorkspaceWindowLangResourceKind
 {
     MenuItemSettings,

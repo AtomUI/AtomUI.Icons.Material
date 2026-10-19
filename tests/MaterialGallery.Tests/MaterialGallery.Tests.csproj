@@ -17,6 +17,8 @@
                           OutputItemType="Analyzer"
                           ReferenceOutputAssembly="false"
                           PrivateAssets="all" />
+        <PackageReference Include="AtomUI.Controls.I18n.PtBR" />
+        <PackageReference Include="AtomUI.Desktop.Controls.I18n.PtBR" />
     </ItemGroup>
 
     <ItemGroup>
