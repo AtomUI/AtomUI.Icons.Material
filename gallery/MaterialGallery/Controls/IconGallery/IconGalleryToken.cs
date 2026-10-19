@@ -5,7 +5,7 @@ using MaterialGallery.Controls.DesignTokens;
 namespace MaterialGallery.Controls;
 
 [ControlDesignToken]
-internal class IconGalleryToken : AbstractControlDesignToken
+internal sealed class IconGalleryToken : AbstractControlDesignToken
 {
     public const string ID = "IconGallery";
     

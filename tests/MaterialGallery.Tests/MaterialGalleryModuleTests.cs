@@ -1,9 +1,9 @@
 using AtomUI.Toolkits.GalleryBase.Localization;
 using MaterialGallery.Features.Community;
+using MaterialGallery.Features.IconCatalog;
 using MaterialGallery.Features.Overview;
 using MaterialGallery.Models;
 using MaterialGallery.Workspace.ViewModels;
-using MaterialGallery.Workspace.Views;
 using ReactiveUI;
 
 namespace MaterialGallery.Tests;
@@ -50,14 +50,15 @@ public class MaterialGalleryModuleTests
         configuration.Routes.GetRequiredRoute(CommunityViewModel.ID).ViewModelType
                      .ShouldBe(typeof(CommunityViewModel));
 
+        using var workspace = new WorkspaceWindowViewModel();
         foreach (var category in repository.Categories)
         {
             var route = configuration.Routes.GetRequiredRoute(category);
-            route.ViewModelType.ShouldBe(typeof(MaterialIconPageViewModel));
-            route.ViewType.ShouldBe(typeof(MaterialIconPage));
+            route.ViewModelType.ShouldBe(typeof(IconCatalogPageViewModel));
+            route.ViewType.ShouldBe(typeof(IconCatalogPage));
 
-            var viewModel = route.CreateViewModel(new TestScreen())
-                                 .ShouldBeOfType<MaterialIconPageViewModel>();
+            using var viewModel = route.CreateViewModel(workspace)
+                                       .ShouldBeOfType<IconCatalogPageViewModel>();
             viewModel.Category.ShouldBe(category);
             viewModel.UrlPathSegment.ShouldBe(category);
         }

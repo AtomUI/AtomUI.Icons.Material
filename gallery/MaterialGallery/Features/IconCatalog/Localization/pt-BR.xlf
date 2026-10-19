@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="2.1" srcLang="en-US" trgLang="pt-BR" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="MaterialGallery.Localization.IconCatalogPageLangResourceKind">
+    <unit id="ResultsFormat"><segment><source>{0:N0} icons</source><target state="translated">{0:N0} ícones</target></segment></unit>
+    <unit id="SearchPlaceholder"><segment><source>Search icons</source><target state="translated">Pesquisar ícones</target></segment></unit>
+    <unit id="EmptyTitle"><segment><source>No icons found</source><target state="translated">Nenhum ícone encontrado</target></segment></unit>
+    <unit id="EmptyDescription"><segment><source>Try another name or clear the search.</source><target state="translated">Tente outro nome ou limpe a pesquisa.</target></segment></unit>
+    <unit id="IconCopied"><segment><source>&lt;{0} /&gt; copied 🎉</source><target state="translated">&lt;{0} /&gt; copiado 🎉</target></segment></unit>
+  </file>
+</xliff>

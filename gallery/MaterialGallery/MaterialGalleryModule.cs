@@ -5,11 +5,10 @@ using AtomUI.Toolkits.GalleryBase.Localization;
 using AtomUI.Toolkits.GalleryBase.Routing;
 using Avalonia.Controls;
 using MaterialGallery.Features.Community;
+using MaterialGallery.Features.IconCatalog;
 using MaterialGallery.Features.Overview;
 using MaterialGallery.Localization;
 using MaterialGallery.Models;
-using MaterialGallery.Workspace.ViewModels;
-using MaterialGallery.Workspace.Views;
 using ReactiveUI;
 
 namespace MaterialGallery;
@@ -116,10 +115,10 @@ public static class MaterialGalleryModule
         foreach (var category in new IconInfoRepository().Categories)
         {
             var capturedCategory = category;
-            routes.Map<MaterialIconPageViewModel, MaterialIconPage>(
+            routes.Map<IconCatalogPageViewModel, IconCatalogPage>(
                 category,
-                screen => new MaterialIconPageViewModel(screen, capturedCategory),
-                static () => new MaterialIconPage());
+                screen => new IconCatalogPageViewModel(screen, capturedCategory),
+                static () => new IconCatalogPage());
         }
     }
 

@@ -27,6 +27,18 @@ public class IconGallery : TemplatedControl, IMotionAwareControl
     
     public static readonly StyledProperty<IconInfoRepository?> IconInfoRepositoryProperty = 
         AvaloniaProperty.Register<IconGallery, IconInfoRepository?>(nameof (IconInfoRepository));
+
+    public static readonly StyledProperty<bool> HasMatchesProperty =
+        AvaloniaProperty.Register<IconGallery, bool>(nameof(HasMatches), true);
+
+    public static readonly StyledProperty<string?> SearchPlaceholderProperty =
+        AvaloniaProperty.Register<IconGallery, string?>(nameof(SearchPlaceholder));
+
+    public static readonly StyledProperty<string?> EmptyTitleProperty =
+        AvaloniaProperty.Register<IconGallery, string?>(nameof(EmptyTitle));
+
+    public static readonly StyledProperty<string?> EmptyDescriptionProperty =
+        AvaloniaProperty.Register<IconGallery, string?>(nameof(EmptyDescription));
     
     public static readonly StyledProperty<bool> IsMotionEnabledProperty =
         MotionAwareControlProperty.IsMotionEnabledProperty.AddOwner<IconGallery>();
@@ -54,6 +66,30 @@ public class IconGallery : TemplatedControl, IMotionAwareControl
         get => GetValue(IconInfoRepositoryProperty);
         set => SetValue(IconInfoRepositoryProperty, value);
     }
+
+    public bool HasMatches
+    {
+        get => GetValue(HasMatchesProperty);
+        set => SetValue(HasMatchesProperty, value);
+    }
+
+    public string? SearchPlaceholder
+    {
+        get => GetValue(SearchPlaceholderProperty);
+        set => SetValue(SearchPlaceholderProperty, value);
+    }
+
+    public string? EmptyTitle
+    {
+        get => GetValue(EmptyTitleProperty);
+        set => SetValue(EmptyTitleProperty, value);
+    }
+
+    public string? EmptyDescription
+    {
+        get => GetValue(EmptyDescriptionProperty);
+        set => SetValue(EmptyDescriptionProperty, value);
+    }
     
     public bool IsMotionEnabled
     {
@@ -64,6 +100,7 @@ public class IconGallery : TemplatedControl, IMotionAwareControl
     private CompositeDisposable? _disposables;
     private ScrollViewer? _scrollViewer;
     private SearchEdit? _searchEdit;
+    private bool _templateHandlersAttached;
     
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
@@ -84,34 +121,82 @@ public class IconGallery : TemplatedControl, IMotionAwareControl
     private void HandleCondChanged()
     {
         _disposables?.Dispose();
+        _disposables = null;
         if (IconInfoRepository != null)
         {
             _disposables = new CompositeDisposable();
             _disposables.Add(BindUtils.RelayBind(this, CategoryProperty, IconInfoRepository, IconInfoRepository.CategoryProperty));
             _disposables.Add(BindUtils.RelayBind(this, IconThemeProperty, IconInfoRepository, IconInfoRepository.IconThemeProperty));
             _disposables.Add(BindUtils.RelayBind(IconInfoRepository, IconInfoRepository.ActivatedIconInfosProperty, this, IconInfosProperty));
+            _disposables.Add(BindUtils.RelayBind(IconInfoRepository, IconInfoRepository.HasMatchesProperty, this, HasMatchesProperty));
             IconInfoRepository.RefreshIconInfos();
+        }
+        else
+        {
+            SetCurrentValue(HasMatchesProperty, false);
         }
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
+        DetachTemplateHandlers();
         base.OnApplyTemplate(e);
-        if (_scrollViewer != null)
-        {
-            _scrollViewer.ScrollChanged -= HandleScrollChanged;
-        }
-
         _scrollViewer = e.NameScope.Find<ScrollViewer>(IconGalleryThemeConstants.ScrollViewerPart);
         _searchEdit = e.NameScope.Find<SearchEdit>(IconGalleryThemeConstants.SearchInputPart);
+        AttachTemplateHandlers();
+    }
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        if (_disposables is null)
+        {
+            HandleCondChanged();
+        }
+
+        AttachTemplateHandlers();
+    }
+
+    protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        DetachTemplateHandlers();
+        _disposables?.Dispose();
+        _disposables = null;
+        base.OnDetachedFromVisualTree(e);
+    }
+
+    private void AttachTemplateHandlers()
+    {
+        if (_templateHandlersAttached)
+        {
+            return;
+        }
+
         if (_scrollViewer != null)
         {
             _scrollViewer.ScrollChanged += HandleScrollChanged;
         }
         if (_searchEdit != null)
         {
-            _searchEdit.SearchButtonClick += HandleSearchButtonClick;
+            _searchEdit.SearchRequested += HandleSearchRequested;
         }
+
+        _templateHandlersAttached = _scrollViewer is not null || _searchEdit is not null;
+    }
+
+    private void DetachTemplateHandlers()
+    {
+        if (_scrollViewer != null)
+        {
+            _scrollViewer.ScrollChanged -= HandleScrollChanged;
+        }
+
+        if (_searchEdit != null)
+        {
+            _searchEdit.SearchRequested -= HandleSearchRequested;
+        }
+
+        _templateHandlersAttached = false;
     }
 
     private void HandleScrollChanged(object? sender, ScrollChangedEventArgs e)
@@ -128,12 +213,11 @@ public class IconGallery : TemplatedControl, IMotionAwareControl
         }
     }
 
-    private void HandleSearchButtonClick(object? sender, RoutedEventArgs e)
+    private void HandleSearchRequested(object? sender, SearchRequestedEventArgs e)
     {
-        if (IconInfoRepository != null && _searchEdit != null)
+        if (IconInfoRepository != null)
         {
-            var filter = _searchEdit.Text?.Trim();
-            IconInfoRepository.Filter = filter;
+            IconInfoRepository.Filter = e.Query.Trim();
         }
     }
 }

@@ -1,0 +1,57 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:atom="https://atomui.net"
+             xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
+             xmlns:vm="using:MaterialGallery.Features.IconCatalog"
+             x:Class="MaterialGallery.Features.IconCatalog.IconCatalogPage"
+             x:DataType="vm:IconCatalogPageViewModel"
+             HorizontalContentAlignment="Stretch"
+             VerticalContentAlignment="Stretch">
+    <Grid RowDefinitions="Auto,*"
+          Margin="24,20,24,0"
+          RowSpacing="14">
+        <atom:FlexPanel Name="CatalogHeader"
+                        Direction="Row"
+                        Wrap="Wrap"
+                        ColumnSpacing="18"
+                        RowSpacing="10"
+                        AlignItems="Center"
+                        JustifyContent="SpaceBetween">
+            <StackPanel Name="CatalogTitleGroup"
+                        Orientation="Horizontal"
+                        Spacing="10"
+                        VerticalAlignment="Center">
+                <atom:TextBlock Name="CategoryTitle"
+                                Text="{Binding CategoryTitle}"
+                                FontSize="26"
+                                FontWeight="Bold"
+                                VerticalAlignment="Center" />
+                <atom:TextBlock Name="ResultCount"
+                                Text="{Binding ResultSummary}"
+                                Foreground="{atom:SharedTokenResource ColorTextSecondary}"
+                                VerticalAlignment="Center" />
+            </StackPanel>
+
+            <atom:Segmented Name="IconThemeSelector"
+                            SelectedIndex="{Binding SelectedThemeIndex, Mode=TwoWay}"
+                            HorizontalAlignment="Right">
+                <atom:SegmentedItem Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeFilled}" />
+                <atom:SegmentedItem Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeOutlined}" />
+                <atom:SegmentedItem Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeRounded}" />
+                <atom:SegmentedItem Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeSharp}" />
+                <atom:SegmentedItem Content="{gallery:WorkspaceWindowLangResource NavigationIconThemeTwoTone}" />
+            </atom:Segmented>
+        </atom:FlexPanel>
+
+        <gallery:IconGallery Name="CatalogGallery"
+                             Grid.Row="1"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch"
+                             Category="{Binding Category}"
+                             IconTheme="{Binding Workspace.IconTheme}"
+                             IconInfoRepository="{Binding IconInfoRepository}"
+                             SearchPlaceholder="{gallery:IconCatalogPageLangResource SearchPlaceholder}"
+                             EmptyTitle="{gallery:IconCatalogPageLangResource EmptyTitle}"
+                             EmptyDescription="{gallery:IconCatalogPageLangResource EmptyDescription}" />
+    </Grid>
+</UserControl>

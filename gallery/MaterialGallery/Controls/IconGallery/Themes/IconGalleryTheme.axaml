@@ -9,27 +9,48 @@
             <ControlTemplate>
                 <DockPanel LastChildFill="True">
                     <atom:SearchEdit Name="{x:Static gallery:IconGalleryThemeConstants.SearchInputPart}"
+                                     PlaceholderText="{TemplateBinding SearchPlaceholder}"
                                      HorizontalAlignment="Stretch"
                                      DockPanel.Dock="Top" />
-                    <atom:ScrollViewer Name="{x:Static gallery:IconGalleryThemeConstants.ScrollViewerPart}"
-                                       VerticalScrollBarVisibility="Auto"
-                                       AllowAutoHide="False"
-                                       BringIntoViewOnFocusChange="False">
-                        <ItemsControl ItemsSource="{TemplateBinding IconInfos}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel LineSpacing="10" ItemSpacing="10" />
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate x:DataType="gallery:IconInfo">
-                                    <gallery:IconInfoItem
-                                        IconName="{Binding Name}"
-                                        Icon="{Binding Icon}" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </atom:ScrollViewer>
+                    <Grid>
+                        <atom:ScrollViewer Name="{x:Static gallery:IconGalleryThemeConstants.ScrollViewerPart}"
+                                           IsVisible="{TemplateBinding HasMatches}"
+                                           VerticalScrollBarVisibility="Auto"
+                                           AllowAutoHide="False"
+                                           BringIntoViewOnFocusChange="False">
+                            <ItemsControl ItemsSource="{TemplateBinding IconInfos}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel LineSpacing="10" ItemSpacing="10" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="gallery:IconInfo">
+                                        <gallery:IconInfoItem
+                                            IconName="{Binding Name}"
+                                            Icon="{Binding Icon}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </atom:ScrollViewer>
+                        <Border Name="IconGalleryEmptyState"
+                                IsVisible="{Binding !HasMatches, RelativeSource={RelativeSource TemplatedParent}}"
+                                IsHitTestVisible="False"
+                                Padding="24">
+                            <StackPanel HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="8">
+                                <atom:TextBlock Text="{TemplateBinding EmptyTitle}"
+                                                FontSize="18"
+                                                FontWeight="SemiBold"
+                                                TextAlignment="Center" />
+                                <atom:TextBlock Text="{TemplateBinding EmptyDescription}"
+                                                Foreground="{atom:SharedTokenResource ColorTextSecondary}"
+                                                TextAlignment="Center"
+                                                TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
                 </DockPanel>
             </ControlTemplate>
         </Setter>
