@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="2.1" srcLang="en-US" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="MaterialGallery.Localization.CommunityPageLangResourceKind">
+    <unit id="Title"><segment><source>AtomUI Material Icons</source></segment></unit>
+    <unit id="Description"><segment><source>A complete Material Design icon library for AtomUI and Avalonia applications.</source></segment></unit>
+    <unit id="Relationship"><segment><source>Built for the AtomUI ecosystem, with generated, strongly typed icons across five visual styles.</source></segment></unit>
+    <unit id="OpenGitHub"><segment><source>Open GitHub</source></segment></unit>
+    <unit id="VisitAtomUI"><segment><source>Visit AtomUI</source></segment></unit>
+    <unit id="ProjectResources"><segment><source>Project resources</source></segment></unit>
+    <unit id="ReportIssueTitle"><segment><source>Report an issue</source></segment></unit>
+    <unit id="ReportIssueDescription"><segment><source>Found a missing icon or a Gallery problem? Tell us what happened.</source></segment></unit>
+    <unit id="ReportIssueAction"><segment><source>Open issue tracker →</source></segment></unit>
+    <unit id="ContributeTitle"><segment><source>Contribute</source></segment></unit>
+    <unit id="ContributeDescription"><segment><source>Improve generated metadata, documentation, tests, or the Gallery experience.</source></segment></unit>
+    <unit id="ContributeAction"><segment><source>View repository →</source></segment></unit>
+    <unit id="GetPackageTitle"><segment><source>Get the package</source></segment></unit>
+    <unit id="GetPackageDescription"><segment><source>Install the current AtomUI.Icons.Material release directly from NuGet.</source></segment></unit>
+    <unit id="GetPackageAction"><segment><source>Open NuGet →</source></segment></unit>
+  </file>
+</xliff>

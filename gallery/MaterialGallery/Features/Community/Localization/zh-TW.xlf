@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="2.1" srcLang="en-US" trgLang="zh-TW" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="MaterialGallery.Localization.CommunityPageLangResourceKind">
+    <unit id="Title"><segment><source>AtomUI Material Icons</source><target state="translated">AtomUI Material 圖示</target></segment></unit>
+    <unit id="Description"><segment><source>A complete Material Design icon library for AtomUI and Avalonia applications.</source><target state="translated">面向 AtomUI 與 Avalonia 應用程式的完整 Material Design 圖示庫。</target></segment></unit>
+    <unit id="Relationship"><segment><source>Built for the AtomUI ecosystem, with generated, strongly typed icons across five visual styles.</source><target state="translated">專為 AtomUI 生態建置，提供五種視覺風格的產生式強型別圖示。</target></segment></unit>
+    <unit id="OpenGitHub"><segment><source>Open GitHub</source><target state="translated">開啟 GitHub</target></segment></unit>
+    <unit id="VisitAtomUI"><segment><source>Visit AtomUI</source><target state="translated">造訪 AtomUI</target></segment></unit>
+    <unit id="ProjectResources"><segment><source>Project resources</source><target state="translated">專案資源</target></segment></unit>
+    <unit id="ReportIssueTitle"><segment><source>Report an issue</source><target state="translated">回報問題</target></segment></unit>
+    <unit id="ReportIssueDescription"><segment><source>Found a missing icon or a Gallery problem? Tell us what happened.</source><target state="translated">發現圖示缺漏或 Gallery 問題？請告訴我們具體情況。</target></segment></unit>
+    <unit id="ReportIssueAction"><segment><source>Open issue tracker →</source><target state="translated">開啟問題追蹤器 →</target></segment></unit>
+    <unit id="ContributeTitle"><segment><source>Contribute</source><target state="translated">參與貢獻</target></segment></unit>
+    <unit id="ContributeDescription"><segment><source>Improve generated metadata, documentation, tests, or the Gallery experience.</source><target state="translated">改進產生的中繼資料、文件、測試或 Gallery 體驗。</target></segment></unit>
+    <unit id="ContributeAction"><segment><source>View repository →</source><target state="translated">查看程式碼倉庫 →</target></segment></unit>
+    <unit id="GetPackageTitle"><segment><source>Get the package</source><target state="translated">取得套件</target></segment></unit>
+    <unit id="GetPackageDescription"><segment><source>Install the current AtomUI.Icons.Material release directly from NuGet.</source><target state="translated">直接從 NuGet 安裝目前的 AtomUI.Icons.Material 版本。</target></segment></unit>
+    <unit id="GetPackageAction"><segment><source>Open NuGet →</source><target state="translated">開啟 NuGet →</target></segment></unit>
+  </file>
+</xliff>
