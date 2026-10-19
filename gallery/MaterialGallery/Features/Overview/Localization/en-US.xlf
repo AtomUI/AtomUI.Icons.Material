@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="2.1" srcLang="en-US" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="MaterialGallery.Localization.OverviewPageLangResourceKind">
+    <unit id="InstallTitle"><segment><source>Install AtomUI Material Icons</source></segment></unit>
+    <unit id="InstallDescription"><segment><source>Add the Material icon package to an Avalonia application.</source></segment></unit>
+    <unit id="DotNetCliTab"><segment><source>.NET CLI</source></segment></unit>
+    <unit id="PackageReferenceTab"><segment><source>PackageReference</source></segment></unit>
+    <unit id="PackageManagerTab"><segment><source>Package Manager</source></segment></unit>
+    <unit id="Copy"><segment><source>Copy</source></segment></unit>
+    <unit id="CommandCopied"><segment><source>Command copied</source></segment></unit>
+    <unit id="QuickLinksTitle"><segment><source>Start exploring</source></segment></unit>
+    <unit id="ExploreTitle"><segment><source>Browse and learn</source></segment></unit>
+    <unit id="ExploreDescription"><segment><source>Explore the icon catalog or open the usage guide.</source></segment></unit>
+    <unit id="PackageTitle"><segment><source>Package and source</source></segment></unit>
+    <unit id="PackageDescription"><segment><source>Get the package from NuGet or contribute on GitHub.</source></segment></unit>
+    <unit id="BrowseIcons"><segment><source>Browse icons</source></segment></unit>
+    <unit id="UsageGuide"><segment><source>Usage guide</source></segment></unit>
+    <unit id="OpenNuGet"><segment><source>Open NuGet</source></segment></unit>
+    <unit id="OpenGitHub"><segment><source>Open GitHub</source></segment></unit>
+  </file>
+</xliff>

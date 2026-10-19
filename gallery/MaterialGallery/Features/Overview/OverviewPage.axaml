@@ -1,17 +1,182 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:atom="https://atomui.net"
-             xmlns:gallery="using:MaterialGallery.Features.Overview"
+             xmlns:antdicons="https://atomui.net/icons/antdesign"
+             xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
+             xmlns:vm="using:MaterialGallery.Features.Overview"
              x:Class="MaterialGallery.Features.Overview.OverviewPage"
-             x:DataType="gallery:OverviewViewModel">
+             x:DataType="vm:OverviewViewModel">
     <atom:ScrollViewer HorizontalScrollBarVisibility="Auto"
                        VerticalScrollBarVisibility="Auto"
                        AllowAutoHide="False">
-        <StackPanel Margin="32" Spacing="12">
-            <atom:TextBlock Text="AtomUI Material Icons"
-                            FontSize="28"
-                            FontWeight="Bold" />
-            <atom:TextBlock Text="Material Design icons for AtomUI and Avalonia." />
+        <StackPanel MaxWidth="980"
+                    Margin="28"
+                    Spacing="24"
+                    HorizontalAlignment="Center">
+            <Image Name="OverviewBanner"
+                   Source="/Assets/atomui-material-icons-banner.webp"
+                   Stretch="Uniform"
+                   HorizontalAlignment="Center"
+                   MaxWidth="920" />
+
+            <Border Background="{atom:SharedTokenResource ColorBgContainer}"
+                    BorderBrush="{atom:SharedTokenResource ColorBorderSecondary}"
+                    BorderThickness="1"
+                    BoxShadow="{atom:SharedTokenResource BoxShadowsTertiary}"
+                    CornerRadius="8"
+                    Padding="22">
+                <StackPanel Spacing="16">
+                    <WrapPanel Orientation="Horizontal"
+                               ItemSpacing="10"
+                               LineSpacing="8">
+                        <atom:TextBlock Text="{gallery:OverviewPageLangResource InstallTitle}"
+                                        FontSize="22"
+                                        FontWeight="Bold"
+                                        VerticalAlignment="Center" />
+                        <atom:Tag Name="DotNet8Tag"
+                                  Text=".NET 8"
+                                  TagColor="blue"
+                                  VerticalAlignment="Center" />
+                        <atom:Tag Name="DotNet10Tag"
+                                  Text=".NET 10"
+                                  TagColor="blue"
+                                  VerticalAlignment="Center" />
+                    </WrapPanel>
+
+                    <atom:TextBlock Text="{gallery:OverviewPageLangResource InstallDescription}"
+                                    Foreground="{atom:SharedTokenResource ColorTextSecondary}"
+                                    TextWrapping="Wrap" />
+
+                    <atom:TabControl Name="InstallTabs">
+                        <atom:TabItem Header="{gallery:OverviewPageLangResource DotNetCliTab}">
+                            <atom:PixelAlignedBorder BorderBrush="{atom:SharedTokenResource ColorBorder}"
+                                                     BorderThickness="1"
+                                                     CornerRadius="6"
+                                                     Padding="14"
+                                                     Margin="0,10,0,0">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                                    <atom:TextBlock Text="{Binding DotNetCliInstallCommand}"
+                                                    FontFamily="Consolas"
+                                                    FontSize="14"
+                                                    TextWrapping="Wrap"
+                                                    VerticalAlignment="Center" />
+                                    <atom:Button Name="DotNetCliCopyButton"
+                                                 Grid.Column="1"
+                                                 ButtonType="Primary"
+                                                 Icon="{antdicons:AntDesignIconProvider Kind=CopyOutlined}"
+                                                 Content="{gallery:OverviewPageLangResource Copy}"
+                                                 Tag="{Binding DotNetCliInstallCommand}"
+                                                 Click="HandleCopyInstallCommandClick" />
+                                </Grid>
+                            </atom:PixelAlignedBorder>
+                        </atom:TabItem>
+
+                        <atom:TabItem Header="{gallery:OverviewPageLangResource PackageReferenceTab}">
+                            <atom:PixelAlignedBorder BorderBrush="{atom:SharedTokenResource ColorBorder}"
+                                                     BorderThickness="1"
+                                                     CornerRadius="6"
+                                                     Padding="14"
+                                                     Margin="0,10,0,0">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                                    <atom:TextBlock Text="{Binding PackageReferenceInstallCommand}"
+                                                    FontFamily="Consolas"
+                                                    FontSize="14"
+                                                    TextWrapping="Wrap"
+                                                    VerticalAlignment="Center" />
+                                    <atom:Button Name="PackageReferenceCopyButton"
+                                                 Grid.Column="1"
+                                                 ButtonType="Primary"
+                                                 Icon="{antdicons:AntDesignIconProvider Kind=CopyOutlined}"
+                                                 Content="{gallery:OverviewPageLangResource Copy}"
+                                                 Tag="{Binding PackageReferenceInstallCommand}"
+                                                 Click="HandleCopyInstallCommandClick" />
+                                </Grid>
+                            </atom:PixelAlignedBorder>
+                        </atom:TabItem>
+
+                        <atom:TabItem Header="{gallery:OverviewPageLangResource PackageManagerTab}">
+                            <atom:PixelAlignedBorder BorderBrush="{atom:SharedTokenResource ColorBorder}"
+                                                     BorderThickness="1"
+                                                     CornerRadius="6"
+                                                     Padding="14"
+                                                     Margin="0,10,0,0">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                                    <atom:TextBlock Text="{Binding PackageManagerInstallCommand}"
+                                                    FontFamily="Consolas"
+                                                    FontSize="14"
+                                                    TextWrapping="Wrap"
+                                                    VerticalAlignment="Center" />
+                                    <atom:Button Name="PackageManagerCopyButton"
+                                                 Grid.Column="1"
+                                                 ButtonType="Primary"
+                                                 Icon="{antdicons:AntDesignIconProvider Kind=CopyOutlined}"
+                                                 Content="{gallery:OverviewPageLangResource Copy}"
+                                                 Tag="{Binding PackageManagerInstallCommand}"
+                                                 Click="HandleCopyInstallCommandClick" />
+                                </Grid>
+                            </atom:PixelAlignedBorder>
+                        </atom:TabItem>
+                    </atom:TabControl>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Spacing="8">
+                <atom:TextBlock Text="{gallery:OverviewPageLangResource QuickLinksTitle}"
+                                FontSize="20"
+                                FontWeight="Bold" />
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="18">
+                    <Border Background="{atom:SharedTokenResource ColorBgContainer}"
+                            BorderBrush="{atom:SharedTokenResource ColorBorderSecondary}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="20">
+                        <StackPanel Spacing="10">
+                            <atom:TextBlock Text="{gallery:OverviewPageLangResource ExploreTitle}"
+                                            FontSize="17"
+                                            FontWeight="SemiBold" />
+                            <atom:TextBlock Text="{gallery:OverviewPageLangResource ExploreDescription}"
+                                            Foreground="{atom:SharedTokenResource ColorTextSecondary}"
+                                            TextWrapping="Wrap" />
+                            <WrapPanel Orientation="Horizontal" ItemSpacing="8">
+                                <atom:HyperLinkButton Name="BrowseIconsLink"
+                                                      Content="{gallery:OverviewPageLangResource BrowseIcons}"
+                                                      Icon="{antdicons:AntDesignIconProvider Kind=AppstoreOutlined}"
+                                                      NavigateUri="{Binding BrowseIconsUri}" />
+                                <atom:HyperLinkButton Name="UsageLink"
+                                                      Content="{gallery:OverviewPageLangResource UsageGuide}"
+                                                      Icon="{antdicons:AntDesignIconProvider Kind=ReadOutlined}"
+                                                      NavigateUri="{Binding UsageUri}" />
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="1"
+                            Background="{atom:SharedTokenResource ColorBgContainer}"
+                            BorderBrush="{atom:SharedTokenResource ColorBorderSecondary}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="20">
+                        <StackPanel Spacing="10">
+                            <atom:TextBlock Text="{gallery:OverviewPageLangResource PackageTitle}"
+                                            FontSize="17"
+                                            FontWeight="SemiBold" />
+                            <atom:TextBlock Text="{gallery:OverviewPageLangResource PackageDescription}"
+                                            Foreground="{atom:SharedTokenResource ColorTextSecondary}"
+                                            TextWrapping="Wrap" />
+                            <WrapPanel Orientation="Horizontal" ItemSpacing="8">
+                                <atom:HyperLinkButton Name="NuGetLink"
+                                                      Content="{gallery:OverviewPageLangResource OpenNuGet}"
+                                                      Icon="{antdicons:AntDesignIconProvider Kind=CloudDownloadOutlined}"
+                                                      NavigateUri="{Binding NuGetUri}" />
+                                <atom:HyperLinkButton Name="GitHubLink"
+                                                      Content="{gallery:OverviewPageLangResource OpenGitHub}"
+                                                      Icon="{antdicons:AntDesignIconProvider Kind=GithubOutlined}"
+                                                      NavigateUri="{Binding GitHubUri}" />
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
         </StackPanel>
     </atom:ScrollViewer>
 </UserControl>

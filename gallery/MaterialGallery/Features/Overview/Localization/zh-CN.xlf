@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="2.1" srcLang="en-US" trgLang="zh-CN" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="MaterialGallery.Localization.OverviewPageLangResourceKind">
+    <unit id="InstallTitle"><segment><source>Install AtomUI Material Icons</source><target state="translated">安装 AtomUI Material Icons</target></segment></unit>
+    <unit id="InstallDescription"><segment><source>Add the Material icon package to an Avalonia application.</source><target state="translated">将 Material 图标包添加到 Avalonia 应用。</target></segment></unit>
+    <unit id="DotNetCliTab"><segment><source>.NET CLI</source><target state="translated">.NET CLI</target></segment></unit>
+    <unit id="PackageReferenceTab"><segment><source>PackageReference</source><target state="translated">PackageReference</target></segment></unit>
+    <unit id="PackageManagerTab"><segment><source>Package Manager</source><target state="translated">包管理器</target></segment></unit>
+    <unit id="Copy"><segment><source>Copy</source><target state="translated">复制</target></segment></unit>
+    <unit id="CommandCopied"><segment><source>Command copied</source><target state="translated">命令已复制</target></segment></unit>
+    <unit id="QuickLinksTitle"><segment><source>Start exploring</source><target state="translated">开始探索</target></segment></unit>
+    <unit id="ExploreTitle"><segment><source>Browse and learn</source><target state="translated">浏览与学习</target></segment></unit>
+    <unit id="ExploreDescription"><segment><source>Explore the icon catalog or open the usage guide.</source><target state="translated">浏览图标目录或查看使用指南。</target></segment></unit>
+    <unit id="PackageTitle"><segment><source>Package and source</source><target state="translated">软件包与源码</target></segment></unit>
+    <unit id="PackageDescription"><segment><source>Get the package from NuGet or contribute on GitHub.</source><target state="translated">从 NuGet 获取软件包，或在 GitHub 上参与贡献。</target></segment></unit>
+    <unit id="BrowseIcons"><segment><source>Browse icons</source><target state="translated">浏览图标</target></segment></unit>
+    <unit id="UsageGuide"><segment><source>Usage guide</source><target state="translated">使用指南</target></segment></unit>
+    <unit id="OpenNuGet"><segment><source>Open NuGet</source><target state="translated">打开 NuGet</target></segment></unit>
+    <unit id="OpenGitHub"><segment><source>Open GitHub</source><target state="translated">打开 GitHub</target></segment></unit>
+  </file>
+</xliff>
