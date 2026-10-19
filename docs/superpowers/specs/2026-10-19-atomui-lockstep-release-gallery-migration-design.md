@@ -50,6 +50,8 @@ A deterministic repository script will implement this query and emit machine-rea
 
 The migration baseline is the clean Gallery implementation at AtomUIV6 tag `v6.2.6` (`6e75aeb452db0782721fdfd893053d90fb37e470`). Product-specific content will not be copied blindly.
 
+The detailed Gallery information architecture, page layouts, state boundaries, and visual acceptance contract are superseded by `2026-10-19-material-gallery-ux-architecture-design.md`. The release gates in this document remain authoritative.
+
 ### Composition root
 
 `GalleryApplication.Configure(IAtomUIBuilder)` becomes the single AtomUI composition entry point. It configures the application ID, user theme directory, supported languages, initial theme, font, desktop controls, GalleryBase, Material Gallery control package, and main window. Desktop startup uses the current AtomUI platform-detection and ReactiveUI view-locator configuration patterns.
@@ -69,7 +71,7 @@ Version text derives from compiled `MaterialVersion` metadata so the Gallery can
 
 The workspace adopts `GalleryWorkspaceViewModel`, `GalleryNavigationViewModel`, `GalleryShellView`, and the current GalleryBase title-bar/menu behavior. Theme, language, appearance, compact mode, motion, wave-spirit, route lifetime, and disposal logic come from GalleryBase instead of the project's duplicate workspace implementation.
 
-Material icon categories become Gallery navigation entries. Selecting a category routes to a Material icon page. The icon theme selector remains a Material-specific sidebar/header action because Filled, Outlined, Rounded, Sharp, and TwoTone are domain state rather than application routes.
+`Overview`, `Community`, and all Material icon categories become direct first-level Gallery navigation entries. Selecting a category routes to the shared icon-catalog page. The icon theme selector is Material-specific content state and belongs in the icon-catalog toolbar; the sidebar header action is reserved for GalleryBase's collapse/expand control.
 
 ### Material-specific content
 
