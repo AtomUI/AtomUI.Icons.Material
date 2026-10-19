@@ -1,0 +1,7 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="using:MaterialGallery.Workspace.ViewModels"
+             x:Class="MaterialGallery.Workspace.Views.MaterialIconPage"
+             x:DataType="viewModels:MaterialIconPageViewModel">
+    <TextBlock Text="{Binding Category}" />
+</UserControl>

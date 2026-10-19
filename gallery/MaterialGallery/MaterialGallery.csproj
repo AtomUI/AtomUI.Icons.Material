@@ -20,10 +20,16 @@
     <ItemGroup>
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="AvaloniaUI.DiagnosticsSupport"/>
         <PackageReference Include="AtomUI.Desktop.Controls"/>
+        <PackageReference Include="AtomUI.Toolkits.GalleryBase"/>
         <PackageReference Include="AtomUI.Generator"
                           OutputItemType="Analyzer"
                           ReferenceOutputAssembly="false"
                           PrivateAssets="all"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <AssemblyMetadata Include="MaterialVersion" Value="$(MaterialVersion)" />
+        <InternalsVisibleTo Include="MaterialGallery.Tests" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(UsePublishedMaterialPackage)' != 'true' and '$(TargetFramework)' != ''">

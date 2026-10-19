@@ -3,4 +3,5 @@
   <Project Path="gallery/MaterialGallery/MaterialGallery.csproj" />
   <Project Path="src/AtomUI.Icons.Material.Generator/AtomUI.Icons.Material.Generator.csproj" />
   <Project Path="src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj" />
+  <Project Path="tests/MaterialGallery.Tests/MaterialGallery.Tests.csproj" />
 </Solution>
