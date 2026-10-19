@@ -121,6 +121,30 @@
         <target state="translated">分類:</target>
       </segment>
     </unit>
+    <unit id="NavigationOverview">
+      <segment>
+        <source>Overview</source>
+        <target state="translated">概覽</target>
+      </segment>
+    </unit>
+    <unit id="NavigationCommunity">
+      <segment>
+        <source>Community</source>
+        <target state="translated">社群</target>
+      </segment>
+    </unit>
+    <unit id="CollapseNavigation">
+      <segment>
+        <source>Collapse navigation</source>
+        <target state="translated">收起導航</target>
+      </segment>
+    </unit>
+    <unit id="ExpandNavigation">
+      <segment>
+        <source>Expand navigation</source>
+        <target state="translated">展開導航</target>
+      </segment>
+    </unit>
     <unit id="IconCategoryAction">
       <segment>
         <source>Action</source>

@@ -11,6 +11,7 @@
         <PackageVersion Include="AtomUI.Desktop.Controls" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Desktop.Controls.I18n.PtBR" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Icons.Shared" Version="$(AtomUIVersion)"/>
+        <PackageVersion Include="AtomUI.Icons.AntDesign" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Generator" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Icons.Material" Version="$(MaterialVersion)"/>
         <PackageVersion Include="AtomUI.Toolkits.GalleryBase" Version="$(AtomUIVersion)"/>

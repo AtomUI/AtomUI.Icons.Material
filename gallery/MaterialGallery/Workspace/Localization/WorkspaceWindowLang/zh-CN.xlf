@@ -121,6 +121,30 @@
         <target state="translated">分类:</target>
       </segment>
     </unit>
+    <unit id="NavigationOverview">
+      <segment>
+        <source>Overview</source>
+        <target state="translated">概览</target>
+      </segment>
+    </unit>
+    <unit id="NavigationCommunity">
+      <segment>
+        <source>Community</source>
+        <target state="translated">社区</target>
+      </segment>
+    </unit>
+    <unit id="CollapseNavigation">
+      <segment>
+        <source>Collapse navigation</source>
+        <target state="translated">收起导航</target>
+      </segment>
+    </unit>
+    <unit id="ExpandNavigation">
+      <segment>
+        <source>Expand navigation</source>
+        <target state="translated">展开导航</target>
+      </segment>
+    </unit>
     <unit id="IconCategoryAction">
       <segment>
         <source>Action</source>

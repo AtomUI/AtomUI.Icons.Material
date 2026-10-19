@@ -121,6 +121,30 @@
         <target state="translated">Categoria:</target>
       </segment>
     </unit>
+    <unit id="NavigationOverview">
+      <segment>
+        <source>Overview</source>
+        <target state="translated">Visão geral</target>
+      </segment>
+    </unit>
+    <unit id="NavigationCommunity">
+      <segment>
+        <source>Community</source>
+        <target state="translated">Comunidade</target>
+      </segment>
+    </unit>
+    <unit id="CollapseNavigation">
+      <segment>
+        <source>Collapse navigation</source>
+        <target state="translated">Recolher navegação</target>
+      </segment>
+    </unit>
+    <unit id="ExpandNavigation">
+      <segment>
+        <source>Expand navigation</source>
+        <target state="translated">Expandir navegação</target>
+      </segment>
+    </unit>
     <unit id="IconCategoryAction">
       <segment>
         <source>Action</source>

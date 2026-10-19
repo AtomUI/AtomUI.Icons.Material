@@ -101,6 +101,26 @@
         <source>Category:</source>
       </segment>
     </unit>
+    <unit id="NavigationOverview">
+      <segment>
+        <source>Overview</source>
+      </segment>
+    </unit>
+    <unit id="NavigationCommunity">
+      <segment>
+        <source>Community</source>
+      </segment>
+    </unit>
+    <unit id="CollapseNavigation">
+      <segment>
+        <source>Collapse navigation</source>
+      </segment>
+    </unit>
+    <unit id="ExpandNavigation">
+      <segment>
+        <source>Expand navigation</source>
+      </segment>
+    </unit>
     <unit id="IconCategoryAction">
       <segment>
         <source>Action</source>

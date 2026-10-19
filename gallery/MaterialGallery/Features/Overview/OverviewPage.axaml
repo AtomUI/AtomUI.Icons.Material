@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:atom="https://atomui.net"
+             xmlns:gallery="using:MaterialGallery.Features.Overview"
+             x:Class="MaterialGallery.Features.Overview.OverviewPage"
+             x:DataType="gallery:OverviewViewModel">
+    <atom:ScrollViewer HorizontalScrollBarVisibility="Auto"
+                       VerticalScrollBarVisibility="Auto"
+                       AllowAutoHide="False">
+        <StackPanel Margin="32" Spacing="12">
+            <atom:TextBlock Text="AtomUI Material Icons"
+                            FontSize="28"
+                            FontWeight="Bold" />
+            <atom:TextBlock Text="Material Design icons for AtomUI and Avalonia." />
+        </StackPanel>
+    </atom:ScrollViewer>
+</UserControl>

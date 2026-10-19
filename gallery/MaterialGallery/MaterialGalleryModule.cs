@@ -1,7 +1,11 @@
 using AtomUI.Controls;
+using AtomUI.Icons.AntDesign;
 using AtomUI.Toolkits.GalleryBase.Configuration;
 using AtomUI.Toolkits.GalleryBase.Localization;
 using AtomUI.Toolkits.GalleryBase.Routing;
+using Avalonia.Controls;
+using MaterialGallery.Features.Community;
+using MaterialGallery.Features.Overview;
 using MaterialGallery.Localization;
 using MaterialGallery.Models;
 using MaterialGallery.Workspace.ViewModels;
@@ -31,20 +35,8 @@ public static class MaterialGalleryModule
     {
         ArgumentNullException.ThrowIfNull(options);
 
-        options.Branding.AppName     = "AtomUI Material Icons";
-        options.Branding.Logo        = "avares://MaterialGallery/Assets/gallery-logo.png";
-        options.Branding.VersionText = GalleryVersionInfo.DisplayVersion;
-        options.Branding.Links.Add(new GalleryLink(
-            "GitHub",
-            "https://github.com/chinware/AtomUI.Icons.Material"));
-
-        var categories = new IconInfoRepository().Categories;
-        options.Navigation.DefaultRoute = "Action";
-        foreach (var category in categories)
-        {
-            options.Navigation.AddPage(category, LocalizedCategory(category));
-        }
-
+        ConfigureBranding(options.Branding);
+        ConfigureNavigation(options.Navigation);
         foreach (var route in RouteDescriptors.Value)
         {
             options.Routes.Map(route);
@@ -54,24 +46,13 @@ public static class MaterialGalleryModule
     public static void RegisterViews(DefaultViewLocator locator)
     {
         ArgumentNullException.ThrowIfNull(locator);
-        locator.Map<MaterialIconPageViewModel, MaterialIconPage>(static () => new MaterialIconPage());
-    }
-
-    private static IReadOnlyList<GalleryRouteDescriptor> CreateRouteDescriptors()
-    {
-        var routes = new GalleryRouteRegistry();
-        foreach (var category in new IconInfoRepository().Categories)
+        foreach (var route in RouteDescriptors.Value)
         {
-            var capturedCategory = category;
-            routes.Map<MaterialIconPageViewModel, MaterialIconPage>(
-                category,
-                screen => new MaterialIconPageViewModel(screen, capturedCategory),
-                static () => new MaterialIconPage());
+            route.RegisterView(locator);
         }
-        return routes.Routes;
     }
 
-    private static object LocalizedCategory(string category)
+    internal static GalleryLocalizedText<WorkspaceWindowLangResourceKind> LocalizedCategory(string category)
     {
         if (!Enum.TryParse<WorkspaceWindowLangResourceKind>(
                 $"IconCategory{category}",
@@ -81,5 +62,76 @@ public static class MaterialGalleryModule
         }
 
         return new GalleryLocalizedText<WorkspaceWindowLangResourceKind>(resourceKind, category);
+    }
+
+    private static void ConfigureBranding(GalleryBrandingOptions branding)
+    {
+        branding.AppName     = "AtomUI Material Icons";
+        branding.Logo        = "avares://MaterialGallery/Assets/gallery-logo.svg";
+        branding.VersionText = GalleryVersionInfo.DisplayVersion;
+        branding.Links.Add(new GalleryLink("Website", GalleryProjectLinks.Website,
+            Icon(AntDesignIconKind.GlobalOutlined)));
+        branding.Links.Add(new GalleryLink("NuGet", GalleryProjectLinks.NuGetPackage,
+            Icon(AntDesignIconKind.CloudDownloadOutlined)));
+        branding.Links.Add(new GalleryLink("GitHub", GalleryProjectLinks.GitHub,
+            Icon(AntDesignIconKind.GithubOutlined)));
+    }
+
+    private static void ConfigureNavigation(AtomUI.Toolkits.GalleryBase.Navigation.GalleryNavigationBuilder navigation)
+    {
+        navigation.DefaultRoute = OverviewViewModel.ID;
+        navigation.AddPage(
+            OverviewViewModel.ID,
+            Localized(WorkspaceWindowLangResourceKind.NavigationOverview, "Overview"),
+            Icon(AntDesignIconKind.HomeOutlined));
+        navigation.AddPage(
+            CommunityViewModel.ID,
+            Localized(WorkspaceWindowLangResourceKind.NavigationCommunity, "Community"),
+            Icon(AntDesignIconKind.TeamOutlined));
+
+        foreach (var category in new IconInfoRepository().Categories)
+        {
+            navigation.AddPage(category, LocalizedCategory(category));
+        }
+    }
+
+    private static IReadOnlyList<GalleryRouteDescriptor> CreateRouteDescriptors()
+    {
+        var routes = new GalleryRouteRegistry();
+        ConfigureRoutes(routes);
+        return routes.Routes;
+    }
+
+    private static void ConfigureRoutes(GalleryRouteRegistry routes)
+    {
+        routes.Map<OverviewViewModel, OverviewPage>(
+            OverviewViewModel.ID,
+            screen => new OverviewViewModel(screen),
+            static () => new OverviewPage());
+        routes.Map<CommunityViewModel, CommunityPage>(
+            CommunityViewModel.ID,
+            screen => new CommunityViewModel(screen),
+            static () => new CommunityPage());
+
+        foreach (var category in new IconInfoRepository().Categories)
+        {
+            var capturedCategory = category;
+            routes.Map<MaterialIconPageViewModel, MaterialIconPage>(
+                category,
+                screen => new MaterialIconPageViewModel(screen, capturedCategory),
+                static () => new MaterialIconPage());
+        }
+    }
+
+    private static GalleryLocalizedText<WorkspaceWindowLangResourceKind> Localized(
+        WorkspaceWindowLangResourceKind kind,
+        string fallback)
+    {
+        return new GalleryLocalizedText<WorkspaceWindowLangResourceKind>(kind, fallback);
+    }
+
+    private static Func<PathIcon> Icon(AntDesignIconKind kind)
+    {
+        return () => (PathIcon)new AntDesignIconProvider(kind).ProvideValue(null!);
     }
 }

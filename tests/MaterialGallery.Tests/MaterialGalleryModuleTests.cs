@@ -1,4 +1,6 @@
 using AtomUI.Toolkits.GalleryBase.Localization;
+using MaterialGallery.Features.Community;
+using MaterialGallery.Features.Overview;
 using MaterialGallery.Models;
 using MaterialGallery.Workspace.ViewModels;
 using MaterialGallery.Workspace.Views;
@@ -9,24 +11,44 @@ namespace MaterialGallery.Tests;
 public class MaterialGalleryModuleTests
 {
     [Fact]
-    public void Configuration_exposes_Material_branding_and_compiled_version()
+    public void Branding_exposes_canonical_links_logo_and_compiled_version()
     {
         var configuration = MaterialGalleryModule.CreateConfiguration();
 
         configuration.Branding.AppName.ShouldBe("AtomUI Material Icons");
+        configuration.Branding.Logo.ShouldBe("avares://MaterialGallery/Assets/gallery-logo.svg");
         configuration.Branding.VersionText.ShouldBe("v6.2.6");
         GalleryVersionInfo.DisplayVersion.ShouldBe("v6.2.6");
+
+        var links = configuration.Branding.Links.ToDictionary(link => link.Key.Value, link => link.Uri);
+        links["Website"].ShouldBe(GalleryProjectLinks.Website);
+        links["NuGet"].ShouldBe(GalleryProjectLinks.NuGetPackage);
+        links["GitHub"].ShouldBe(GalleryProjectLinks.GitHub);
     }
 
     [Fact]
-    public void Configuration_maps_every_generated_category_to_a_deferred_Material_page()
+    public void Configuration_uses_overview_then_community_then_flat_category_routes()
     {
         var repository = new IconInfoRepository();
         var configuration = MaterialGalleryModule.CreateConfiguration();
         var routes = configuration.Routes.Routes;
+        var expectedKeys = new[] { OverviewViewModel.ID, CommunityViewModel.ID }
+            .Concat(repository.Categories)
+            .ToArray();
 
-        configuration.DefaultRoute.Value.ShouldBe("Action");
-        routes.Count.ShouldBe(repository.Categories.Count);
+        configuration.DefaultRoute.Value.ShouldBe(OverviewViewModel.ID);
+        configuration.NavigationNodes.Select(node => node.Key.Value).ShouldBe(expectedKeys);
+        configuration.NavigationNodes.ShouldAllBe(node => node.Children.Count == 0);
+        routes.Count.ShouldBe(expectedKeys.Length);
+        foreach (var key in expectedKeys)
+        {
+            configuration.Routes.GetRequiredRoute(key).ShouldNotBeNull();
+        }
+
+        configuration.Routes.GetRequiredRoute(OverviewViewModel.ID).ViewModelType
+                     .ShouldBe(typeof(OverviewViewModel));
+        configuration.Routes.GetRequiredRoute(CommunityViewModel.ID).ViewModelType
+                     .ShouldBe(typeof(CommunityViewModel));
 
         foreach (var category in repository.Categories)
         {
@@ -47,8 +69,9 @@ public class MaterialGalleryModuleTests
         var repository = new IconInfoRepository();
         var configuration = MaterialGalleryModule.CreateConfiguration();
 
-        configuration.NavigationNodes.Count.ShouldBe(repository.Categories.Count);
-        foreach (var pair in configuration.NavigationNodes.Zip(repository.Categories))
+        var categoryNodes = configuration.NavigationNodes.Skip(2).ToArray();
+        categoryNodes.Count().ShouldBe(repository.Categories.Count);
+        foreach (var pair in categoryNodes.Zip(repository.Categories))
         {
             pair.First.Key.Value.ShouldBe(pair.Second);
             pair.First.IsRoute.ShouldBeTrue();

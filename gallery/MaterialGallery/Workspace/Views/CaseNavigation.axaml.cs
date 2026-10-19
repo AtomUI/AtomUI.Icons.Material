@@ -3,33 +3,52 @@ using System.Reactive.Disposables.Fluent;
 using AtomUI;
 using AtomUI.Controls;
 using AtomUI.Desktop.Controls;
+using AtomUI.Icons.AntDesign;
 using AtomUI.Localization;
 using AtomUI.Toolkits.GalleryBase.Controls;
+using AtomUI.Toolkits.GalleryBase.Localization;
 using AtomUI.Toolkits.GalleryBase.Navigation;
 using AtomUI.Toolkits.GalleryBase.Shell;
 using Avalonia;
+using Avalonia.Automation;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
+using Avalonia.Layout;
+using MaterialGallery.Localization;
 using MaterialGallery.Workspace.ViewModels;
-using ComboBox = AtomUI.Desktop.Controls.ComboBox;
-using ComboBoxItem = AtomUI.Desktop.Controls.ComboBoxItem;
+using DesktopButton = AtomUI.Desktop.Controls.Button;
 
 namespace MaterialGallery.Workspace.Views;
 
 public partial class CaseNavigation : GalleryReactiveUserControl<CaseNavigationViewModel>,
                                       IGallerySidebarNavMenuHost
 {
-    private readonly ComboBox _iconThemeSelector;
+    private readonly PathIcon _collapseNavigationIcon;
+    private readonly PathIcon _expandNavigationIcon;
+    private readonly DesktopButton _navigationCollapseButton;
     private ILanguageManager? _subscribedLanguageManager;
     private EventHandler<LanguageChangedEventArgs>? _languageChangedHandler;
 
     NavMenu IGallerySidebarNavMenuHost.SidebarNavMenu => CategoryNavMenu;
-    Control IGallerySidebarNavMenuHost.SidebarHeaderAction => _iconThemeSelector;
+    Control IGallerySidebarNavMenuHost.SidebarHeaderAction => _navigationCollapseButton;
 
     public CaseNavigation()
     {
         InitializeComponent();
-        _iconThemeSelector = CreateIconThemeSelector();
+        _collapseNavigationIcon = CreateNavigationIcon(AntDesignIconKind.MenuFoldOutlined);
+        _expandNavigationIcon   = CreateNavigationIcon(AntDesignIconKind.MenuUnfoldOutlined);
+        _navigationCollapseButton = new DesktopButton
+        {
+            Name                = "NavigationCollapseButton",
+            Width               = 40,
+            Height              = 40,
+            ButtonType          = ButtonType.Text,
+            HorizontalAlignment = HorizontalAlignment.Center,
+            VerticalAlignment   = VerticalAlignment.Center
+        };
+        _navigationCollapseButton.Click += HandleToggleNavigationCollapsedClick;
         ConfigureNavigationMenu();
+        UpdateNavigationCollapseButtonPresentation();
 
         this.WhenActivated(disposables =>
         {
@@ -47,44 +66,10 @@ public partial class CaseNavigation : GalleryReactiveUserControl<CaseNavigationV
             CategoryNavMenu.NavMenuItemClick += NavMenuItemClickHandler;
             Disposable.Create(() => CategoryNavMenu.NavMenuItemClick -= NavMenuItemClickHandler)
                       .DisposeWith(disposables);
+            CategoryNavMenu.GetObservable(NavMenu.IsInlineCollapsedProperty)
+                           .Subscribe(_ => UpdateNavigationCollapseButtonPresentation())
+                           .DisposeWith(disposables);
         });
-    }
-
-    private ComboBox CreateIconThemeSelector()
-    {
-        var selector = new ComboBox
-        {
-            Name          = "IconThemeSelector",
-            Width         = 150,
-            SelectedIndex = 0
-        };
-        IconThemeType[] materialThemes =
-        [
-            IconThemeType.Filled,
-            IconThemeType.Outlined,
-            IconThemeType.Rounded,
-            IconThemeType.Sharp,
-            IconThemeType.TwoTone
-        ];
-        foreach (var iconTheme in materialThemes)
-        {
-            selector.Items.Add(new ComboBoxItem
-            {
-                Content = iconTheme.ToString(),
-                Tag     = iconTheme
-            });
-        }
-        selector.SelectionChanged += HandleIconThemeSelectionChanged;
-        return selector;
-    }
-
-    private void HandleIconThemeSelectionChanged(object? sender, SelectionChangedEventArgs args)
-    {
-        if (ViewModel is not null &&
-            _iconThemeSelector.SelectedItem is ComboBoxItem { Tag: IconThemeType theme })
-        {
-            ViewModel.Workspace.IconTheme = theme;
-        }
     }
 
     private void ConfigureNavigationMenu()
@@ -125,7 +110,11 @@ public partial class CaseNavigation : GalleryReactiveUserControl<CaseNavigationV
             return;
         }
 
-        _languageChangedHandler = (_, _) => ConfigureNavigationMenu();
+        _languageChangedHandler = (_, _) =>
+        {
+            ConfigureNavigationMenu();
+            UpdateNavigationCollapseButtonPresentation();
+        };
         _subscribedLanguageManager.LanguageChanged += _languageChangedHandler;
     }
 
@@ -139,5 +128,33 @@ public partial class CaseNavigation : GalleryReactiveUserControl<CaseNavigationV
         _subscribedLanguageManager.LanguageChanged -= _languageChangedHandler;
         _subscribedLanguageManager = null;
         _languageChangedHandler = null;
+    }
+
+    private void HandleToggleNavigationCollapsedClick(object? sender, RoutedEventArgs e)
+    {
+        CategoryNavMenu.IsInlineCollapsed = !CategoryNavMenu.IsInlineCollapsed;
+        UpdateNavigationCollapseButtonPresentation();
+    }
+
+    private void UpdateNavigationCollapseButtonPresentation()
+    {
+        var isCollapsed = CategoryNavMenu.IsInlineCollapsed;
+        var resourceKind = isCollapsed
+            ? WorkspaceWindowLangResourceKind.ExpandNavigation
+            : WorkspaceWindowLangResourceKind.CollapseNavigation;
+        var fallback = isCollapsed ? "Expand navigation" : "Collapse navigation";
+        var accessibleText = new GalleryLocalizedText<WorkspaceWindowLangResourceKind>(resourceKind, fallback)
+            .Resolve()
+            .ToString();
+
+        _navigationCollapseButton.Icon = isCollapsed
+            ? _expandNavigationIcon
+            : _collapseNavigationIcon;
+        AutomationProperties.SetName(_navigationCollapseButton, accessibleText);
+    }
+
+    private static PathIcon CreateNavigationIcon(AntDesignIconKind iconKind)
+    {
+        return (PathIcon)new AntDesignIconProvider(iconKind).ProvideValue(null!);
     }
 }
