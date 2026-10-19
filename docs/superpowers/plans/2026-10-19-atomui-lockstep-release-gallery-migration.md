@@ -226,6 +226,8 @@ Stage only the files listed in this task and commit with `feat: migrate Material
 
 ### Task 5: Route Material icon content and preserve interactions
 
+> Superseded by `docs/superpowers/plans/2026-10-19-material-gallery-ux-refactor.md`, which implements the subsequently approved flat navigation, Overview, Community, icon-catalog layout, and visual acceptance contract. Complete that plan before continuing with Task 6 below.
+
 **Files:**
 - Modify: `gallery/MaterialGallery/Workspace/ViewModels/MaterialIconPageViewModel.cs`
 - Modify: `gallery/MaterialGallery/Workspace/Views/MaterialIconPage.axaml`
