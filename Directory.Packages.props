@@ -13,5 +13,6 @@
         <PackageVersion Include="AtomUI.Icons.Shared" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Generator" Version="$(AtomUIVersion)"/>
         <PackageVersion Include="AtomUI.Icons.Material" Version="$(MaterialVersion)"/>
+        <PackageVersion Include="AtomUI.Toolkits.GalleryBase" Version="$(AtomUIVersion)"/>
     </ItemGroup>
 </Project>
