@@ -173,7 +173,7 @@ public class GalleryShellMigrationTests
         double height)
     {
         AvaloniaTestApp.EnsureInitialized();
-        var window = new WorkspaceWindow
+        var window = new TitleBarInspectableWorkspaceWindow
         {
             Width  = width,
             Height = height
@@ -186,9 +186,9 @@ public class GalleryShellMigrationTests
             using var expandedFrame = window.CaptureRenderedFrame();
 
             var shell = window.GetVisualDescendants().OfType<GalleryShellView>().Single();
-            var titleBar = window.GetVisualDescendants()
-                                 .OfType<AtomUI.Toolkits.GalleryBase.Controls.GalleryWindowTitleBar>()
-                                 .Single();
+            var titleBar = window.ConfiguredTitleBar
+                                 .ShouldBeOfType<AtomUI.Toolkits.GalleryBase.Controls.GalleryWindowTitleBar>();
+            titleBar.Menu.ShouldNotBeNull();
             var sidebar = FindNamed<Border>(shell, "WorkspaceSidebar");
             var separator = FindNamed<Border>(shell, "WorkspaceNavigationSeparator");
             var footer = FindNamed<Border>(shell, "WorkspaceSidebarFooter");
@@ -197,15 +197,24 @@ public class GalleryShellMigrationTests
                                        .OfType<DesktopButton>()
                                        .Single(button => button.Name == "NavigationCollapseButton");
 
-            var titleBarRect = BoundsInWindow(titleBar, window);
             var rootRect = BoundsInWindow(rootLayout, window);
             var sidebarRect = BoundsInWindow(sidebar, window);
             var contentRect = BoundsInWindow(shell.ContentHost, window);
             var separatorRect = BoundsInWindow(separator, window);
             var footerRect = BoundsInWindow(footer, window);
 
-            titleBarRect.Height.ShouldBeGreaterThan(0);
-            titleBarRect.Bottom.ShouldBeLessThanOrEqualTo(rootRect.Top + 1);
+            if (titleBar.IsAttachedToVisualTree())
+            {
+                var titleBarRect = BoundsInWindow(titleBar, window);
+                titleBarRect.Height.ShouldBeGreaterThan(0);
+                titleBarRect.Bottom.ShouldBeLessThanOrEqualTo(rootRect.Top + 1);
+            }
+            else
+            {
+                // Windows CSD uses drawn decorations outside the headless client visual tree.
+                // The configured Gallery title bar/menu and all client geometry are still checked.
+                OperatingSystem.IsWindows().ShouldBeTrue();
+            }
             sidebarRect.Right.ShouldBeLessThanOrEqualTo(contentRect.Left + 1);
             separatorRect.Width.ShouldBe(1, 0.01);
             separatorRect.Left.ShouldBe(contentRect.Left, 1);
@@ -329,6 +338,17 @@ public class GalleryShellMigrationTests
         {
             window.Close();
             Dispatcher.UIThread.RunJobs();
+        }
+    }
+
+    private sealed class TitleBarInspectableWorkspaceWindow : WorkspaceWindow
+    {
+        public AtomUI.Desktop.Controls.WindowTitleBar? ConfiguredTitleBar { get; private set; }
+
+        protected override void NotifyConfigureTitleBar(AtomUI.Desktop.Controls.WindowTitleBar titleBar)
+        {
+            base.NotifyConfigureTitleBar(titleBar);
+            ConfiguredTitleBar = titleBar;
         }
     }
 
