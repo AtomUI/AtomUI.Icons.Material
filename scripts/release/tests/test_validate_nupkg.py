@@ -60,6 +60,13 @@ class PackageValidationTests(unittest.TestCase):
             with self.subTest(changes=changes):
                 self.assertNotEqual(0, self.run_validator(self.package(**changes)).returncode)
 
+    def test_accepts_the_deterministic_nuget_core_properties_entry(self):
+        path = self.package(extra={
+            "package/services/metadata/core-properties/nuget.psmdcp": "<coreProperties />",
+        })
+        result = self.run_validator(path)
+        self.assertEqual(0, result.returncode, result.stderr)
+
     def test_rejects_missing_framework_or_package_resources(self):
         for missing in ("lib/net8.0/AtomUI.Icons.Material.dll", "lib/net10.0/AtomUI.Icons.Material.dll", "LICENSE", "README.nuget.md", "logo.png"):
             with self.subTest(missing=missing):
