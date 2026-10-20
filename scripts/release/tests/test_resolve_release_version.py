@@ -101,6 +101,16 @@ class ReleaseResolverTests(unittest.TestCase):
         self.assertEqual("6.2.6", decision.target_version)
         self.assertEqual("6.1.3", decision.material_version)
 
+    def test_prerelease_only_index_blocks_without_a_target(self):
+        fetch_json, fetch_bytes = self._nuget_fakes(
+            material_versions=["6.1.3"],
+            package_versions={package: ["6.3.0-beta.1"] for package in COHORT_PACKAGES},
+        )
+        decision = resolve_release(fetch_json=fetch_json, fetch_bytes=fetch_bytes)
+        self.assertEqual("blocked", decision.status)
+        self.assertIsNone(decision.target_version)
+        self.assertEqual(2, main([], fetch_json=fetch_json, fetch_bytes=fetch_bytes, stdout=io.StringIO()))
+
     def test_core_nuspec_supplies_one_avalonia_version(self):
         nuspec = self._core_nupkg(
             """

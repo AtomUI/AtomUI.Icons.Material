@@ -1,93 +1,141 @@
 name: Material Icons Release Pipeline
+
 on:
-   workflow_dispatch:
-      inputs:
-         TargetBranch:
-            description: 'Target branch to build'
-            type: string
-            default: 'main'
-         BuildConfiguration:
-            description: 'Build configuration'
-            type: string
-            default: 'Release'
-         PublishToNuget:
-            description: 'Publish to nuget.org'
-            type: boolean
-            default: false
-env:
-   SOURCE_DIR: ${{ github.workspace }}
-   BASE_OUTPUT_DIR: ${{ github.workspace }}/output
-   LOCAL_NUGET_DIR: ${{ github.workspace }}/nuget
+  workflow_dispatch:
+    inputs:
+      SourceRef:
+        description: 'Exact verified source commit (40-character SHA)'
+        type: string
+        required: true
+      PublishToNuget:
+        description: 'Publish the validated artifact to nuget.org'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: material-icons-release
+  cancel-in-progress: false
+
 jobs:
-   BuildAtomUINuget:
-      name: Build Material Icons NuGet packages
-      runs-on: windows-latest
-      steps:
-         -  name: Checkout code
-            uses: actions/checkout@v7
-            with:
-               ref: ${{ inputs.TargetBranch }}
-         -  name: Setup .NET 10
-            uses: actions/setup-dotnet@v5
-            with:
-               dotnet-version: '10.0.x'
-         -  name: Create local NuGet feed
-            run: |
-               $localFeedPath = $env:LOCAL_NUGET_DIR
-               New-Item -Path $localFeedPath -ItemType Directory -Force | Out-Null
-               Write-Output "Local NuGet feed created at: $localFeedPath"
-               dotnet nuget add source $localFeedPath --name local-feed
-               $sources = dotnet nuget list source
-               if ($sources -match "local-feed") {
-                  Write-Output "Local feed added successfully"
-               } else {
-                  Write-Error "Failed to add local feed"
-                  exit 1
-               }
-         -  name: Build AtomUI.Icons.Material projects
-            shell: pwsh
-            run: |
-               # Build AtomUI.Icons.Material project
-               dotnet build --configuration ${{ inputs.BuildConfiguration }} ./src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj
-         -  name: Create Material Icons NuGet packages
-            shell: pwsh
-            run: |
-               $projects = @(
-                  "./src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj"
-               )
-               foreach ($project in $projects) {
-                  dotnet pack --no-build --output $env:BASE_OUTPUT_DIR --configuration ${{ inputs.BuildConfiguration }} $project
-               }
-               $packages = Get-ChildItem -Path $env:BASE_OUTPUT_DIR -Filter *.nupkg -Recurse -File
-               foreach ($pkg in $packages) {
-                  try {
-                     dotnet nuget push $pkg.FullName --source $env:LOCAL_NUGET_DIR
-                     if ($LASTEXITCODE -ne 0) {
-                        Write-Warning "pushed nuget package: $($pkg.Name)"
-                     }
-                  }
-                  catch {
-                      Write-Error "push $($pkg.Name) error: $_"
-                  }
-               }
-         -  name: Upload NuGet artifacts
-            uses: actions/upload-artifact@v7
-            with:
-               name: NuGetPackages
-               path: ${{ env.BASE_OUTPUT_DIR }}/*.nupkg
-         -  name: Publish to nuget.org
-            if: ${{ inputs.PublishToNuget == true }}
-            shell: pwsh
-            run: |
-               $packages = Get-ChildItem -Path $env:BASE_OUTPUT_DIR -Filter *.nupkg -Recurse -File
-               foreach ($pkg in $packages) {
-                  try {
-                     dotnet nuget push $pkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
-                     if ($LASTEXITCODE -ne 0) {
-                        Write-Warning "pushed nuget package: $($pkg.Name)"
-                     }
-                  }
-                  catch {
-                      Write-Error "push $($pkg.Name) error: $_"
-                  }
-               }
+  build_and_validate:
+    runs-on: windows-latest
+    outputs:
+      version: ${{ steps.source.outputs.version }}
+      atomui_version: ${{ steps.source.outputs.atomui_version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.SourceRef }}
+      - name: Verify immutable source and versions
+        id: source
+        shell: pwsh
+        env:
+          SOURCE_REF: ${{ inputs.SourceRef }}
+          NUGET_PUBLISH_CONFIGURED: ${{ secrets.NUGET_API_KEY != '' }}
+          PUBLISH_REQUESTED: ${{ inputs.PublishToNuget }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Write-Output "NuGet publication credential available: $env:NUGET_PUBLISH_CONFIGURED"
+          if ($env:PUBLISH_REQUESTED -eq 'true' -and $env:NUGET_PUBLISH_CONFIGURED -ne 'true') { throw 'NUGET_API_KEY is not configured for this repository' }
+          if ($env:SOURCE_REF -notmatch '^[0-9a-fA-F]{40}$') { throw 'SourceRef must be a full commit SHA' }
+          if ((git rev-parse HEAD) -ne $env:SOURCE_REF) { throw 'Checkout does not match SourceRef' }
+          [xml]$versions = Get-Content build/Version.props
+          $version = [string]$versions.Project.PropertyGroup.MaterialVersion
+          $atomui = [string]$versions.Project.PropertyGroup.AtomUIVersion
+          if ($version -ne $atomui) { throw 'Material and AtomUI versions must match' }
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "atomui_version=$atomui" >> $env:GITHUB_OUTPUT
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Test release tooling
+        run: python -m unittest discover -s scripts/release/tests -p "test_*.py" -v
+      - name: Restore, build and test Release
+        shell: pwsh
+        run: |
+          dotnet restore Material.slnx -p:Configuration=Release
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          dotnet build Material.slnx -c Release --no-restore -m:1 -nr:false
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          dotnet test Material.slnx -c Release --no-build --no-restore
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Pack once, validate and hash
+        shell: pwsh
+        env:
+          VERSION: ${{ steps.source.outputs.version }}
+          ATOMUI_VERSION: ${{ steps.source.outputs.atomui_version }}
+          SOURCE_REF: ${{ inputs.SourceRef }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $packageDir = Join-Path $env:RUNNER_TEMP 'material-nuget'
+          New-Item -ItemType Directory -Path $packageDir | Out-Null
+          dotnet pack src/AtomUI.Icons.Material/AtomUI.Icons.Material.csproj -c Release --no-build --no-restore -o $packageDir
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/release/validate_nupkg.py $packageDir --expected-version $env:VERSION --expected-atomui-version $env:ATOMUI_VERSION --expected-commit $env:SOURCE_REF
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $package = Get-ChildItem $packageDir -Filter '*.nupkg'
+          $hash = (Get-FileHash $package.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  $($package.Name)" | Set-Content (Join-Path $packageDir 'SHA256SUMS') -Encoding ascii
+      - uses: actions/upload-artifact@v7
+        with:
+          name: NuGetPackages
+          path: ${{ runner.temp }}/material-nuget/*
+          if-no-files-found: error
+
+  publish:
+    if: ${{ inputs.PublishToNuget }}
+    needs: build_and_validate
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.SourceRef }}
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - uses: actions/download-artifact@v7
+        with:
+          name: NuGetPackages
+          path: ${{ runner.temp }}/material-nuget
+      - name: Verify downloaded artifact and publish without rebuilding
+        shell: pwsh
+        env:
+          VERSION: ${{ needs.build_and_validate.outputs.version }}
+          ATOMUI_VERSION: ${{ needs.build_and_validate.outputs.atomui_version }}
+          SOURCE_REF: ${{ inputs.SourceRef }}
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $packageDir = Join-Path $env:RUNNER_TEMP 'material-nuget'
+          $packages = @(Get-ChildItem $packageDir -Filter '*.nupkg')
+          if ($packages.Count -ne 1) { throw 'Expected exactly one validated package' }
+          $package = $packages[0]
+          $checksum = (Get-Content (Join-Path $packageDir 'SHA256SUMS')).Trim()
+          $hash = (Get-FileHash $package.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($checksum -ne "$hash  $($package.Name)") { throw 'Artifact checksum mismatch' }
+          python scripts/release/validate_nupkg.py $packageDir --expected-version $env:VERSION --expected-atomui-version $env:ATOMUI_VERSION --expected-commit $env:SOURCE_REF
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          if ([string]::IsNullOrWhiteSpace($env:NUGET_API_KEY)) { throw 'NUGET_API_KEY is not configured' }
+          dotnet nuget push $package.FullName --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json
+          if ($LASTEXITCODE -ne 0) { throw 'NuGet push failed or was ambiguous; query NuGet before retrying' }
+          $url = 'https://api.nuget.org/v3-flatcontainer/atomui.icons.material/index.json'
+          for ($attempt = 0; $attempt -lt 60; $attempt++) {
+            try {
+              $index = Invoke-RestMethod $url
+              if ($index.versions -contains $env:VERSION) {
+                Write-Output "NuGet confirmed AtomUI.Icons.Material $env:VERSION (artifact SHA256 $hash)"
+                exit 0
+              }
+            } catch { Write-Warning 'NuGet indexing check is temporarily unavailable' }
+            Start-Sleep -Seconds 10
+          }
+          throw 'Publication was accepted but visibility is unconfirmed; query NuGet before retrying'
