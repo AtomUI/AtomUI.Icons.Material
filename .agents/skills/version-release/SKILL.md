@@ -37,7 +37,7 @@ description: Use when preparing, reviewing, validating, tagging, or publishing a
 
    ```sh
    dotnet build src/AtomUI.Icons.Material.Generator/AtomUI.Icons.Material.Generator.csproj -c Release -f net10.0
-   (cd output/bin/Release/net10.0 && dotnet AtomUI.Icons.Material.Generator.dll)
+   (cd .artifacts/bin/Release/net10.0 && dotnet AtomUI.Icons.Material.Generator.dll)
    ```
 
    Review the generated diff, then run it again and require no further diff.

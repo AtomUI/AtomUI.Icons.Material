@@ -340,7 +340,7 @@ git commit -m "build: publish validated Material package artifacts"
 
 - [ ] **Step 1: Reconcile generated sources**
 
-Build the Material generator for `net10.0`, run it from `output/bin/Release/net10.0`, review the diff, run it a second time, and require no second-run diff. Build the Gallery to refresh compiler-generated files; review every addition/deletion against AtomUI `6.2.6` generator changes.
+Build the Material generator for `net10.0`, run it from `.artifacts/bin/Release/net10.0`, review the diff, run it a second time, and require no second-run diff. Build the Gallery to refresh compiler-generated files; review every addition/deletion against AtomUI `6.2.6` generator changes.
 
 - [ ] **Step 2: Run the full local verification suite**
 

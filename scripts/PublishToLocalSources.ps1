@@ -6,7 +6,7 @@ param (
 function Push-NuGetPackages {
     [CmdletBinding(SupportsShouldProcess = $true)]
     param(
-        [string]$PackagePath = "../output/Nuget",
+        [string]$PackagePath = "../.artifacts/Nuget",
         [Parameter(Mandatory = $true)]
         [string]$Source
     )

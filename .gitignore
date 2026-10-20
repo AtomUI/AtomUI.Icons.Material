@@ -196,6 +196,7 @@ node_modules
 api/diff
 
 # Project generation intermediate results storage
+.artifacts/
 output/
 cmake-build-*/
 
