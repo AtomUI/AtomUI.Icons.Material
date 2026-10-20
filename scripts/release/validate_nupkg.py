@@ -50,7 +50,7 @@ def validate_package(path: Path, expected_version: str, expected_atomui_version:
         for name in names:
             if name in required or name in {"_rels/.rels", "[Content_Types].xml", ".signature.p7s"}:
                 continue
-            if re.fullmatch(r"package/services/metadata/core-properties/[0-9a-f]+\.psmdcp", name):
+            if re.fullmatch(r"package/services/metadata/core-properties/(?:[0-9a-f]+|nuget)\.psmdcp", name):
                 continue
             if name in {f"lib/{framework}/{PACKAGE_ID}.xml" for framework in FRAMEWORKS}:
                 continue
