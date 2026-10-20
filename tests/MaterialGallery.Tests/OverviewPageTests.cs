@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Platform;
 using Avalonia.Threading;
+using Avalonia.VisualTree;
 using MaterialGallery.Features.Overview;
 using MaterialGallery.Models;
 using ReactiveUI;
@@ -8,6 +9,7 @@ using DesktopButton = AtomUI.Desktop.Controls.Button;
 using DesktopHyperLinkButton = AtomUI.Desktop.Controls.HyperLinkButton;
 using DesktopTag = AtomUI.Desktop.Controls.Tag;
 using DesktopTabControl = AtomUI.Desktop.Controls.TabControl;
+using DesktopScrollViewer = AtomUI.Desktop.Controls.ScrollViewer;
 
 namespace MaterialGallery.Tests;
 
@@ -114,9 +116,25 @@ public class OverviewPageTests
         detachedFeedback.ShouldBeEmpty();
     }
 
-    private static WindowContext Show(Control content)
+    [Fact]
+    public void Landing_page_scales_to_the_minimum_content_width_without_horizontal_overflow()
     {
-        var window = new Window { Width = 1000, Height = 720, Content = content };
+        AvaloniaTestApp.EnsureInitialized();
+        var page = new OverviewPage
+        {
+            DataContext = new OverviewViewModel(new TestScreen())
+        };
+        using var host = Show(page, 760);
+
+        var scrollViewer = page.GetVisualDescendants().OfType<DesktopScrollViewer>().First();
+        scrollViewer.HorizontalScrollBarVisibility.ShouldBe(Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled);
+        scrollViewer.Viewport.Width.ShouldBeGreaterThan(0);
+        scrollViewer.Extent.Width.ShouldBeLessThanOrEqualTo(scrollViewer.Viewport.Width + 0.5);
+    }
+
+    private static WindowContext Show(Control content, double width = 1000)
+    {
+        var window = new Window { Width = width, Height = 720, Content = content };
         window.Show();
         Dispatcher.UIThread.RunJobs();
         content.ApplyTemplate();

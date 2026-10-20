@@ -111,6 +111,11 @@
         <source>Community</source>
       </segment>
     </unit>
+    <unit id="NavigationCategories">
+      <segment>
+        <source>Categories</source>
+      </segment>
+    </unit>
     <unit id="CollapseNavigation">
       <segment>
         <source>Collapse navigation</source>

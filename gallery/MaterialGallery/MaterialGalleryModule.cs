@@ -15,6 +15,8 @@ namespace MaterialGallery;
 
 public static class MaterialGalleryModule
 {
+    internal const string CategoriesNavigationKey = "Categories";
+
     private static readonly Lazy<IReadOnlyList<GalleryRouteDescriptor>> RouteDescriptors =
         new(CreateRouteDescriptors);
 
@@ -66,7 +68,7 @@ public static class MaterialGalleryModule
     private static void ConfigureBranding(GalleryBrandingOptions branding)
     {
         branding.AppName     = "AtomUI Material Icons";
-        branding.Logo        = "avares://MaterialGallery/Assets/gallery-logo.svg";
+        branding.Logo        = "avares://MaterialGallery/Assets/atomui-oss.svg";
         branding.VersionText = GalleryVersionInfo.DisplayVersion;
         branding.Links.Add(new GalleryLink("Website", GalleryProjectLinks.Website,
             Icon(AntDesignIconKind.GlobalOutlined)));
@@ -88,9 +90,15 @@ public static class MaterialGalleryModule
             Localized(WorkspaceWindowLangResourceKind.NavigationCommunity, "Community"),
             Icon(AntDesignIconKind.TeamOutlined));
 
+        var categories = navigation.AddGroup(
+            CategoriesNavigationKey,
+            Localized(WorkspaceWindowLangResourceKind.NavigationCategories, CategoriesNavigationKey),
+            Icon(AntDesignIconKind.AppstoreOutlined));
+        navigation.DefaultOpenKeys.Add(CategoriesNavigationKey);
+
         foreach (var category in new IconInfoRepository().Categories)
         {
-            navigation.AddPage(category, LocalizedCategory(category));
+            categories.AddPage(category, LocalizedCategory(category), CategoryIcon(category));
         }
     }
 
@@ -132,5 +140,31 @@ public static class MaterialGalleryModule
     private static Func<PathIcon> Icon(AntDesignIconKind kind)
     {
         return () => (PathIcon)new AntDesignIconProvider(kind).ProvideValue(null!);
+    }
+
+    private static Func<PathIcon> CategoryIcon(string category)
+    {
+        return Icon(category switch
+        {
+            "Action"        => AntDesignIconKind.ThunderboltOutlined,
+            "Alert"         => AntDesignIconKind.WarningOutlined,
+            "Av"            => AntDesignIconKind.PlayCircleOutlined,
+            "Communication" => AntDesignIconKind.MessageOutlined,
+            "Content"       => AntDesignIconKind.FileTextOutlined,
+            "Device"        => AntDesignIconKind.MobileOutlined,
+            "Editor"        => AntDesignIconKind.EditOutlined,
+            "File"          => AntDesignIconKind.FolderOutlined,
+            "Hardware"      => AntDesignIconKind.DesktopOutlined,
+            "Home"          => AntDesignIconKind.HomeOutlined,
+            "Image"         => AntDesignIconKind.PictureOutlined,
+            "Maps"          => AntDesignIconKind.EnvironmentOutlined,
+            "Navigation"    => AntDesignIconKind.CompassOutlined,
+            "Notification"  => AntDesignIconKind.BellOutlined,
+            "Places"        => AntDesignIconKind.ShopOutlined,
+            "Search"        => AntDesignIconKind.SearchOutlined,
+            "Social"        => AntDesignIconKind.TeamOutlined,
+            "Toggle"        => AntDesignIconKind.SwitcherOutlined,
+            _ => throw new InvalidOperationException($"No navigation icon exists for icon category '{category}'.")
+        });
     }
 }

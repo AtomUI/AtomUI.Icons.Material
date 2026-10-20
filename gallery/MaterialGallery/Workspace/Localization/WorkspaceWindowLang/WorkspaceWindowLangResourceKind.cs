@@ -27,6 +27,7 @@ public enum WorkspaceWindowLangResourceKind
     NavigationCategoryLabel,
     NavigationOverview,
     NavigationCommunity,
+    NavigationCategories,
     CollapseNavigation,
     ExpandNavigation,
     IconCategoryAction,

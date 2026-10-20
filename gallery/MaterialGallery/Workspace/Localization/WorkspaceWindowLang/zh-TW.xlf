@@ -133,6 +133,12 @@
         <target state="translated">社群</target>
       </segment>
     </unit>
+    <unit id="NavigationCategories">
+      <segment>
+        <source>Categories</source>
+        <target state="translated">分類</target>
+      </segment>
+    </unit>
     <unit id="CollapseNavigation">
       <segment>
         <source>Collapse navigation</source>

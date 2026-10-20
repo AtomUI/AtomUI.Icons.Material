@@ -6,7 +6,7 @@
              xmlns:vm="using:MaterialGallery.Features.Overview"
              x:Class="MaterialGallery.Features.Overview.OverviewPage"
              x:DataType="vm:OverviewViewModel">
-    <atom:ScrollViewer HorizontalScrollBarVisibility="Auto"
+    <atom:ScrollViewer HorizontalScrollBarVisibility="Disabled"
                        VerticalScrollBarVisibility="Auto"
                        AllowAutoHide="False">
         <StackPanel MaxWidth="980"

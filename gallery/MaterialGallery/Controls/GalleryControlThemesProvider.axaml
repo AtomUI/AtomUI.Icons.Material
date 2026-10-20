@@ -5,6 +5,5 @@
                             Id="MaterialGallery.Controls">
     <atom:ControlThemesProvider.ControlThemes>
         <ResourceInclude Source="IconGallery/Themes/IconGalleryThemes.axaml" />
-        <ResourceInclude Source="Navigation/Themes/NavigationThemes.axaml" />
     </atom:ControlThemesProvider.ControlThemes>
 </atom:ControlThemesProvider>

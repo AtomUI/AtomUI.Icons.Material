@@ -1,4 +1,7 @@
+using AtomUI.Controls;
+using AtomUI.Icons.AntDesign;
 using AtomUI.Toolkits.GalleryBase.Localization;
+using Avalonia.Controls;
 using MaterialGallery.Features.Community;
 using MaterialGallery.Features.IconCatalog;
 using MaterialGallery.Features.Overview;
@@ -16,9 +19,9 @@ public class MaterialGalleryModuleTests
         var configuration = MaterialGalleryModule.CreateConfiguration();
 
         configuration.Branding.AppName.ShouldBe("AtomUI Material Icons");
-        configuration.Branding.Logo.ShouldBe("avares://MaterialGallery/Assets/gallery-logo.svg");
-        configuration.Branding.VersionText.ShouldBe("v6.2.6");
-        GalleryVersionInfo.DisplayVersion.ShouldBe("v6.2.6");
+        configuration.Branding.Logo.ShouldBe("avares://MaterialGallery/Assets/atomui-oss.svg");
+        configuration.Branding.VersionText.ShouldBe("v6.2.7");
+        GalleryVersionInfo.DisplayVersion.ShouldBe("v6.2.7");
 
         var links = configuration.Branding.Links.ToDictionary(link => link.Key.Value, link => link.Uri);
         links["Website"].ShouldBe(GalleryProjectLinks.Website);
@@ -27,20 +30,25 @@ public class MaterialGalleryModuleTests
     }
 
     [Fact]
-    public void Configuration_uses_overview_then_community_then_flat_category_routes()
+    public void Configuration_uses_overview_then_community_then_an_expanded_categories_group()
     {
+        AvaloniaTestApp.EnsureInitialized();
         var repository = new IconInfoRepository();
         var configuration = MaterialGalleryModule.CreateConfiguration();
         var routes = configuration.Routes.Routes;
-        var expectedKeys = new[] { OverviewViewModel.ID, CommunityViewModel.ID }
-            .Concat(repository.Categories)
-            .ToArray();
+        var expectedRouteKeys = new[] { OverviewViewModel.ID, CommunityViewModel.ID }
+            .Concat(repository.Categories).ToArray();
 
         configuration.DefaultRoute.Value.ShouldBe(OverviewViewModel.ID);
-        configuration.NavigationNodes.Select(node => node.Key.Value).ShouldBe(expectedKeys);
-        configuration.NavigationNodes.ShouldAllBe(node => node.Children.Count == 0);
-        routes.Count.ShouldBe(expectedKeys.Length);
-        foreach (var key in expectedKeys)
+        configuration.NavigationNodes.Select(node => node.Key.Value)
+                     .ShouldBe([OverviewViewModel.ID, CommunityViewModel.ID, "Categories"]);
+        var categoriesGroup = configuration.NavigationNodes[2];
+        categoriesGroup.IsRoute.ShouldBeFalse();
+        categoriesGroup.Children.Select(node => node.Key.Value).ShouldBe(repository.Categories);
+        categoriesGroup.Children.ShouldAllBe(node => node.IsRoute && node.Children.Count == 0);
+        configuration.DefaultOpenKeys.Select(key => key.Value).ShouldBe(["Categories"]);
+        routes.Count.ShouldBe(expectedRouteKeys.Length);
+        foreach (var key in expectedRouteKeys)
         {
             configuration.Routes.GetRequiredRoute(key).ShouldNotBeNull();
         }
@@ -65,13 +73,35 @@ public class MaterialGalleryModuleTests
     }
 
     [Fact]
+    public void Every_category_supplies_a_distinct_outlined_icon_and_a_fresh_visual_on_rebuild()
+    {
+        AvaloniaTestApp.EnsureInitialized();
+        var categories = MaterialGalleryModule.CreateConfiguration().NavigationNodes[2].Children;
+        var iconTypes = new HashSet<Type>();
+
+        foreach (var category in categories)
+        {
+            var createIcon = category.Icon.ShouldBeOfType<Func<PathIcon>>(category.Key.Value);
+            var icon = createIcon().ShouldBeAssignableTo<AntDesignIcon>();
+            icon.IconTheme.ShouldBe(IconThemeType.Outlined, category.Key.Value);
+            createIcon().ShouldNotBeSameAs(icon);
+            iconTypes.Add(icon.GetType()).ShouldBeTrue(
+                $"{category.Key.Value} should have its own recognizable category icon");
+        }
+    }
+
+    [Fact]
     public void Configuration_keeps_category_headers_localizable_with_key_fallbacks()
     {
         var repository = new IconInfoRepository();
         var configuration = MaterialGalleryModule.CreateConfiguration();
 
-        var categoryNodes = configuration.NavigationNodes.Skip(2).ToArray();
-        categoryNodes.Count().ShouldBe(repository.Categories.Count);
+        var categoriesGroup = configuration.NavigationNodes[2];
+        var groupHeader = categoriesGroup.Header.ShouldBeAssignableTo<IGalleryLocalizedText>();
+        groupHeader.Resolve().ToString().ShouldBe("Categories");
+
+        var categoryNodes = categoriesGroup.Children;
+        categoryNodes.Count.ShouldBe(repository.Categories.Count);
         foreach (var pair in categoryNodes.Zip(repository.Categories))
         {
             pair.First.Key.Value.ShouldBe(pair.Second);

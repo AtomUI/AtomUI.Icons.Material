@@ -9,59 +9,78 @@ internal static class GeneratedThemeSchema
     {
     };
 
-    private static readonly ControlTokenDescriptor[] s_controls = new ControlTokenDescriptor[]
-    {
-        new ControlTokenDescriptor(
-            typeof(global::MaterialGallery.Controls.IconGallery),
-            new ControlTokenIdentity("MaterialGallery", "IconGallery"),
-            new TokenDescriptor[]
-            {
-                new TokenDescriptor("GalleryIconSize", 0, TokenStage.Control, typeof(global::System.Double), global::MaterialGallery.Controls.DesignTokens.IconGalleryTokenKind.GalleryIconSize,
-                    static value => ThemeTokenValueParser.Parse<global::System.Double>(value),
-                    static value => ThemeTokenValueFormatter.Format((global::System.Double)value!),
-                    static token => ((global::MaterialGallery.Controls.IconGalleryToken)token).GalleryIconSize,
-                    static (token, value) => ((global::MaterialGallery.Controls.IconGalleryToken)token).GalleryIconSize = (global::System.Double)value!,
-                    static token => ThemeResourceValue.Project(((global::MaterialGallery.Controls.IconGalleryToken)token).GalleryIconSize)),
-                new TokenDescriptor("InfoItemSize", 1, TokenStage.Control, typeof(global::System.Double), global::MaterialGallery.Controls.DesignTokens.IconGalleryTokenKind.InfoItemSize,
-                    static value => ThemeTokenValueParser.Parse<global::System.Double>(value),
-                    static value => ThemeTokenValueFormatter.Format((global::System.Double)value!),
-                    static token => ((global::MaterialGallery.Controls.IconGalleryToken)token).InfoItemSize,
-                    static (token, value) => ((global::MaterialGallery.Controls.IconGalleryToken)token).InfoItemSize = (global::System.Double)value!,
-                    static token => ThemeResourceValue.Project(((global::MaterialGallery.Controls.IconGalleryToken)token).InfoItemSize)),
-                new TokenDescriptor("SearchInputMargin", 2, TokenStage.Control, typeof(global::Avalonia.Thickness), global::MaterialGallery.Controls.DesignTokens.IconGalleryTokenKind.SearchInputMargin,
-                    static value => ThemeTokenValueParser.Parse<global::Avalonia.Thickness>(value),
-                    static value => ThemeTokenValueFormatter.Format((global::Avalonia.Thickness)value!),
-                    static token => ((global::MaterialGallery.Controls.IconGalleryToken)token).SearchInputMargin,
-                    static (token, value) => ((global::MaterialGallery.Controls.IconGalleryToken)token).SearchInputMargin = (global::Avalonia.Thickness)value!,
-                    static token => ThemeResourceValue.Project(((global::MaterialGallery.Controls.IconGalleryToken)token).SearchInputMargin)),
-            },
-            static () => new global::MaterialGallery.Controls.IconGalleryToken(),
-            static (token, appearance) => ((global::MaterialGallery.Controls.IconGalleryToken)token).CalculateTokenValues(appearance == global::AtomUI.Theme.ThemeAppearance.Dark)),
-        new ControlTokenDescriptor(
-            typeof(global::MaterialGallery.Controls.IconInfoItem),
-            new ControlTokenIdentity("MaterialGallery", "IconInfoItem")
-        ),
-        new ControlTokenDescriptor(
-            typeof(global::MaterialGallery.Controls.Navigation),
-            new ControlTokenIdentity("MaterialGallery", "Navigation"),
-            new TokenDescriptor[]
-            {
-                new TokenDescriptor("PanelWidth", 0, TokenStage.Control, typeof(global::System.Double), global::MaterialGallery.Controls.DesignTokens.NavigationTokenKind.PanelWidth,
-                    static value => ThemeTokenValueParser.Parse<global::System.Double>(value),
-                    static value => ThemeTokenValueFormatter.Format((global::System.Double)value!),
-                    static token => ((global::MaterialGallery.Controls.NavigationToken)token).PanelWidth,
-                    static (token, value) => ((global::MaterialGallery.Controls.NavigationToken)token).PanelWidth = (global::System.Double)value!,
-                    static token => ThemeResourceValue.Project(((global::MaterialGallery.Controls.NavigationToken)token).PanelWidth)),
-            },
-            static () => new global::MaterialGallery.Controls.NavigationToken(),
-            static (token, appearance) => ((global::MaterialGallery.Controls.NavigationToken)token).CalculateTokenValues(appearance == global::AtomUI.Theme.ThemeAppearance.Dark)),
-    };
-
     private static readonly ThemeAlgorithmDescriptor[] s_algorithms = new ThemeAlgorithmDescriptor[]
     {
     };
 
     internal static global::System.Collections.Generic.IReadOnlyList<TokenDescriptor> GetGlobalTokens() => s_globalTokens;
-    internal static global::System.Collections.Generic.IReadOnlyList<ControlTokenDescriptor> GetControls() => s_controls;
     internal static global::System.Collections.Generic.IReadOnlyList<ThemeAlgorithmDescriptor> GetAlgorithms() => s_algorithms;
+}
+
+internal static class GeneratedThemeSchemaDescriptorFactory
+{
+    internal static ControlTokenDescriptor CreateControlDescriptor_IconGallery_161D5AB171EE85ED()
+    {
+        return
+            new ControlTokenDescriptor(
+                typeof(global::MaterialGallery.Controls.IconGallery),
+                ControlTokenIdentity.ForControl(typeof(global::MaterialGallery.Controls.IconGallery), "MaterialGallery", "IconGallery"),
+                new TokenDescriptor[]
+                {
+                    TokenDescriptor.CreateGenerated("GalleryIconSize", 0, TokenStage.Control, TokenValueCodec<global::System.Double>.Instance, global::MaterialGallery.Controls.DesignTokens.IconGalleryTokenKind.GalleryIconSize, GeneratedTokenAccessor_IconGallery_161D5AB171EE85ED.Instance, 1),
+                    TokenDescriptor.CreateGenerated("InfoItemSize", 1, TokenStage.Control, TokenValueCodec<global::System.Double>.Instance, global::MaterialGallery.Controls.DesignTokens.IconGalleryTokenKind.InfoItemSize, GeneratedTokenAccessor_IconGallery_161D5AB171EE85ED.Instance, 1),
+                    TokenDescriptor.CreateGenerated("SearchInputMargin", 2, TokenStage.Control, TokenValueCodec<global::Avalonia.Thickness>.Instance, global::MaterialGallery.Controls.DesignTokens.IconGalleryTokenKind.SearchInputMargin, GeneratedTokenAccessor_IconGallery_161D5AB171EE85ED.Instance, 1),
+                },
+                static () => new global::MaterialGallery.Controls.IconGalleryToken(),
+                static (token, appearance) => ((global::MaterialGallery.Controls.IconGalleryToken)token).CalculateTokenValues(appearance == global::AtomUI.Theme.ThemeAppearance.Dark)
+            );
+    }
+
+    internal static ControlTokenDescriptor CreateControlDescriptor_IconInfoItem_94298F31C4419CF6()
+    {
+        return
+            new ControlTokenDescriptor(
+                typeof(global::MaterialGallery.Controls.IconInfoItem),
+                ControlTokenIdentity.ForControl(typeof(global::MaterialGallery.Controls.IconInfoItem), "MaterialGallery", "IconInfoItem")
+            );
+    }
+
+}
+
+internal sealed class GeneratedTokenAccessor_IconGallery_161D5AB171EE85ED : TokenValueAccessor
+{
+    internal static readonly GeneratedTokenAccessor_IconGallery_161D5AB171EE85ED Instance = new GeneratedTokenAccessor_IconGallery_161D5AB171EE85ED();
+
+    public override object GetValue(global::AtomUI.Theme.DesignTokens.AbstractDesignToken token, int slot)
+    {
+        switch (slot)
+        {
+            case 0: return ((global::MaterialGallery.Controls.IconGalleryToken)token).GalleryIconSize;
+            case 1: return ((global::MaterialGallery.Controls.IconGalleryToken)token).InfoItemSize;
+            case 2: return ((global::MaterialGallery.Controls.IconGalleryToken)token).SearchInputMargin;
+            default: throw new global::System.ArgumentOutOfRangeException(nameof(slot));
+        }
+    }
+
+    public override void SetValue(global::AtomUI.Theme.DesignTokens.AbstractDesignToken token, int slot, object value)
+    {
+        switch (slot)
+        {
+            case 0: ((global::MaterialGallery.Controls.IconGalleryToken)token).GalleryIconSize = (global::System.Double)value!; return;
+            case 1: ((global::MaterialGallery.Controls.IconGalleryToken)token).InfoItemSize = (global::System.Double)value!; return;
+            case 2: ((global::MaterialGallery.Controls.IconGalleryToken)token).SearchInputMargin = (global::Avalonia.Thickness)value!; return;
+            default: throw new global::System.ArgumentOutOfRangeException(nameof(slot));
+        }
+    }
+
+    public override object ProjectResourceValue(global::AtomUI.Theme.DesignTokens.AbstractDesignToken token, int slot)
+    {
+        switch (slot)
+        {
+            case 0: return global::AtomUI.Theme.Schema.ThemeResourceValue.Project(((global::MaterialGallery.Controls.IconGalleryToken)token).GalleryIconSize);
+            case 1: return global::AtomUI.Theme.Schema.ThemeResourceValue.Project(((global::MaterialGallery.Controls.IconGalleryToken)token).InfoItemSize);
+            case 2: return global::AtomUI.Theme.Schema.ThemeResourceValue.Project(((global::MaterialGallery.Controls.IconGalleryToken)token).SearchInputMargin);
+            default: throw new global::System.ArgumentOutOfRangeException(nameof(slot));
+        }
+    }
 }

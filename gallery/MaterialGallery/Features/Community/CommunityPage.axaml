@@ -1,138 +1,283 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MaterialGallery.Features.Community.CommunityPage"
+             xmlns:svg="using:Avalonia.Svg"
              xmlns:atom="https://atomui.net"
              xmlns:antdicons="https://atomui.net/icons/antdesign"
              xmlns:gallery="https://atomui.net/icons/material/icons-gallery"
-             xmlns:vm="using:MaterialGallery.Features.Community"
-             x:Class="MaterialGallery.Features.Community.CommunityPage"
-             x:DataType="vm:CommunityViewModel">
-    <atom:ScrollViewer HorizontalScrollBarVisibility="Auto"
+             xmlns:views="using:MaterialGallery.Features.Community">
+    <UserControl.Styles>
+        <Style Selector="svg|Svg#AtomInnovationLogo">
+            <Setter Property="Path" Value="/Assets/atom-innovation-logo.svg" />
+        </Style>
+        <Style Selector="svg|Svg#TLAICIncubationLogo">
+            <Setter Property="Path" Value="/Assets/TLAIC.svg" />
+        </Style>
+        <Style Selector="views|CommunityPage[IsDarkThemeMode=True]">
+            <Style Selector="^ svg|Svg#AtomInnovationLogo">
+                <Setter Property="Path" Value="/Assets/atom-innovation-logo-white.svg" />
+            </Style>
+            <Style Selector="^ svg|Svg#TLAICIncubationLogo">
+                <Setter Property="Path" Value="/Assets/TLAIC-white.svg" />
+            </Style>
+        </Style>
+    </UserControl.Styles>
+
+    <atom:ScrollViewer Name="CommunityScrollViewer"
+                       HorizontalScrollBarVisibility="Auto"
                        VerticalScrollBarVisibility="Auto"
                        AllowAutoHide="False">
-        <StackPanel MaxWidth="980"
-                    Margin="28"
-                    Spacing="24"
+        <StackPanel Name="CommunityContent"
+                    MinWidth="800"
+                    Width="820"
+                    Margin="32"
+                    Spacing="18"
                     HorizontalAlignment="Center">
-            <Border Background="{atom:SharedTokenResource ColorBgContainer}"
-                    BorderBrush="{atom:SharedTokenResource ColorBorderSecondary}"
-                    BorderThickness="1"
+            <Border Name="CommunityAboutCard"
+                    Background="{atom:SharedTokenResource ColorBgContainer}"
                     BoxShadow="{atom:SharedTokenResource BoxShadowsTertiary}"
-                    CornerRadius="10"
-                    Padding="28">
-                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="24">
-                    <Border Width="104"
-                            Height="104"
-                            CornerRadius="18"
-                            Background="{atom:SharedTokenResource ColorFillSecondary}"
-                            Padding="14"
-                            VerticalAlignment="Top">
-                        <Image Source="/Assets/gallery-logo.svg" Stretch="Uniform" />
-                    </Border>
+                    CornerRadius="8"
+                    Padding="20">
+                <Grid ColumnDefinitions="Auto,*"
+                      ColumnSpacing="24">
+                    <StackPanel Width="230"
+                                VerticalAlignment="Center">
+                        <svg:Svg Name="AtomInnovationLogo"
+                             Width="220"
+                             HorizontalAlignment="Left" />
+                    </StackPanel>
 
-                    <StackPanel Grid.Column="1" Spacing="12">
-                        <atom:TextBlock Text="{gallery:CommunityPageLangResource Title}"
-                                        FontSize="28"
+                    <StackPanel Grid.Column="1"
+                                Spacing="14"
+                                VerticalAlignment="Center">
+                        <atom:TextBlock Text="{gallery:CommunityPageLangResource AboutAtomUI}"
+                                        FontSize="20"
                                         FontWeight="Bold" />
-                        <atom:TextBlock Text="{gallery:CommunityPageLangResource Description}"
-                                        FontSize="15"
-                                        TextWrapping="Wrap" />
-                        <atom:TextBlock Text="{gallery:CommunityPageLangResource Relationship}"
-                                        Foreground="{atom:SharedTokenResource ColorTextSecondary}"
-                                        TextWrapping="Wrap" />
-                        <WrapPanel Orientation="Horizontal" ItemSpacing="10" LineSpacing="8">
-                            <atom:HyperLinkButton Name="GitHubHeroAction"
-                                                  Content="{gallery:CommunityPageLangResource OpenGitHub}"
-                                                  Icon="{antdicons:AntDesignIconProvider Kind=GithubOutlined}"
-                                                  NavigateUri="{Binding GitHubUri}" />
-                            <atom:HyperLinkButton Name="AtomUIHeroAction"
-                                                  Content="{gallery:CommunityPageLangResource VisitAtomUI}"
+
+                        <StackPanel Spacing="8">
+                            <Border Background="{atom:SharedTokenResource ColorPrimaryBg}"
+                                    CornerRadius="6"
+                                    Padding="12,10">
+                                <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10">
+                                    <atom:TextBlock Text="{gallery:CommunityPageLangResource VisionLabel}"
+                                                    Foreground="{atom:SharedTokenResource ColorPrimary}"
+                                                    FontWeight="Bold" />
+                                    <atom:TextBlock Grid.Column="1"
+                                                    Text="{gallery:CommunityPageLangResource VisionText}"
+                                                    TextWrapping="Wrap"
+                                                    Foreground="{atom:SharedTokenResource ColorText}" />
+                                </Grid>
+                            </Border>
+
+                            <Border Background="{atom:SharedTokenResource ColorFillQuaternary}"
+                                    CornerRadius="6"
+                                    Padding="12,10">
+                                <Grid ColumnDefinitions="Auto,*"
+                                      ColumnSpacing="10">
+                                    <atom:TextBlock Text="{gallery:CommunityPageLangResource MissionLabel}"
+                                                    Foreground="{atom:SharedTokenResource ColorText}"
+                                                    FontWeight="Bold" />
+                                    <atom:TextBlock Grid.Column="1"
+                                                    Text="{gallery:CommunityPageLangResource MissionText}"
+                                                    TextWrapping="Wrap"
+                                                    Foreground="{atom:SharedTokenResource ColorTextSecondary}" />
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel Spacing="6"
+                                    Orientation="Horizontal">
+                            <atom:HyperLinkButton Name="CommunityHomePageLink"
                                                   Icon="{antdicons:AntDesignIconProvider Kind=GlobalOutlined}"
-                                                  NavigateUri="{Binding AtomUIUri}" />
-                        </WrapPanel>
+                                                  IconWidth="18"
+                                                  IconHeight="18"
+                                                  NavigateUri="https://www.atomui.net"
+                                                  Content="{gallery:CommunityPageLangResource HomePage}" />
+                            <atom:HyperLinkButton Name="CommunityGiteeLink"
+                                                  Icon="{antdicons:AntDesignIconProvider Kind=GiteeOutlined}"
+                                                  IconWidth="18"
+                                                  IconHeight="18"
+                                                  NavigateUri="https://gitee.com/chinware/atomui"
+                                                  Content="Gitee" />
+                            <atom:HyperLinkButton Name="CommunityGitHubLink"
+                                                  Icon="{antdicons:AntDesignIconProvider Kind=GithubOutlined}"
+                                                  IconWidth="18"
+                                                  IconHeight="18"
+                                                  NavigateUri="https://github.com/chinware/atomui"
+                                                  Content="Github" />
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </Border>
 
-            <StackPanel Spacing="12">
-                <atom:TextBlock Text="{gallery:CommunityPageLangResource ProjectResources}"
-                                FontSize="20"
-                                FontWeight="Bold" />
-                <Grid ColumnDefinitions="*,*,*" ColumnSpacing="14">
-                    <atom:HyperLinkButton Name="ReportIssueCard"
-                                          NavigateUri="{Binding IssuesUri}"
-                                          HorizontalContentAlignment="Stretch"
-                                          VerticalContentAlignment="Stretch">
-                        <Border Background="{atom:SharedTokenResource ColorBgContainer}"
-                                BorderBrush="{atom:SharedTokenResource ColorBorderSecondary}"
-                                BorderThickness="1"
-                                CornerRadius="8"
-                                Padding="18"
-                                MinHeight="180">
-                            <StackPanel Spacing="10">
-                                <antdicons:BugOutlined Width="28" Height="28" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource ReportIssueTitle}"
-                                                FontSize="17"
-                                                FontWeight="SemiBold" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource ReportIssueDescription}"
-                                                Foreground="{atom:SharedTokenResource ColorTextSecondary}"
-                                                TextWrapping="Wrap" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource ReportIssueAction}"
-                                                Foreground="{atom:SharedTokenResource ColorPrimary}" />
-                            </StackPanel>
-                        </Border>
-                    </atom:HyperLinkButton>
+            <Border Name="CommunityIncubationCard"
+                    Background="{atom:SharedTokenResource ColorBgContainer}"
+                    BoxShadow="{atom:SharedTokenResource BoxShadowsTertiary}"
+                    CornerRadius="8"
+                    Padding="24">
+                <Grid MinHeight="188"
+                      ColumnDefinitions="220,*"
+                      ColumnSpacing="32">
+                    <svg:Svg Name="TLAICIncubationLogo"
+                         Width="210"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left" />
 
-                    <atom:HyperLinkButton Name="ContributeCard"
-                                          Grid.Column="1"
-                                          NavigateUri="{Binding GitHubUri}"
-                                          HorizontalContentAlignment="Stretch"
-                                          VerticalContentAlignment="Stretch">
-                        <Border Background="{atom:SharedTokenResource ColorBgContainer}"
-                                BorderBrush="{atom:SharedTokenResource ColorBorderSecondary}"
-                                BorderThickness="1"
-                                CornerRadius="8"
-                                Padding="18"
-                                MinHeight="180">
-                            <StackPanel Spacing="10">
-                                <antdicons:PullRequestOutlined Width="28" Height="28" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource ContributeTitle}"
-                                                FontSize="17"
-                                                FontWeight="SemiBold" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource ContributeDescription}"
-                                                Foreground="{atom:SharedTokenResource ColorTextSecondary}"
-                                                TextWrapping="Wrap" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource ContributeAction}"
-                                                Foreground="{atom:SharedTokenResource ColorPrimary}" />
-                            </StackPanel>
-                        </Border>
-                    </atom:HyperLinkButton>
+                    <StackPanel Grid.Column="1"
+                                Spacing="16"
+                                VerticalAlignment="Center">
+                        <StackPanel Spacing="6">
+                            <atom:TextBlock Text="{gallery:CommunityPageLangResource IncubationEyebrow}"
+                                            FontSize="12"
+                                            FontWeight="Bold"
+                                            Foreground="{atom:SharedTokenResource ColorPrimary}" />
+                            <atom:TextBlock Text="{gallery:CommunityPageLangResource IncubationTitle}"
+                                            FontSize="24"
+                                            FontWeight="Bold"
+                                            LineHeight="30"
+                                            TextWrapping="Wrap"
+                                            Foreground="{atom:SharedTokenResource ColorText}" />
+                            <atom:TextBlock Text="{gallery:CommunityPageLangResource IncubationDescription}"
+                                            FontSize="14"
+                                            LineHeight="22"
+                                            TextWrapping="Wrap"
+                                            Foreground="{atom:SharedTokenResource ColorTextSecondary}" />
+                        </StackPanel>
 
-                    <atom:HyperLinkButton Name="GetPackageCard"
-                                          Grid.Column="2"
-                                          NavigateUri="{Binding NuGetUri}"
-                                          HorizontalContentAlignment="Stretch"
-                                          VerticalContentAlignment="Stretch">
-                        <Border Background="{atom:SharedTokenResource ColorBgContainer}"
-                                BorderBrush="{atom:SharedTokenResource ColorBorderSecondary}"
-                                BorderThickness="1"
-                                CornerRadius="8"
-                                Padding="18"
-                                MinHeight="180">
-                            <StackPanel Spacing="10">
-                                <antdicons:CloudDownloadOutlined Width="28" Height="28" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource GetPackageTitle}"
-                                                FontSize="17"
-                                                FontWeight="SemiBold" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource GetPackageDescription}"
-                                                Foreground="{atom:SharedTokenResource ColorTextSecondary}"
-                                                TextWrapping="Wrap" />
-                                <atom:TextBlock Text="{gallery:CommunityPageLangResource GetPackageAction}"
+                        <Grid ColumnDefinitions="*,*,*"
+                              ColumnSpacing="16">
+                            <StackPanel Spacing="4">
+                                <Border Height="1"
+                                        Background="{atom:SharedTokenResource ColorPrimaryBorder}" />
+                                <atom:TextBlock Text="01"
+                                                FontSize="12"
+                                                FontWeight="Bold"
                                                 Foreground="{atom:SharedTokenResource ColorPrimary}" />
+                                <atom:TextBlock Text="{gallery:CommunityPageLangResource IncubationPointOpenSource}"
+                                                FontSize="15"
+                                                FontWeight="Bold"
+                                                TextWrapping="Wrap"
+                                                Foreground="{atom:SharedTokenResource ColorText}" />
                             </StackPanel>
-                        </Border>
-                    </atom:HyperLinkButton>
+
+                            <StackPanel Grid.Column="1"
+                                        Spacing="4">
+                                <Border Height="1"
+                                        Background="{atom:SharedTokenResource ColorPrimaryBorder}" />
+                                <atom:TextBlock Text="02"
+                                                FontSize="12"
+                                                FontWeight="Bold"
+                                                Foreground="{atom:SharedTokenResource ColorPrimary}" />
+                                <atom:TextBlock Text="{gallery:CommunityPageLangResource IncubationPointEcosystem}"
+                                                FontSize="15"
+                                                FontWeight="Bold"
+                                                TextWrapping="Wrap"
+                                                Foreground="{atom:SharedTokenResource ColorText}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2"
+                                        Spacing="4">
+                                <Border Height="1"
+                                        Background="{atom:SharedTokenResource ColorPrimaryBorder}" />
+                                <atom:TextBlock Text="03"
+                                                FontSize="12"
+                                                FontWeight="Bold"
+                                                Foreground="{atom:SharedTokenResource ColorPrimary}" />
+                                <atom:TextBlock Text="{gallery:CommunityPageLangResource IncubationPointLicense}"
+                                                FontSize="15"
+                                                FontWeight="Bold"
+                                                TextWrapping="Wrap"
+                                                Foreground="{atom:SharedTokenResource ColorText}" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
-            </StackPanel>
+            </Border>
+
+            <Grid Name="CommunityChannels"
+                  ColumnDefinitions="*,*,*,*"
+                  ColumnSpacing="12"
+                  Margin="0,6,0,0">
+                <Border Name="WeChatOfficialCard"
+                        Background="{atom:SharedTokenResource ColorBgContainer}"
+                        BoxShadow="{atom:SharedTokenResource BoxShadowsTertiary}"
+                        CornerRadius="8"
+                        Padding="16">
+                    <StackPanel Spacing="10">
+                        <atom:TextBlock Text="{gallery:CommunityPageLangResource WeChatOfficial}"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        HorizontalAlignment="Center"
+                                        TextAlignment="Center"
+                                        TextWrapping="Wrap" />
+                        <Image Name="WeChatOfficialQRCode"
+                               Source="/Assets/qinware-wechatpress.png"
+                               HorizontalAlignment="Center"
+                               Width="144" />
+                    </StackPanel>
+                </Border>
+
+                <Border Name="TelegramCard"
+                        Grid.Column="1"
+                        Background="{atom:SharedTokenResource ColorBgContainer}"
+                        BoxShadow="{atom:SharedTokenResource BoxShadowsTertiary}"
+                        CornerRadius="8"
+                        Padding="16">
+                    <StackPanel Spacing="10">
+                        <atom:TextBlock Text="{gallery:CommunityPageLangResource TelegramGroup}"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        HorizontalAlignment="Center"
+                                        TextAlignment="Center"
+                                        TextWrapping="Wrap" />
+                        <Image Name="TelegramQRCode"
+                               Source="/Assets/atomui-telegram.png"
+                               HorizontalAlignment="Center"
+                               Width="144" />
+                    </StackPanel>
+                </Border>
+
+                <Border Name="WeChatGroupCard"
+                        Grid.Column="2"
+                        Background="{atom:SharedTokenResource ColorBgContainer}"
+                        BoxShadow="{atom:SharedTokenResource BoxShadowsTertiary}"
+                        CornerRadius="8"
+                        Padding="16">
+                    <StackPanel Spacing="10">
+                        <atom:TextBlock Text="{gallery:CommunityPageLangResource WeChatGroup}"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        HorizontalAlignment="Center"
+                                        TextAlignment="Center"
+                                        TextWrapping="Wrap" />
+                        <Image Name="WeChatGroupQRCode"
+                               Source="/Assets/atomui-wechat.png"
+                               HorizontalAlignment="Center"
+                               Width="144" />
+                    </StackPanel>
+                </Border>
+
+                <Border Name="QQGroupCard"
+                        Grid.Column="3"
+                        Background="{atom:SharedTokenResource ColorBgContainer}"
+                        BoxShadow="{atom:SharedTokenResource BoxShadowsTertiary}"
+                        CornerRadius="8"
+                        Padding="16">
+                    <StackPanel Spacing="10">
+                        <atom:TextBlock Text="{gallery:CommunityPageLangResource QQGroup}"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        HorizontalAlignment="Center"
+                                        TextAlignment="Center"
+                                        TextWrapping="Wrap" />
+                        <Image Name="QQGroupQRCode"
+                               Source="/Assets/atomui-qq.png"
+                               HorizontalAlignment="Center"
+                               Width="144" />
+                    </StackPanel>
+                </Border>
+            </Grid>
         </StackPanel>
     </atom:ScrollViewer>
 </UserControl>

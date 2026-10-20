@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Rebuild the Material Gallery on GalleryBase with the approved AtomUI-style chrome, flat first-level icon-category navigation, and polished Overview, Community, and shared icon-catalog pages.
+**Goal:** Rebuild the Material Gallery on GalleryBase with the approved AtomUI-style chrome, a `Categories` navigation group, and polished Overview, Community, and shared icon-catalog pages.
 
 **Architecture:** GalleryBase continues to own the title bar, shell, routing host, responsive sidebar, branding, and footer. `MaterialGalleryModule` supplies immutable product configuration, while three feature modules own Overview, Community, and the shared category-driven icon catalog; generated icon metadata remains behind a per-page repository session.
 
@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Keep `AtomUIVersion=6.2.6`, `MaterialVersion=6.2.6`, and `AvaloniaVersion=12.1.4` unchanged.
-- Navigation order is exactly `Overview`, `Community`, then the 18 generated categories; every entry is first-level and no parent group is allowed.
+- Root navigation order is exactly `Overview`, `Community`, `Categories`; the group is expanded by default and owns the 18 generated category routes.
 - The default route is `Overview`.
 - Preserve English, Simplified Chinese, Traditional Chinese, and Portuguese (Brazil) localization.
 - Preserve 96-item initial and incremental batches, visible overflow scrollbars, search, five themes, copying, motion, and disposal behavior.
@@ -62,7 +62,7 @@
 
 - [ ] **Step 1: Write failing configuration tests**
 
-Add `Configuration_uses_overview_then_community_then_flat_category_routes` and assert the exact first-level key sequence, zero child nodes, `Overview` as default, and one registered route for every key. Add `Branding_exposes_canonical_links_logo_and_compiled_version` and assert the Website, NuGet, and GitHub URLs, SVG logo resource, and `GalleryVersionInfo.DisplayVersion`.
+Add `Configuration_uses_overview_then_community_then_an_expanded_categories_group` and assert the root key sequence, `Categories` children, its default-open state, `Overview` as default, and one registered route for every page key. Add `Branding_exposes_canonical_links_logo_and_compiled_version` and assert the Website, NuGet, and GitHub URLs, supplied AtomUI OSS SVG logo resource, and `GalleryVersionInfo.DisplayVersion`.
 
 - [ ] **Step 2: Write failing sidebar tests**
 
@@ -76,7 +76,7 @@ Run:
 dotnet test tests/MaterialGallery.Tests/MaterialGallery.Tests.csproj -c Debug --filter "FullyQualifiedName~MaterialGalleryModuleTests|FullyQualifiedName~GalleryShellMigrationTests"
 ```
 
-Expected: FAIL because Overview/Community routes, canonical links, flat ordering, and the collapse button are absent.
+Expected: FAIL because Overview/Community routes, canonical links, grouped category ordering, and the collapse button are absent.
 
 - [ ] **Step 4: Add the direct Gallery icon dependency**
 
@@ -86,9 +86,9 @@ Add centrally versioned `AtomUI.Icons.AntDesign` at `$(AtomUIVersion)` and refer
 
 Create minimal routable `OverviewViewModel(IScreen)` and `CommunityViewModel(IScreen)` classes and their typed Gallery reactive views. Define the five absolute project-link constants once in `GalleryProjectLinks`; use the package metadata repository URL as the GitHub canonical value.
 
-- [ ] **Step 6: Configure branding and flat navigation**
+- [ ] **Step 6: Configure branding and grouped category navigation**
 
-Split `MaterialGalleryModule.Configure` into focused `ConfigureBranding`, `ConfigureNavigation`, and `ConfigureRoutes` methods. Set `DefaultRoute = OverviewViewModel.ID`; add Overview with `HomeOutlined`, Community with `TeamOutlined`, then add each generated category directly with `LocalizedCategory(category)` and no synthetic parent node. Configure footer links with `GlobalOutlined`, `CloudDownloadOutlined`, and `GithubOutlined`. Register all route/view factories without instantiating icon data during configuration.
+Split `MaterialGalleryModule.Configure` into focused `ConfigureBranding`, `ConfigureNavigation`, and `ConfigureRoutes` methods. Set `DefaultRoute = OverviewViewModel.ID`; add Overview with `HomeOutlined`, Community with `TeamOutlined`, then add a localized `Categories` group with `AppstoreOutlined` and each generated category as a child through `LocalizedCategory(category)`. Mark the group open by default. Configure footer links with `GlobalOutlined`, `CloudDownloadOutlined`, and `GithubOutlined`. Register all route/view factories without instantiating icon data during configuration.
 
 - [ ] **Step 7: Restore the GalleryBase collapse action**
 
@@ -98,7 +98,7 @@ Port the current AtomUIV6 collapse/expand button behavior into `CaseNavigation`:
 
 Run the Step 3 command.
 
-Expected: PASS with exact flat navigation order and functional collapse behavior.
+Expected: PASS with exact grouped navigation order and functional collapse behavior.
 
 - [ ] **Step 9: Commit the navigation slice**
 

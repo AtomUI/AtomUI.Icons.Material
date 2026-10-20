@@ -2,15 +2,15 @@
 
 ## Summary
 
-The `AtomUI.Icons.Material` Gallery will use `AtomUI.Toolkits.GalleryBase` as its application shell while presenting an information architecture designed for an icon catalog rather than a component library. It preserves the current AtomUI Gallery chrome—Settings, Theme, Language, branding, collapsible sidebar, footer links, and version—while making `Overview`, `Community`, and every Material icon category direct first-level routes.
+The `AtomUI.Icons.Material` Gallery will use `AtomUI.Toolkits.GalleryBase` as its application shell while presenting an information architecture designed for an icon catalog rather than a component library. It preserves the current AtomUI Gallery chrome—Settings, Theme, Language, branding, collapsible sidebar, footer links, and version—while keeping `Overview` and `Community` first-level and grouping every Material icon category under `Categories`.
 
-The default route is `Overview`. The Gallery has no `Components`, `Icons`, or `Material` parent navigation group. All category routes reuse one icon-catalog page implementation and differ only by route category.
+The default route is `Overview`. The `Categories` group is expanded by default and has no route of its own. All category child routes reuse one icon-catalog page implementation and differ only by route category.
 
 ## Goals
 
 - Match the current AtomUI Gallery shell and interaction quality without copying component-specific content.
 - Keep `Overview` and `Community` as the first two first-level sidebar entries.
-- Place all 18 Material icon categories directly below them as first-level entries.
+- Place all 18 Material icon categories under a single `Categories` parent that is expanded by default.
 - Provide a polished Overview, project-specific Community page, and reusable icon-catalog page.
 - Preserve all five Material icon themes, search, incremental loading, scrolling, copying, localization, and responsive behavior.
 - Keep shell concerns in GalleryBase and Material-specific behavior inside focused feature modules.
@@ -43,11 +43,12 @@ The expanded sidebar contains:
 1. Material Gallery brand logo with the navigation collapse button on the right.
 2. `Overview`.
 3. `Community`.
-4. The direct category routes in generated catalog order:
+4. A `Categories` parent using the GalleryBase group interaction.
+5. The category child routes in generated catalog order:
    `Action`, `Alert`, `Av`, `Communication`, `Content`, `Device`, `Editor`, `File`, `Hardware`, `Home`, `Image`, `Maps`, `Navigation`, `Notification`, `Places`, `Search`, `Social`, and `Toggle`.
 5. A footer containing Website, NuGet, and GitHub icon links plus `GalleryVersionInfo.DisplayVersion`.
 
-There is no interactive or visual parent node between `Community` and `Action`. Categories are peers of `Overview` and `Community`, not children of `Components` or `Icons`.
+`Categories` is a localized, non-route parent node. Clicking it only expands or collapses its children; selecting a child navigates to the shared icon catalog page.
 
 The sidebar uses GalleryBase responsive behavior. When collapsed, brand content and the footer hide, category labels collapse according to `NavMenu`, and the collapse/expand action remains available. The header extension point is reserved for the collapse button; the Material icon-theme selector does not occupy it.
 
@@ -164,7 +165,7 @@ Category is route state. Search text and scroll offset are page state:
 
 ## Data Flow
 
-1. The user selects a category in the first-level `NavMenu`.
+1. The user expands `Categories` when necessary and selects a category child in the `NavMenu`.
 2. `GalleryNavigationViewModel` resolves the registered category route.
 3. The route factory creates `IconCatalogPageViewModel(category)`.
 4. The page view model combines category, workspace icon theme, and page search text.
@@ -210,8 +211,8 @@ No height constraint, overflow behavior, visible scrollbar, or nested scrolling 
 
 ### Configuration tests
 
-- Exact navigation order: `Overview`, `Community`, then the 18 generated categories.
-- No `Components`, `Icons`, or `Material` parent navigation node.
+- Exact root navigation order: `Overview`, `Community`, then `Categories`.
+- `Categories` is non-routable, expanded by default, and contains the 18 generated categories in catalog order.
 - `Overview` is the default route.
 - Every route has exactly one deferred view/view-model mapping.
 - Branding exposes Website, NuGet, GitHub, and the compiled Material version.

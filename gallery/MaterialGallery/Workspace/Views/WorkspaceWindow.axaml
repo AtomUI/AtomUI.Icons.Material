@@ -6,7 +6,7 @@
              xmlns:viewModels="using:MaterialGallery.Workspace.ViewModels"
              x:Class="MaterialGallery.Workspace.Views.WorkspaceWindow"
              x:DataType="viewModels:WorkspaceWindowViewModel"
-             Icon="/Assets/MaterialGallery.ico"
+             Icon="/Assets/gallery-logo.png"
              Title="{x:Null}"
              IsPinCaptionButtonVisible="True"
              IsFullScreenCaptionButtonVisible="True"

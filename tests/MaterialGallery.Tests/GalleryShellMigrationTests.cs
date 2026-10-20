@@ -4,10 +4,16 @@ using AtomUI.Localization;
 using AtomUI.Toolkits.GalleryBase.Navigation;
 using AtomUI.Toolkits.GalleryBase.Shell;
 using Avalonia.Automation;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Headless;
+using Avalonia.Input;
+using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
+using MaterialGallery.Features.Overview;
+using MaterialGallery.Features.IconCatalog;
 using MaterialGallery.Models;
 using MaterialGallery.Workspace.ViewModels;
 using MaterialGallery.Workspace.Views;
@@ -42,6 +48,7 @@ public class GalleryShellMigrationTests
     [Fact]
     public void Workspace_delegates_shared_state_to_GalleryBase_and_defaults_to_filled_icons()
     {
+        AvaloniaTestApp.EnsureInitialized();
         using var workspace = new WorkspaceWindowViewModel();
 
         workspace.ShouldBeAssignableTo<GalleryWorkspaceViewModel>();
@@ -53,6 +60,7 @@ public class GalleryShellMigrationTests
     [Fact]
     public void Every_category_navigation_node_can_route_and_disposal_stops_runtime_activity()
     {
+        AvaloniaTestApp.EnsureInitialized();
         using var workspace = new WorkspaceWindowViewModel();
         var categories = new IconInfoRepository().Categories;
 
@@ -155,5 +163,190 @@ public class GalleryShellMigrationTests
         {
             window.Close();
         }
+    }
+
+    [Theory]
+    [InlineData(1300, 900)]
+    [InlineData(1040, 720)]
+    public void Workspace_window_preserves_the_complete_shell_geometry_and_collapse_contract(
+        double width,
+        double height)
+    {
+        AvaloniaTestApp.EnsureInitialized();
+        var window = new WorkspaceWindow
+        {
+            Width  = width,
+            Height = height
+        };
+
+        try
+        {
+            window.Show();
+            Dispatcher.UIThread.RunJobs();
+            using var expandedFrame = window.CaptureRenderedFrame();
+
+            var shell = window.GetVisualDescendants().OfType<GalleryShellView>().Single();
+            var titleBar = window.GetVisualDescendants()
+                                 .OfType<AtomUI.Toolkits.GalleryBase.Controls.GalleryWindowTitleBar>()
+                                 .Single();
+            var sidebar = FindNamed<Border>(shell, "WorkspaceSidebar");
+            var separator = FindNamed<Border>(shell, "WorkspaceNavigationSeparator");
+            var footer = FindNamed<Border>(shell, "WorkspaceSidebarFooter");
+            var rootLayout = FindNamed<Grid>(shell, "WorkspaceRootLayout");
+            var collapseButton = window.GetVisualDescendants()
+                                       .OfType<DesktopButton>()
+                                       .Single(button => button.Name == "NavigationCollapseButton");
+
+            var titleBarRect = BoundsInWindow(titleBar, window);
+            var rootRect = BoundsInWindow(rootLayout, window);
+            var sidebarRect = BoundsInWindow(sidebar, window);
+            var contentRect = BoundsInWindow(shell.ContentHost, window);
+            var separatorRect = BoundsInWindow(separator, window);
+            var footerRect = BoundsInWindow(footer, window);
+
+            titleBarRect.Height.ShouldBeGreaterThan(0);
+            titleBarRect.Bottom.ShouldBeLessThanOrEqualTo(rootRect.Top + 1);
+            sidebarRect.Right.ShouldBeLessThanOrEqualTo(contentRect.Left + 1);
+            separatorRect.Width.ShouldBe(1, 0.01);
+            separatorRect.Left.ShouldBe(contentRect.Left, 1);
+            separatorRect.Top.ShouldBe(rootRect.Top, 1);
+            separatorRect.Bottom.ShouldBe(rootRect.Bottom, 1);
+            footerRect.Left.ShouldBeGreaterThanOrEqualTo(sidebarRect.Left);
+            footerRect.Right.ShouldBeLessThanOrEqualTo(sidebarRect.Right);
+            footerRect.Bottom.ShouldBeLessThanOrEqualTo(sidebarRect.Bottom + 1);
+            footerRect.Top.ShouldBeGreaterThan(sidebarRect.Top);
+            RectanglesOverlap(footerRect, contentRect).ShouldBeFalse();
+            window.ViewModel!.Router.GetCurrentViewModel().ShouldBeOfType<OverviewViewModel>();
+
+            var navMenu = ((IGallerySidebarNavMenuHost)window.GetVisualDescendants()
+                .OfType<CaseNavigation>()
+                .Single()).SidebarNavMenu;
+            var initialCollapsed = navMenu.IsInlineCollapsed;
+            var initialSidebarWidth = sidebar.Bounds.Width;
+            var initialContentWidth = shell.ContentHost.Bounds.Width;
+            AutomationProperties.GetName(collapseButton).ShouldBe(
+                initialCollapsed ? "Expand navigation" : "Collapse navigation");
+
+            collapseButton.RaiseEvent(new RoutedEventArgs(DesktopButton.ClickEvent));
+            var targetSidebarWidth = initialCollapsed
+                ? MaterialGalleryModule.GetConfiguration().Shell.SidebarWidth
+                : navMenu.InlineCollapsedWidth;
+            SpinWait.SpinUntil(() =>
+            {
+                Dispatcher.UIThread.RunJobs();
+                window.UpdateLayout();
+                return Math.Abs(sidebar.Bounds.Width - targetSidebarWidth) <= 0.5;
+            }, TimeSpan.FromSeconds(3)).ShouldBeTrue(
+                $"sidebar collapse animation should reach its target width of {targetSidebarWidth}");
+            using var toggledFrame = window.CaptureRenderedFrame();
+
+            navMenu.IsInlineCollapsed.ShouldBe(!initialCollapsed);
+            AutomationProperties.GetName(collapseButton).ShouldBe(
+                initialCollapsed ? "Collapse navigation" : "Expand navigation");
+            if (initialCollapsed)
+            {
+                sidebar.Bounds.Width.ShouldBeGreaterThan(initialSidebarWidth);
+                shell.ContentHost.Bounds.Width.ShouldBeLessThan(initialContentWidth);
+            }
+            else
+            {
+                sidebar.Bounds.Width.ShouldBeLessThan(initialSidebarWidth);
+                shell.ContentHost.Bounds.Width.ShouldBeGreaterThan(initialContentWidth);
+            }
+        }
+        finally
+        {
+            window.Close();
+            Dispatcher.UIThread.RunJobs();
+        }
+    }
+
+    [Theory]
+    [InlineData(1300, 900)]
+    [InlineData(1040, 720)]
+    public void Sidebar_rows_receive_full_width_pointer_input_and_real_headless_wheel_events(
+        double width, double height)
+    {
+        AvaloniaTestApp.EnsureInitialized();
+        Avalonia.Application.Current!.GetLanguageManager()!.ChangeLanguage(LanguageTags.EnUS);
+        var window = new WorkspaceWindow { Width = width, Height = height };
+        try
+        {
+            window.Show();
+            Dispatcher.UIThread.RunJobs();
+            using var frame = window.CaptureRenderedFrame();
+            var navigation = window.GetVisualDescendants().OfType<CaseNavigation>().Single();
+            var menu = ((IGallerySidebarNavMenuHost)navigation).SidebarNavMenu;
+            menu.IsInlineCollapsed.ShouldBeFalse();
+            var rows = menu.GetVisualDescendants().OfType<HeaderedSelectingItemsControl>().ToArray();
+            var row = rows.FirstOrDefault(control => (control.Header as NavMenuNode)?.ItemKey?.Value == "Action")
+                          .ShouldNotBeNull(string.Join(", ", rows.Select(control => $"{control.GetType().Name}:{control.Header}")));
+            var header = row.GetVisualDescendants().OfType<Control>()
+                            .Single(control => control.Name == "PART_Header" && ReferenceEquals(control.TemplatedParent, row));
+            var root = window.Content.ShouldBeOfType<Grid>();
+            var overlay = new Border { Background = Avalonia.Media.Brushes.Transparent };
+            var center = header.TranslatePoint(new Point(header.Bounds.Width / 2, header.Bounds.Height / 2), window)
+                            .ShouldNotBeNull();
+
+            // A blocking overlay is a negative control: positive bounds alone must not pass.
+            root.Children.Add(overlay);
+            window.UpdateLayout();
+            using var blockedFrame = window.CaptureRenderedFrame();
+            (window.InputHitTest(center) as Visual).ShouldBeSameAs(overlay);
+            root.Children.Remove(overlay);
+            window.UpdateLayout();
+            using var unblockedFrame = window.CaptureRenderedFrame();
+
+            foreach (var x in new[] { 2d, header.Bounds.Width / 2, header.Bounds.Width - 2 })
+            {
+                window.ViewModel!.CaseNavigation.NavigateToCommand.Execute(OverviewViewModel.ID).Subscribe();
+                Dispatcher.UIThread.RunJobs();
+                var point = header.TranslatePoint(new Point(x, header.Bounds.Height / 2), window).ShouldNotBeNull();
+                var hit = (window.InputHitTest(point) as Visual).ShouldNotBeNull();
+                (ReferenceEquals(hit, row) || hit.GetVisualAncestors().Contains(row)).ShouldBeTrue(
+                    $"Sidebar Action row should own its full-width input point {point}");
+                window.MouseMove(point);
+                row.IsPointerOver.ShouldBeTrue();
+                window.MouseDown(point, MouseButton.Left);
+                window.MouseUp(point, MouseButton.Left);
+                Dispatcher.UIThread.RunJobs();
+                window.ViewModel.Router.GetCurrentViewModel().ShouldBeOfType<IconCatalogPageViewModel>()
+                      .Category.ShouldBe("Action", $"click at {point}, header={header.Bounds}, row={row.Bounds}");
+            }
+
+            var scroll = menu.GetVisualDescendants().OfType<Avalonia.Controls.ScrollViewer>()
+                             .First(viewer => viewer.Viewport.Height > 0 && viewer.Extent.Height > viewer.Viewport.Height);
+            var initialOffset = scroll.Offset.Y;
+            window.MouseWheel(center, new Vector(0, -5));
+            SpinWait.SpinUntil(() =>
+            {
+                Dispatcher.UIThread.RunJobs();
+                window.UpdateLayout();
+                return scroll.Offset.Y > initialOffset;
+            }, TimeSpan.FromSeconds(3)).ShouldBeTrue("a wheel event over the sidebar row should scroll the category list");
+        }
+        finally
+        {
+            window.Close();
+            Dispatcher.UIThread.RunJobs();
+        }
+    }
+
+    private static T FindNamed<T>(Visual root, string name)
+        where T : Control
+    {
+        return root.GetVisualDescendants().OfType<T>().Single(control => control.Name == name);
+    }
+
+    private static Rect BoundsInWindow(Visual visual, Visual window)
+    {
+        var origin = visual.TranslatePoint(default, window).ShouldNotBeNull();
+        return new Rect(origin, visual.Bounds.Size);
+    }
+
+    private static bool RectanglesOverlap(Rect first, Rect second)
+    {
+        return first.Left < second.Right && first.Right > second.Left &&
+               first.Top < second.Bottom && first.Bottom > second.Top;
     }
 }

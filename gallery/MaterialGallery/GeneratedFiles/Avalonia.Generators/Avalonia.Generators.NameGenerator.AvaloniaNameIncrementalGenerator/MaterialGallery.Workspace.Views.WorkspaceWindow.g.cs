@@ -8,17 +8,15 @@ namespace MaterialGallery.Workspace.Views
 {
     partial class WorkspaceWindow
     {
-        [global::System.CodeDom.Compiler.GeneratedCode("Avalonia.Generators.NameGenerator.InitializeComponentCodeGenerator", "12.1.1.0")]
-        internal global::MaterialGallery.Controls.Navigation Navigation;
-        [global::System.CodeDom.Compiler.GeneratedCode("Avalonia.Generators.NameGenerator.InitializeComponentCodeGenerator", "12.1.1.0")]
-        internal global::MaterialGallery.Controls.IconGallery Gallery;
+        [global::System.CodeDom.Compiler.GeneratedCode("Avalonia.Generators.NameGenerator.InitializeComponentCodeGenerator", "12.1.4.0")]
+        internal global::Avalonia.Controls.Grid ShellHost;
 
         /// <summary>
         /// Wires up the controls and optionally loads XAML markup and attaches dev tools (if Avalonia.Diagnostics package is referenced).
         /// </summary>
         /// <param name="loadXaml">Should the XAML be loaded into the component.</param>
 
-        [global::System.CodeDom.Compiler.GeneratedCode("Avalonia.Generators.NameGenerator.InitializeComponentCodeGenerator", "12.1.1.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Avalonia.Generators.NameGenerator.InitializeComponentCodeGenerator", "12.1.4.0")]
         [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
         public void InitializeComponent(bool loadXaml = true)
         {
@@ -28,8 +26,7 @@ namespace MaterialGallery.Workspace.Views
             }
 
             var __thisNameScope__ = this.FindNameScope();
-            Navigation = __thisNameScope__?.Find<global::MaterialGallery.Controls.Navigation>("Navigation");
-            Gallery = __thisNameScope__?.Find<global::MaterialGallery.Controls.IconGallery>("Gallery");
+            ShellHost = __thisNameScope__?.Find<global::Avalonia.Controls.Grid>("ShellHost");
         }
     }
 }

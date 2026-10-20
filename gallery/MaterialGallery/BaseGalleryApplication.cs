@@ -1,7 +1,6 @@
 using Avalonia;
 using System.Globalization;
 using AtomUI;
-using AtomUI.Controls;
 using AtomUI.Desktop.Controls;
 using AtomUI.Localization;
 using AtomUI.Theme;
