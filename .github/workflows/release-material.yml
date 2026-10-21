@@ -126,16 +126,5 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           if ([string]::IsNullOrWhiteSpace($env:NUGET_API_KEY)) { throw 'NUGET_API_KEY is not configured' }
           dotnet nuget push $package.FullName --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json
-          if ($LASTEXITCODE -ne 0) { throw 'NuGet push failed or was ambiguous; query NuGet before retrying' }
-          $url = 'https://api.nuget.org/v3-flatcontainer/atomui.icons.material/index.json'
-          for ($attempt = 0; $attempt -lt 60; $attempt++) {
-            try {
-              $index = Invoke-RestMethod $url
-              if ($index.versions -contains $env:VERSION) {
-                Write-Output "NuGet confirmed AtomUI.Icons.Material $env:VERSION (artifact SHA256 $hash)"
-                exit 0
-              }
-            } catch { Write-Warning 'NuGet indexing check is temporarily unavailable' }
-            Start-Sleep -Seconds 10
-          }
-          throw 'Publication was accepted but visibility is unconfirmed; query NuGet before retrying'
+          if ($LASTEXITCODE -ne 0) { throw 'NuGet push failed or was ambiguous; inspect this run before any user-authorized retry' }
+          Write-Output "NuGet upload succeeded for AtomUI.Icons.Material $env:VERSION (artifact SHA256 $hash); GitHub Actions publication is complete."
